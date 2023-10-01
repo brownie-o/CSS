@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 第二種使用樣式的方式 外部樣式表 -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- 第一種使用樣式的方式 <style></style> -->
+  <style>
+    /* 標籤選擇器 */
+    h1 {
+      color: red; 
+      background-color: yellow;
+      font-size: 40px;
+    }
+    p{
+      color: grey;
+      background-color: rgb(59, 59, 136);
+      font-size: 20px;
+    }
+
+    /* 群組選擇器 用逗號區隔 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: rgb(6, 113, 6);
+    }
+    /* 後面的屬性會蓋掉前面的 */
+  </style>
+</head>
+
+<body>
+  <!-- 第三種方式 style屬性樣式，一班會稱為行內樣式 inline style -->
+  <h1 style="color: crimson">CSS 第一堂課</h1>
+  <p>早安早安早安早安圖書館</p>
+
+  <h1>CSS 第二堂課</h1>
+  <p>早安早安早安早安圖書館</p>
+
+  <h1>CSS 第三堂課</h1>
+  <p>早安早安早安早安圖書館</p>
+
+  <hr>
+
+  <h1>Hello World</h1>
+  <h2>Hello World</h2>
+  <h3>Hello World</h3>
+  <h5>Hello World</h5>
+  <h5>Hello World</h1>
+  <h6>Hello World</h6>
+
+  <h1>由上而下的解析方式</h1>
+  <p>瀏覽器由上至下解析文件，對於樣式而言，如果選擇器權重一樣，後者會蓋掉前者。</p>
+</body>
+</html>

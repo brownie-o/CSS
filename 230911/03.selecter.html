@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      - 以 . 開頭
+      - 只允許使用英文、數字、連字號 - 、底線_ (特殊符號 X)
+      - 必須字元開始，不能數字開頭 (.123 X)
+      - 可以用中文命名，但盡量不要
+      - 有區分大小寫 case sensitive
+    */
+    .name {
+      color: blue
+    }
+
+    li {
+      color: green;
+    }
+
+    .active {
+      color: darkmagenta;
+    }
+
+    .font {
+      font-size: 30px;
+    }
+
+    #header {
+      color:lightsalmon
+    }
+
+    #main {
+      color:palevioletred
+    }
+
+    #sidebar {
+      color: tomato;
+    }
+
+    #footer{
+      color:peachpuff
+    }
+
+    #header, 
+    #main, 
+    #sidebar, 
+    #footer {
+      font-size: 30px;
+    }
+
+    /* 後代選擇器為半形空白 選擇到兒子與孫子們 全選nav後的所有後代p */
+    nav p{
+      color: blue;
+    }
+
+    /* 子代選擇器為 > 只選nav中的p (兒子)*/
+    nav>p {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS 選擇器</h1>
+  <!-- 賦予class屬性 自己隨意命名(name) -->
+  <h1 class="name">class 選擇器</h1>
+  <h2>使用場景</h2>
+  <h3>1. 相同元素但需要不同外觀時</h3>
+  <ul>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li class="active">Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+  </ul>
+
+  <h3>2. 重複使用時</h3>
+  <p>Lorem ipsum dolor <a class="font" href="#">藍色星期一</a> sit amet consectetur, adipisicing elit. Voluptates perferendis
+    consequatur, <em class="font">fuga molestias voluptate in</em>, atque velit laboriosam, <b class="font">distinctio
+      quaerat iure explicabo esse</b> illum quidem aperiam cumque ipsam. Dolorum, ad!</p>
+
+  <hr>
+
+  <h1>ID選擇器</h1>
+  <ul>
+    <li>一份文件裡面，只允許一個獨一無二的id名稱，就像身分證不能重複</li>
+    <li>對程式來說，id是最簡單、最快速、最直接的選擇方式，DOM 文件物件模型</li>
+  </ul>
+
+  <h2>網頁區塊的名稱會以id來命名</h2>
+  <div id="header">這是 header 區塊</div>
+  <div id="main">這是 main 區塊</div>
+  <div id="sidebar">這是 sidebar 區塊</div>
+  <div id="footer">這是 footer 區塊</div>
+
+  <hr>
+
+  <h2>後代選擇器與子代選擇器</h2>
+  <nav>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <h6>123123</h6>
+    </div>
+  </nav>
+</body>
+
+</html>

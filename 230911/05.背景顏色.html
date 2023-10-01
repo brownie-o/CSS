@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-image: url("https://picsum.photos/1920/1080/?random=10");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    .box{
+      width: 600px;
+      height: 600px;
+      border: 5px solid #fff;
+      margin: 100px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      
+      font-size: 3rem;
+      color: yellow;
+      text-shadow: 0 0 3px rgb(0, 0, 0);
+
+      backdrop-filter: blur(10px)
+    }
+
+    .bg-color{
+      background-color: #faa;
+    }
+
+    .bg-img{
+      background-image: url("https://picsum.photos/200/200/?random=10");
+    }
+
+    .bg-repeat-x{
+      background-repeat: repeat-x;
+    }
+
+    .bg-repeat-y{
+      background-repeat: repeat-y;
+    }
+
+    .bg-no-repeat{
+      background-repeat: no-repeat;
+    }
+
+    /* 改變背景圖片的尺寸 */
+    .bg-size{
+      background-image: url("https://picsum.photos/300/200/?random=10");
+      background-repeat: no-repeat;
+      /* 單值的設定 */
+      /* 滿版 填滿box 但有可能會因為比例不同而有一部分被裁切在盒子外面 可用於大圖片縮小 */
+      background-size: cover;
+      /* 圖片雖也是滿版但會整個被裝在box中 背景圖片一邊碰到box的一邊時，停止縮放*/
+      background-size: contain;
+      /* 單值-百分比, px, rem, em... 依據box的寬等比縮放，第二個值:高度會被省略default為auto  */
+      background-size: 75%;
+      /* 雙值-百分比, px, rem, em... 寬高皆設定 第一個是寬，第二個是高 */
+      background-size: 300px 400px;
+    }
+
+    .bg-position{
+      /* 第一個是水平 第二個是垂直 */
+      /* 第一個關鍵字: left, center, right <==> 0%, 50%, 100% */
+      /* 第二個關鍵字: top, center, bottom <==> 0%, 50%, 100% */
+      background-position: 25% 25%;
+      background-position: 200px 200px;
+      /* 如果只設定一個值 另一個就會是default center */
+      background-position: top;
+    }
+
+    .pikachu{
+      width: 600px;
+      height: 600px;
+      border: 5px solid #fff;
+      margin: 100px auto;
+
+      font-size: 3rem;
+      color: yellow;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+      background-image: url(./pikachu.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 -100px;
+    }
+    
+    .bg-abbr{
+      /* 
+      縮寫規則
+      1. background-size 一定要緊接在background-posotion 之後，必須要用斜線分隔(/)
+      2. 設定background-position 雙值時，先設定水平再設定垂直
+      3. 值跟值中間要空格 */
+      background: #ff0 url("https://picsum.photos/300/200/?random=10") no-repeat center center/cover;
+    }
+
+    /* 
+      多層背景
+      1. 使用多層背景受重疊時，各屬性值可用逗號分隔，圖片列出順序，經由上而下排列，上方會蓋住下方
+      2. 第一個背景圖片為最上層，第二為第二層，最後一個為最底層
+    */
+    .bg-three{
+      /* background-image: 
+      url("https://picsum.photos/600/100/?random=1"),
+      url("https://picsum.photos/600/400/?random=2"),
+      url("https://picsum.photos/600/100/?random=3");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: left top, left 100px, left bottom; */
+
+      /* 縮寫版 */
+      background: url("https://picsum.photos/600/100/?random=1") no-repeat left top,
+      url("https://picsum.photos/600/400/?random=2") no-repeat left 100px,
+      url("https://picsum.photos/600/100/?random=3") no-repeat left bottom;
+    }
+
+    .linear-gradient1{
+      background-image: linear-gradient(red, yellow, white);
+      background-image: linear-gradient(45deg, red, yellow, white);
+    }
+
+    /* 有百分比的漸層點(分配比例) % = 位置 */
+    .linear-gradient2{
+      background-image: linear-gradient(to right top, #fff 0%, lightblue 25%, white 50%, lightblue 75%, #fff 100%);
+    }
+
+    .radial-gradient{
+      background-image: radial-gradient(red, yellow, white);
+    }
+    
+    /* 半透明顏色背景 使用透明漸層蓋在背景圖上 */
+    .half-opacity{
+      background-image:
+      linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+      url("https://picsum.photos/600/600/?random=10");
+    }
+  </style>
+</head>
+<body>
+  <!-- .box=<div class="box"></div> -->
+  <!-- class 1: box, class 2: bg-color -->
+  <!-- class 的命名盡量清楚 讓別人也看得懂 -->
+  <div class="box bg-color">background-color</div>
+  <div class="box bg-img">backgroung-image</div>
+  <div class="box bg-img bg-repeat-x">background-repeat-x</div>
+  <div class="box bg-img bg-repeat-y">background-repeat-y</div>
+  <div class="box bg-img bg-no-repeat">background-no-repeat</div>
+  <div class="box bg-size">background-size</div>
+  <div class="box bg-img bg-no-repeat bg-position">background-position</div>
+  <div class="pikachu">皮卡丘</div>
+  <div class="box bg-abbr">縮寫版</div>
+  <div class="box bg-three">多張背景圖</div>
+  <div class="box linear-gradient1">線性漸層1</div>
+  <div class="box linear-gradient2">線性漸層2</div>
+  <div class="box radial-gradient">放射漸層</div>
+  <div class="box half-opacity">半透明顏色背景</div>
+</body>
+</html>

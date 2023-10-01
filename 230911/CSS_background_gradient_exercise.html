@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		table {
+			margin: 1rem;
+			display: inline-block;
+		}
+
+		table,
+		tr,
+		td {
+			border: 1px solid #000;
+		}
+
+		table td {
+			width: 200px;
+			height: 200px;
+		}
+
+		.bg-color {
+			background-color: crimson;
+		}
+
+		.bg-image {
+			background: url("https://picsum.photos/200/200/?random=10") center/cover;
+			/* background-image: url(picsum 200*200) */
+		}
+		
+		.bg-img-x {
+			background: url("https://picsum.photos/50/50/?random=10") repeat-x;
+			/* background-image: url(picsum 50*50) */
+			/* background-repeat: repeat-x */
+		}
+
+		.bg-img-y {
+			background: url("https://picsum.photos/50/50/?random=1") repeat-y;
+		}
+
+		.bg-img-center {
+			background: url("https://picsum.photos/50/50/?random=8") no-repeat center;
+		}
+
+		.bg-img-color {
+			background: url("https://picsum.photos/50/50/?random=9") no-repeat center #ffa;
+		}
+
+		.bg-3-layer-img {
+			background: 
+				url("https://picsum.photos/200/50/?random=10") no-repeat top,
+				url("https://picsum.photos/200/102?random=10") no-repeat center 50px,
+				url("https://picsum.photos/200/50/?random=10") no-repeat bottom
+				/* 
+				background-position: left top, 0 50px, left bottom;
+				background-repeat: no-repeat
+				*/
+		}
+
+		.bg-linear {
+			background: linear-gradient(270deg, blue, black);
+		}
+
+		.bg-radient {
+			background: radial-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td class="bg-color"></td>
+			<td class="bg-image"></td>
+			<td class="bg-img-x"></td>
+		</tr>
+		<tr>
+			<td class="bg-img-y"></td>
+			<td class="bg-img-center"></td>
+			<td class="bg-img-color"></td>
+		</tr>
+		<tr>
+			<td class="bg-3-layer-img"></td>
+			<td class="bg-linear"></td>
+			<td class="bg-radient"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
