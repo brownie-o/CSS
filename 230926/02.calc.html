@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+    }
+
+    #header{
+      width: 100%;
+      height: 60px;
+      background: lightblue;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #sidebar{
+      /* vh = view port height 視窗高度*/
+      height: calc(100vh - 60px); 
+      width: 15%;
+      background: lightgoldenrodyellow;
+      position: fixed;
+      left: 0;
+      top: 60px;
+      /* 可以找自訂義卷軸 hover才會出現 */
+    }
+
+    #content{
+      width: calc(100% - 15%);
+      background: lightgreen;
+      margin-left: 15%;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <div id="sidebar"></div>
+  <div id="content">
+    <div class="card"></div>
+  </div>
+</body>
+</html>

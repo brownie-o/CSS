@@ -1,0 +1,344 @@
+/* 設定body擁有滿版的高度 */
+/* 要連html(父元素)一起寫 才抓得到滿版100%(父元素)的高 */
+html,
+body {
+  height: 100%
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 建立一個寬度一致且水平置中的容器，目的是讓每個區塊的內容寬度一致。 */
+.container {
+  width: 75%;
+  /* 水平置中 */
+  margin: auto;
+  /* 
+  margin-right: auto
+  margin-left: auto
+  */
+}
+
+/* 繼承上一層的高度 */
+.h-100 {
+  height: 100%;
+}
+
+/* header------------------------------------------ */
+#header {
+  width: 75%;
+  height: 60px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  /* filter 多函式之間不用逗點
+  drop-shadow 在輪廓附上陰影 */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  /* 才不會被後面的section蓋住 */
+  z-index: 1;
+}
+
+/* #header .menu => 選擇header的所有後代 menu */
+/* #header>.menu => 選擇header的子代 menu */
+#header .menu {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: url('../images/nav-bg-full.jpg') repeat-x center;
+  position: absolute;
+  top: 25px;
+  /* 消除inline-block右橫排造成的幽靈空白 */
+  font-size: 0;
+  z-index: -1;
+}
+
+#header .menu li {
+  /* 變橫排 */
+  display: inline-block;
+  padding: 1rem 0;
+  /* 把消除幽靈空白時消失的字叫回來 */
+  font-size: 1rem;
+}
+
+#header .menu li a {
+  color: white;
+  text-decoration: none;
+  /* 讓padding留在li裡不外流 */
+  display: block;
+  padding: 0.5rem 1.5rem;
+  /* 做動畫用 */
+  transition: 0.5s;
+}
+
+#header .menu li a:hover {
+  background: rgba(255, 60, 0, 0.3);
+}
+
+/* 第三個li右側推移15%空間 */
+#header .menu li:nth-child(3) {
+  /* % 根據父元素(ul)的寬度 */
+  margin-right: 15%;
+}
+
+#header .menu::before {
+  content: '';
+  /* 縮寫: background-position/background-size 一定要這樣寫 */
+  /* cover: 填滿 */
+  background: url("../images/nav-bg-left.png") no-repeat left top/cover;
+  width: 12px;
+  height: 60px;
+  /*  */
+  position: absolute;
+  /* 父元素(header)有設定position */
+  left: -10px;
+}
+
+#header .menu::after {
+  content: '';
+  background: url("../images/nav-bg-right.png") no-repeat right top/cover;
+  width: 12px;
+  height: 60px;
+  position: absolute;
+  right: -10px;
+}
+
+#header .logo {
+  width: 15%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#header .logo img {
+  /* 讓太大的圖片可以放在.logo內 */
+  width: 100%;
+}
+
+/* section01 ------------------------------ */
+#section01 {
+  background: url("../images/section01-bg.jpg") no-repeat center/cover;
+  position: relative;
+}
+
+#section01 .main-news {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#section01 .main-news h1 {
+  font-size: 2.5rem;
+  font-style: italic;
+  color: yellow;
+  text-shadow:
+    0 0 5px rgba(0, 0, 0, 1),
+    0 0 10px rgba(0, 0, 0, 1),
+    0 0 15px rgba(0, 0, 0, 1);
+}
+
+/* section02 ------------------------------ */
+#section02 {
+  background: url("../images/section02-bg.jpg") no-repeat center/cover;
+  position: relative;
+}
+
+#section02 .container {
+  /* 繼承h-100的高度(滿版) */
+  height: 100%;
+  position: relative;
+}
+
+#section02 .row {
+  width: 100%;
+  /* 轉型 讓內容和寬度一致 */
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 因為幽靈空白無法並排 去除幽靈空白 */
+  font-size: 0;
+}
+
+#section02 .row .col {
+  /* box-sizing 可重新計算box總寬度、高度。width, height包含了padding, border，排版時不用考慮padding, border */
+  box-sizing: border-box;
+  padding: 5rem 1rem;
+  color: white;
+  width: 50%;
+  /* 內容改為流向排版 */
+  display: inline-block;
+  font-size: 1rem;
+}
+
+#section02 .row .col h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#section02 .row .col p {
+  /* 目前字體大小(16px)的倍數(1.5倍)=總行高 => 總行高/2 = 字距 */
+  line-height: 1.5;
+  text-indent: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+#section02 .row .col iframe {
+  width: 100%;
+  height: 300px;
+  border: 5px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* section03 ------------------------------ */
+#section03 {
+  background: linear-gradient(45deg, #222 40%, #aaa 40%);
+}
+
+/* 切出上方角色資料容器 65% */
+#section03 .col:nth-child(1) {
+  height: 65%;
+  /* background-color: lightcyan; */
+}
+
+/* 切出下方角色選單容器 35% */
+#section03 .col:nth-child(2) {
+  height: 35%;
+  /* background-color: lightgoldenrodyellow; */
+}
+
+/* 上方角色資料大區塊 */
+/* > 選擇子層div */
+#section03 .role_info>div {
+  height: 100%;
+  /* 隱藏div */
+  display: none;
+}
+
+/* 當radio選單被觸發成 :checked狀態時，相鄰的div讓其顯示 */
+/* + div : 被checked的隔壁的div會被display */
+#section03 .role_info input:checked+div {
+  display: block;
+}
+
+#section03 .role_info input {
+  display: none;
+}
+
+/* 人物大圖 */
+#section03 .role_info .role {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  /* 因為有設box-sizing 所以可以放心設定padding(不會妨礙到內容物) */
+  padding: 5rem 1.5rem 0;
+  float: left;
+}
+
+#section03 .role_info .role img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 人物資料 */
+#section03 .role_info .info {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  padding: 8rem 1rem 5rem;
+  float: right;
+}
+
+#section03 .role_info .info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#section03 .role_info .info p {
+  padding: 0.5rem 0;
+  line-height: 1.2;
+}
+
+/* 下方角色選單大區塊 */
+#section03 .role_list {
+  /* 讓label水平置中 */
+  text-align: center;
+  /* 消除幽靈空白 沒有文字所以不用再加回來 */
+  font-size: 0;
+}
+
+#section03 .role_list label {
+  width: 7%;
+  display: inline-block;
+  margin: 0 0 5px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#section03 .role_list img {
+  width: 100%;
+}
+
+#section03 .role_list label:hover {
+  filter: drop-shadow(0 0 5px rgb(255, 0, 0)) drop-shadow(0 0 10px rgb(255, 0, 0));
+}
+
+/* ~ 同層全體選擇器，選擇第15個之後出現的所有label */
+#section03 .role_list label:nth-child(15)~label {
+  filter: brightness(0.4);
+  cursor: auto;
+}
+
+/* footer ------------------------------ */
+#footer {
+  background: black;
+  color: white;
+  padding: 2rem 0;
+}
+
+#footer .row {
+  /* 把背景叫回來 */
+  overflow: auto;
+}
+
+#footer .row .col {
+  width: 25%;
+  float: left;
+}
+
+#footer .card {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+#footer li {
+  line-height: 1.4;
+  padding-left: 1.5rem;
+}
+
+#footer h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#footer .card h3 {
+  margin-bottom: 1rem 0;
+}
+
+#footer .card>i {
+  /* icon 是文字 可以設定字型 顏色等 */
+  width: 30px;
+  font-size: 1.3rem;
+  color: lightblue;
+}
+
+#footer .copyright {
+  text-align: center;
+  /* 置中 */
+  padding: 2rem 0 0;
+}
