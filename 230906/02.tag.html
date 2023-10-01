@@ -1,0 +1,412 @@
+<!-- !DOCTYPE html 告訴瀏覽器這份文件是html5文件 -->
+<!DOCTYPE html>
+<!-- lang 語系 -->
+<html lang="en">
+
+
+<head>
+	<!-- meta=info for browser, UTF-8 字元編碼，確保網頁瀏覽正常 -->
+	<meta charset="UTF-8">
+	<!-- RWD 必須設定此行，不需改裡面的值 (符合最佳解析度) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="這是我的第一個網頁" title=常用標籤>
+	<style>
+		body {
+			padding-bottom: 150px;
+		}
+
+		/* ul li{
+			display: inline-block;
+		} */
+	</style>
+
+</head>
+
+<body>
+	<h1>標籤使用的注意</h1>
+	<ul>
+		<li>標籤雖然不分大小寫，但是養成使用小寫的習慣</li>
+		<li>屬性不限制用單引或雙引，養成習慣使用雙引號</li>
+		<li>標籤具有屬性與值的特性，屬性之間需要空格</li>
+		<li>大多數元素(有屬性&值)有起始標籤及結束標籤，少數只有起始標籤</li>
+	</ul>
+
+	<!-- 水平線 -->
+	<hr>
+
+	<h1 id="hello">常用標籤</h1>
+	<p> 先學常用的標籤以及標記內容，了解語意的概念即可</p>
+
+	<h2>標題 h1~h6</h2>
+	<h1>h1 - Hello World!</h1>
+	<h2>h2 - Hello World!</h2>
+	<h3>h3 - Hello World!</h3>
+	<h4>h4 - Hello World!</h4>
+	<h5>h5 - Hello World!</h5>
+	<h6>h6 - Hello World!</h6>
+
+	<hr>
+
+	<h2>段落 p</h2>
+	<p>我是段落文字</p>
+	<!-- 英文假字 lorem -->
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta officia reprehenderit rem tempora ea ex deserunt
+		beatae unde perferendis ratione praesentium quo deleniti, asperiores magni corporis pariatur quaerat culpa sunt.
+		Voluptatum eaque consequatur perspiciatis, illum laudantium reiciendis excepturi id cupiditate tenetur? Soluta
+		debitis eius cumque ipsum eligendi deserunt illo odit perferendis obcaecati tenetur commodi, in, labore aliquid
+		perspiciatis. Magni nisi nulla deleniti veniam assumenda, laudantium velit quod quas ipsum perspiciatis deserunt
+		cupiditate ratione vel itaque iste quasi repudiandae eum excepturi ullam commodi enim aspernatur. Libero,
+		reiciendis reprehenderit exercitationem facere esse distinctio sed fugiat eos odio atque fugit aut quam possimus
+		aliquid praesentium, quod magnam a dolorum dolor? Quibusdam ea, repellendus adipisci ex doloribus nihil a
+		voluptas! Est voluptatem quod cupiditate, consectetur fuga culpa optio necessitatibus tempora similique expedita
+		laborum vel repudiandae perspiciatis reprehenderit. Harum veniam excepturi aliquam numquam vitae modi magnam
+		eius voluptates adipisci et alias, unde fugit libero dolorum quod maxime perferendis! Voluptatum, enim nemo
+		incidunt aperiam nesciunt corporis deserunt a repellendus, inventore voluptates nostrum quia quidem deleniti
+		explicabo fuga! Veniam temporibus suscipit debitis, sint odit at, ad, molestias blanditiis consequatur ea atque
+		autem vel. Autem porro est asperiores id excepturi non quibusdam natus facere dicta dolor, laudantium aspernatur
+		commodi. Voluptatum recusandae ut commodi a earum, voluptate, odit laudantium rem sequi fugiat tempore unde
+		ipsam. Labore reiciendis quaerat ex eligendi placeat praesentium eum velit ducimus est inventore doloribus,
+		iste, reprehenderit unde itaque harum consequuntur perspiciatis quisquam soluta id odio vel ullam! Impedit
+		explicabo deserunt consequuntur harum non eum, eius mollitia ad error numquam repellat minus velit quisquam
+		consequatur quibusdam ipsam. Commodi, doloribus. Itaque labore consequuntur nemo veritatis deserunt. Natus
+		nostrum dolores officiis aperiam amet voluptas quidem tenetur voluptatibus minus error! Necessitatibus mollitia
+		explicabo atque dolore reiciendis esse. Debitis exercitationem voluptate magni architecto culpa earum unde
+		assumenda molestiae obcaecati nihil!</p>
+	<!-- 中文假字 ctlorem -->
+	<p>ctlorem</p>
+
+	<hr>
+
+	<h2>連結 a</h2>
+	<!-- target="_blank" 開啟新的分頁 -->
+	<a href="http://www.google.com" target="_blank">前往 Google</a>
+	<br>
+	<!-- ./ = 相對路徑 -->
+	<a href="./01.firstpage.html">我的第一個網頁</a>
+
+	<br>
+	<a href="#">跳回頂端</a>
+
+	<br>
+	<!-- 錨點 -->
+	<a href="#hello">前往 id 為 hello處</a>
+
+	<hr>
+
+	<h2>換行 br</h2>
+	白日依山盡<br>
+	黃河入海流<br>
+	欲窮千里目<br>
+	更上一層樓
+
+	<hr>
+
+	<h2>有序號的清單 ol</h2>
+	<!-- ol>li*4 -->
+	<ol>
+		<li>上網</li>
+		<li>看電影</li>
+		<li>睡覺</li>
+		<li>寫code</li>
+	</ol>
+
+	<h2>無序號的清單 ul</h2>
+	<!-- ul>li*4 -->
+	<ul>
+		<li>清單項目1</li>
+		<li>清單項目2</li>
+		<li>清單項目3</li>
+		<li>
+			<ul>
+				<li>子層清單1</li>
+				<li>子層清單2</li>
+			</ul>
+		</li>
+	</ul>
+
+	<hr>
+
+	<h2>HTML 巢狀概念</h2>
+	<p>巢狀概念其他技術也會有，具有外、內的關係，父子的關係。同一層級稱為兄弟關係</p>
+
+
+	<ul>
+		<li>
+			<h3>前端技能</h3>
+			<ol>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+				<li>jQuery</li>
+				<li>Bootstrap</li>
+			</ol>
+		</li>
+		<li>
+			<h3>影像繪圖</h3>
+			<ol>
+				<li>Photoshop</li>
+				<li>Illustrator</li>
+			</ol>
+		</li>
+
+	</ul>
+
+	<hr>
+
+
+	<h2>圖片 img</h2>
+
+	<ul>
+		<li>絕對路徑: 一般連結外部連結或資源時使用</li>
+		<li>相對路徑: 從文件的位置為起點找到目標檔案或資源的位置</li>
+	</ul>
+
+	<h3>絕對路徑</h3>
+	<img src="https://p2.bahamut.com.tw/B/2KU/47/0000612947.JPG?v=1648450602320" alt="成步堂龍一" width="400" title="成步堂龍一">
+
+	<h3>相對路徑</h3>
+	<img src="./images/Dy3_8uGU8AEaGpt.jpg_large" width="400" alt="御剣怜侍" title="御剣怜侍">
+	<img src="./others/imgs/y_5c526d7e14760.jpg" alt="綾里真宵" width="400" title="綾里真宵">
+
+	<hr>
+	<h2>頁框 iframe</h2>
+	<a href="./others/hello.html" target="kaifu">載入 hello.html 到一個name叫 kaifu 的頁框裡</a>
+	<br>
+	<br>
+
+	<a href="https://www.google.com.tw/?hl=zh_TW" target="kaifu">Google</a>
+	<br>
+	<br>
+
+	<!-- 預設頁面為main.html , 利用target & name建立屬性關係-->
+	<iframe src="./others/main.html" frameborder="0" width="550" height="200" name="kaifu"></iframe>
+	<br>
+	<br>
+
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14458.788257549193!2d121.40919800125396!3d25.044352685305952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1693977963564!5m2!1szh-TW!2stw"
+		width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+	<hr>
+
+	<h2>各種字體的標籤</h2>
+	<b>粗體</b>
+	<strong>粗體(強調內容)</strong>
+
+	<br>
+
+	<i>斜體</i>
+	<em>我也是斜體</em>
+
+	<br>
+
+	<u>底線</u>
+	<ins>我也是底線</ins>
+
+	<br>
+
+	<!-- 上標 -->
+	x<sup>2</sup>
+
+	<!-- 下標 -->
+	CO<sub>2</sub>
+
+	<h2>pre 打印內容(完全複製)</h2>
+	<pre>
+			<code>
+					const btn = document.querySelector('#btn')
+					// 抓到id為showTime的div
+					const showTime = document.querySelector('#showTime')
+					// 點擊按鈕後，顯示時間
+					btn.onclick = function () {
+					showTime.innerText = new Date()
+					}
+			</code>
+  </pre>
+
+	<hr>
+
+	<h2>表格 table</h2>
+	<!-- cellspacing 表示格子之間的距離, cellpadding 表示格子的內距 -->
+	<table border="1" width="600" align="center" cellspacing="10" cellpadding="10">
+		<!-- caption 為表格標題 -->
+		<caption>前端班級成績表</caption>
+		<thead>
+			<!-- tr=列, th=粗體且文字置中的欄位 -->
+			<tr>
+				<th>姓名</th>
+				<th>網頁排版</th>
+				<th>程式設計</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- td=一般欄位 靠左 -->
+			<tr align="center">
+				<td>大寶</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+			<tr align="center">
+				<td>二寶</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+			<tr align="center">
+				<td>小寶</td>
+				<td>100</td>
+				<td>100</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr align="center">
+				<td>共三人</td>
+				<td>總平均: 100</td>
+				<td>總平均: 100</td>
+			</tr>
+		</tfoot>
+	</table>
+
+	<br>
+	<br>
+
+	<h2>表格合併</h2>
+	<!-- table>(tr>td{$}*6)*6 內有流水號{$}的6*6表格 -->
+	<p>colspan (欄合併): 左吃右,右消失, colspan="自己+吃了幾個"</p>
+	<p>rowspan (列合併): 上吃下,下消失, rowspan="自己+吃了幾個"</p>
+	<table border="1" width="600" align="center" cellspacing="5" cellpadding="5">
+		<tr>
+			<td colspan="2">1</td>
+			<td>3</td>
+			<td>4</td>
+			<td rowspan="4">5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td rowspan="3">10</td>
+			<td>10</td>
+			<td>10</td>
+			<td>10</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td rowspan="3">20</td>
+			<td>20</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>30</td>
+			<td>30</td>
+			<td>30</td>
+		</tr>
+		<tr>
+			<td>40</td>
+			<td>40</td>
+			<td colspan="3">40</td>
+		</tr>
+		<tr>
+			<td>50</td>
+			<td colspan="2">50</td>
+			<td>50</td>
+			<td>50</td>
+			<td>50</td>
+		</tr>
+	</table>
+
+	<h2>表單</h2>
+	<form>
+		<table border="1" cellspacing="0" cellpadding="5">
+			<tr>
+				<td width="100">帳號:</td>
+				<td><input type="text" size="20" maxlength="10" name="id" placeholder="請輸入帳號"</td>
+			</tr>
+			<tr>
+				<td>密碼:</td>
+				<td><input type="password" placeholder="請輸入密碼" name="pw"></td>
+			</tr>
+			<tr>
+				<td>性別:</td>
+				<td>
+					<!-- radio 為單選, name 需相同, 表示同一組單選, checked 為預設核選選項 -->
+					<input type="radio" value="男" name="gender">男生
+					<input type="radio" value="女" name="gender" checked>女生
+				</td>
+			</tr>
+			<tr>
+				<td>興趣:</td>
+				<!-- checkbox 為複選, name 需相同, 表示同一組複選, checked 為預設核選選項-->
+				<td>
+					<input type="checkbox" name="like" value="看書">看書
+					<input type="checkbox" name="like" value="玩遊戲">玩遊戲
+					<input type="checkbox" name="like" value="睡覺">睡覺
+					<input type="checkbox" name="like" value="看漫畫">看漫畫
+					<input type="checkbox" name="like" value="追星">追星
+				</td>
+			</tr>
+			<tr>
+				<td>上傳檔案:</td>
+				<td><input type="file" name="upload"></td>
+			</tr>
+			<tr>
+				<td>出生年份:</td>
+				<td>
+					<select name="year_select">
+						<option value="1990">1990</option>
+						<option value="1991">1991</option>
+						<option value="1992">1992</option>
+						<option value="1993">1993</option>
+						<option value="1994">1994</option>
+						<option value="1995">1995</option>
+						<option value="1996">1996</option>
+						<option value="1997">1997</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>留言訊息:</td>
+				<td><textarea name="message" cols="30" rows="5"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="送出">
+					<input type="reset" value="重置">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<h2>空元素(空標籤)</h2>
+	<p>空元素是少數沒有結束標籤的元素，例如: meta, br, hr, img, input, link</p>
+	<p>大部分元素都有起始結束標籤。</p>
+
+	<div id="header"></div>
+	<header></header>
+
+	<div id="aside"></div>
+	<aside></aside>
+
+	<div id="footer"></div>
+	<footer></footer>
+
+	<h2>HTML 跳脫字元(特殊字元)</h2>
+	<!-- 
+        unicode table
+        &lt; <
+        &gt; >
+        &copy; ©
+	-->
+	<p>&lt;body&gt;</p>
+	<p>2023&copy;泰山職訓局</p>
+
+	<h2>div 與 span 標籤</h2>
+	<!-- 無副作用的區塊標籤 -->
+	<div>div 是區塊標籤家族一員</div>
+	<!-- 無副作用的行內標籤 -->
+	<span>span 是行內標籤家族的一員</span>
+
+</body>
+
+</html>
