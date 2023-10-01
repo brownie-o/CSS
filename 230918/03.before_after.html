@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 全域選擇, 但不包含before after的。*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* 清除style */
+      box-sizing: border-box;
+      /* box-sizing: border-box; => 讓 padding跟border都算在寬內 */
+    }
+
+    /* before, after的外寬要另外設 */
+    *::before, 
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body{
+      padding-bottom: 300px;
+    }
+
+    .a{
+      width: 100px;
+      padding: 10px;
+      border: 10px solid #333;
+    }
+
+    .b{
+      width: 100px;
+      padding: 10px;
+      border: 10px solid #333;
+      box-sizing: border-box;
+      /* box-sizing: border-box => padding, border都算在width內 */
+      /* content: 60px, padding: 10px*2, border: 10px*2 */
+    }
+
+    h1 {
+      color: white;
+      background-color: #000;
+      margin: 2rem 0 0 0;
+      padding: 1rem;
+    }
+
+    hr {
+      margin: 2% 0;
+    }
+
+    .container {
+      width: 75%;
+      margin: 1% auto;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #333;
+      margin: 20px auto;
+      color: white;
+      position: relative;
+    }
+
+    .box .content {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      /* 定位後就會壓到前面綠色的before */
+    }
+
+    .box::before{
+      content: "";
+      /* 偽元素要件: 一定要有空的content */
+      /* 是inline 無法使用寬高 */
+      position: absolute;
+      /* 使用偽元素時通常會搭配定位 定位後變成block 就可以調寬高了 */
+      /* 進入定位層 就會壓到沒有定位的紅色content */
+      width: 100px;
+      height: 100px;
+      /* border: 5px solid yellow; */
+      left: 25px;
+      top: 0;
+      background: green;
+      /* z-index: 1; */
+      /* 加上z-index就可以讓綠色變成最上層 */
+    }
+
+    .box::after{
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      /* border: 5px solid greenyellow; */
+      left: 50px;
+      top: 0;
+      background: blue;
+    }
+
+    .bg-color {
+      background: #ffa;
+      /* overflow: hidden; --> 讓被float削去的背景顏色復原*/
+    }
+
+    .col {
+      width: 45%;
+      margin: 2.5%;
+      float: left;
+    }
+
+    .col img {
+      width: 100%;
+    }
+
+    .clearfix::after{
+      content:'';
+      display: block;
+      /* 讓after變成和div一樣的block */
+      clear: both;
+      /* 清除浮動 */
+    }
+
+    .box2 {
+      width: 150px;
+      height: 150px;
+      background-image: url("https://picsum.photos/150/150/?random=10");
+      margin: auto;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .box2::before {
+      content:'';
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: -110%;
+      background-image: url("https://picsum.photos/150/150/?random=2");
+      transition: 0.5s;
+    }
+
+    .box2::after {
+      content:'';
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      right: -110%;
+      background-image: url("https://picsum.photos/150/150/?random=3");
+      transition: 0.5s;
+    }
+
+    .box2:hover::before {
+      background: url("https://picsum.photos/150/150/?random=10");
+      left: 110%;
+    }
+
+    .box2:hover::after {
+      background: url("https://picsum.photos/150/150/?random=10");
+      right: 110%;
+    }
+
+    .box2 .inside{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .box2 .inside::before {
+      content:'';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: darkgoldenrod;
+      top: -110%;
+      transition: 1s;
+    }
+    
+    .box2 .inside::after {
+      content:'';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: darkkhaki;
+      bottom: -110%;
+      transition: 1s;
+    }
+
+    /* 當點到box2時 讓box2裡的inside動 */
+    .box2:hover .inside::before {
+      transform: rotate(360deg);
+    }
+
+    .box2:hover .inside::after {
+      transform: rotate(-360deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="a"></div>
+  <div class="b"></div> -->
+
+  <div class="container">
+    <h1>偽元素 ::before, ::after</h1>
+    <div class="box">
+      <div class="content">Lorem.</div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>啟動條件與特性</h1>
+    <ul>
+      <li>1. 要有content: '  ' 才會有作用</li>
+      <li>2. 建立時類型為 inline，不能設定寬、高</li>
+      <li>3. position:absolute, fixed轉型為block, 可以設定寬、高</li>
+      <li>4. 結構上，before被建立在內容區域的前方，after 在內容區域的後方，像分身可以幫本體做更多事情</li>
+      <li>5. 偽元素不能再建立偽元素，例如 ::before::before 是不行的</li>
+      <li>6. 無法使用再置換元素，img, input, iframe... 都無法使用偽元素</li>
+      <li>7. before與after定位時，依舊遵循後蓋前(after會蓋住before)可使用z-index改變層級</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h1>1. 當作清除浮動</h1>
+  </div>
+
+  <div class="container bg-color clearfix">
+    <div class="col">
+      <img src="https://picsum.photos/600/400/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquid eligendi maxime dolorum nobis deserunt minus facere? Necessitatibus, labore eaque? A, quibusdam ea possimus fugiat ut laborum maxime repellat quis!</p>
+    </div>
+    <div class="col">
+      <img src="https://picsum.photos/600/400/?random=10">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero aliquid eligendi maxime dolorum nobis deserunt minus facere? Necessitatibus, labore eaque? A, quibusdam ea possimus fugiat ut laborum maxime repellat quis!</p>
+    </div>
+    <!-- ::after => 將其變成block 一樣也是clear:both -->
+    <!-- <div style="clear:both;"></div> -->
+  </div>
+
+  <div class="container">
+    <h1>2. 摸到主體，讓分身做事情</h1>
+  </div>
+
+  <div class="container">
+    <div class="box2">
+      <div class="inside"></div>
+    </div>
+  </div>
+</body>
+</html>

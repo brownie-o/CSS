@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .taichi {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid black;
+      position: absolute;
+      background-image: linear-gradient(270deg, black 50%, white 50%);
+      /* background-image: linear-gradient(90deg, white 50%, black 0%); */
+      box-shadow: 0 0 20px rgb(0, 0, 0);
+      /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      /* 四邊都0 margin auto推到水平置中 */
+    }
+
+    .taichi::before {
+      content: '';
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, -0%);
+      background: white;
+    }
+
+    .taichi::after {
+      content: '';
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 1px solid black;
+      position: absolute;
+      /* bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, -0%); */
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      /* 推到最下面 */
+      background: black;
+    }
+
+    .taichi .yingyang{
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 50%;
+    }
+
+    .taichi .yinyang::before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      /* top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%); */
+      top: 25%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(-50%);
+    }
+
+    .taichi .yinyang::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      border: 1px solid white;
+      border-radius: 50%;
+      position: absolute;
+      background: white;
+      bottom: 25%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(50%);
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="taichi">
+    <div class="yinyang"></div>
+  </div>
+</body>
+
+</html>

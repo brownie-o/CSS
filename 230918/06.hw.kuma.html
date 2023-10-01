@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuma</title>
+  <style>
+    .kuma {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .kuma::before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: red;
+      border-radius: 50%;
+      top: 40%;
+      left: -5%;
+    }
+
+    .kuma::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: red;
+      border-radius: 50%;
+      top: 40%;
+      right: -5%;
+    }
+
+    .nose {
+      width: 80px;
+      height: 50px;
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      text-align: center;
+    }
+
+    .nose::before {
+      content: '';
+      width: 20px;
+      height: 13px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 10%;
+      transform: translateX(-50%);
+    }
+
+    .nose::after {
+      content: '';
+      width: 50px;
+      height: 18px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ears {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      left: 3%;
+    }
+
+    .ears::after {
+      content: '';
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+    }
+
+    .earsl {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      right: 3%;
+    }
+
+    .earsl::after {
+      content: '';
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+    }
+
+    .eyes {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      transform: translate(-25%, -25%);
+    }
+
+    .eyes::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 17%;
+      left: 17%;
+    }
+
+    .eyesl {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 25%;
+      left: 75%;
+      transform: translate(-75%, -25%);
+    }
+
+    .eyesl::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 17%;
+      left: 17%;
+    }
+
+    .chest {
+      bottom: 10%;
+      right: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+    }
+
+    .chest::before {
+      content: '';
+      height: 30px;
+      width: 30px;
+      background: white;
+      position: absolute;
+      bottom: 15%;
+      left: 33%;
+      transform: skew(50deg, 0);
+    }
+
+    .chest::after {
+      content: '';
+      height: 30px;
+      width: 30px;
+      background: white;
+      position: absolute;
+      bottom: 15%;
+      right: 33%;
+      transform: skew(-50deg, 0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="kuma">
+    <div class="nose"></div>
+    <div class="ears"></div>
+    <div class="earsl"></div>
+    <div class="eyes"></div>
+    <div class="eyesl"></div>
+    <div class="chest"></div>
+  </div>
+</body>
+
+</html>

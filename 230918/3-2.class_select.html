@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box .content {
+      color: blue;
+    /* 優先權的權重比較高 因此會顯示藍色 */
+    /* 選擇包在box中的content */
+  }
+
+  .content{
+    color: red;
+    /* 有content的都會被選到 */
+  }
+  </style>  
+</head>
+<body>
+  <div class="box">
+    <div class="content">lorem1</div>
+  </div>
+
+  <div class="content">lorem2</div>
+  <div class="content">lorem3</div>
+</body>
+</html>
