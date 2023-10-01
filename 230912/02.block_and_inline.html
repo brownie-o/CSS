@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    /* 去除幽靈空白，但文字會消失 */
+    font-size: 0;
+    }
+
+    .menu li {
+      display:inline-block; /* 讓直向的選單變成橫向 轉型成inline block 行內元素 */
+      background: black;
+      width: 100px; /* 轉型後可以設定寬度 */
+      /* 將文字叫回來 */
+      font-size: 1rem;
+    }
+
+    .menu a {
+      display:block; /* 轉型成block 區塊元素 */
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      background: yellow;
+      color: black;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>區塊盒和行內盒</h1>
+  <p>CSS是盒子的世界，盒子分為區塊盒、行內盒兩種基本型。</p>
+  
+  <h3>請說出以下兩行的差異</h3>
+  <div>Lorem ipsum dolor sit amet.</div>
+  <span>Lorem ipsum dolor sit amet.</span>
+  
+  <hr>
+  
+  <h3>上背景顏色</h3>
+  <!-- div = block element 區塊元素 -->
+  <div style="background-color: gold;">Lorem ipsum dolor sit amet.</div> 
+  <!-- span = inline element 行內元素 -->
+  <span style="background-color: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+
+  <hr>
+
+  <h2>區塊盒(區塊元素)</h2>
+  <p>例子: div, h1~h6, p, ul, li, section, header, article ...</p>
+
+  <ul>
+    <li>區塊元素若沒有寬度，會<u>佔據整個畫面的空間</u>，可以用背景顏色測試</li>
+    <li>可以正常使用盒模型 width, height, margin, padding 屬性，其中margin對正常流向的其他元素有實質的空間推移特性。</li>
+  </ul>
+
+  <div style="background: gold;">Lorem ipsum dolor sit amet.</div>
+  <div style="background: gold;">Lorem ipsum dolor sit amet.</div>
+  <div style="background: gold; width: 500px;">Lorem ipsum dolor sit amet.</div>
+  <div style="background: gold; width: 300px;">Lorem ipsum dolor sit amet.</div>
+
+  <h2>行內盒(行內元素)</h2>
+  <p>例子: span, a, em, strong, b ...</p>
+  <ul>
+    <li>前後不會換行，不會破壞正常流向，本身內容多少寬度就多少，和內容等寬</li>
+    <li>設定width, height 都不會有作用，也不會強迫換行，由左至右、由上而下循著正常流向排列。</li>
+  </ul>
+
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+  <span style="background: deepskyblue; width: 3000px;">Lorem ipsum dolor sit amet.</span>
+
+  <hr>
+
+  <h3>可以使用display 設定成其他類型的盒子，稱為轉型，例如 display:inline-block</h3>
+  <p>使用display:inline-block 橫向選單</p>
+  <ul class="menu">
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+  </ul>
+</body>
+</html>

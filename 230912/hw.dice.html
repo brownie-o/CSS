@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DICE</title>
+  <style>
+    .container {
+      width: 100%;
+      /* 如果沒有設寬度又使用position的話 物件的背景會與物件同寬 */
+      /* 使用position: absolute後可以讓inline變成block 就可以設寬高 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      /* 因為用inline-block轉型成區塊元素 */
+    }
+
+    .dice {
+      margin: auto;
+      border: 1px black solid;
+      border-radius: 10%;
+      width: 60px;
+      height: 60px;
+      background-image: linear-gradient(225deg, white, rgb(205, 205, 205));
+      box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      /* float: left; */
+      position: relative;
+      /* relative 讓點點待在骰子殼裡 */
+      transform: translate(0%);
+    }
+
+    .color-red {
+      color: red;
+      background-color: red;
+    }
+
+    .color-black {
+      color: black;
+      background-color: black;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border: 1px solid;
+      border-radius: 50%;
+      position: fixed;
+    }
+
+    .center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .top-left {
+      top: 10%;
+      left: 10%;
+    }
+
+    .top-right {
+      top: 10%;
+      right: 10%;
+    }
+
+    .bottom-right {
+      bottom: 10%;
+      right: 10%;
+    }
+
+    .bottom-left {
+      bottom: 10%;
+      left: 10%;
+    }
+
+    .middle-right {
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%)
+    }
+
+    .middle-left {
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="dice">
+      <div class="dot center color-red"></div>
+    </div>
+    <div class="dice">
+      <div class="dot top-left color-black"></div>
+      <div class="dot bottom-right color-black"></div>
+    </div>
+    <div class="dice">
+      <div class="dot center color-black"></div>
+      <div class="dot top-left color-black"></div>
+      <div class="dot bottom-right color-black"></div>
+    </div>
+    <div class="dice">
+      <div class="dot top-left color-red"></div>
+      <div class="dot top-right color-red"></div>
+      <div class="dot bottom-right color-red"></div>
+      <div class="dot bottom-left color-red"></div>
+    </div>
+    <div class="dice">
+      <div class="dot center color-black"></div>
+      <div class="dot top-left color-black"></div>
+      <div class="dot top-right color-black"></div>
+      <div class="dot bottom-right color-black"></div>
+      <div class="dot bottom-left color-black"></div>
+    </div>
+    <div class="dice">
+      <div class="dot top-left color-black"></div>
+      <div class="dot top-right color-black"></div>
+      <div class="dot bottom-right color-black"></div>
+      <div class="dot bottom-left color-black"></div>
+      <div class="dot middle-left color-black"></div>
+      <div class="dot middle-right color-black"></div>
+    </div>
+  </div>
+</body>
+
+</html>

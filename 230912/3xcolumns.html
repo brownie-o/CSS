@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* 使用display設計一個960px且水平置中 */
+    .container {
+      width: 960px;
+      /* 置中 */
+      margin: auto;
+      font-size: 0;
+    }
+
+    .col {
+      display: inline-block;
+      width: 300px;
+      border: 5px white double;
+      padding: 5px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 流向布局: 由左至右 由上而下 -->
+  <div class="container">
+    <div class="col" style="background-color: lightblue;">
+      <img src="https://picsum.photos/300/300/?random=10">
+      <h2>title</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, laudantium nostrum. Sint magni quisquam,
+        similique aspernatur, repudiandae, quam iste placeat iusto nostrum corporis ducimus. Veritatis sint illo
+        corporis? Doloribus, laudantium?</p>
+    </div>
+    <div class="col" style="background-color: lightcoral;">
+      <img src="https://picsum.photos/300/300/?random=10">
+      <h2>title</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, laudantium nostrum. Sint magni quisquam,
+        similique aspernatur, repudiandae, quam iste placeat iusto nostrum corporis ducimus. Veritatis sint illo
+        corporis? Doloribus, laudantium?</p>
+    </div>
+    <div class="col" style="background-color: lightgoldenrodyellow;">
+      <img src="https://picsum.photos/300/300/?random=10">
+      <h2>title</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, laudantium nostrum. Sint magni quisquam,
+        similique aspernatur, repudiandae, quam iste placeat iusto nostrum corporis ducimus. Veritatis sint illo
+        corporis? Doloribus, laudantium?</p>
+    </div>
+
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>

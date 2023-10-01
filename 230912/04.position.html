@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 75%;
+      margin: auto;
+      border: 1px solid #000;
+      padding: 0 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .box1 {
+      background-color: pink;
+    }
+
+    .box2 {
+      background-color: lightcyan;
+    }
+
+    .box3 {
+      background-color: lightslategray;
+    }
+
+    .box4 {
+      background-color: rgb(214, 244, 169);
+    }
+
+    /* 相對定位 */
+    .relative {
+      position: relative
+    }
+
+    /* 絕對定位 */
+    .absolute {
+      position: absolute;
+    }
+
+    /* tip, bottom, right, left = 位移的量 */
+    .top {
+      top: 0;
+    }
+
+    .bottom {
+      bottom: 0;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Position: relative</h1>
+    <ul>
+      <li>使用位移屬性(top, right, bottom, left)來調整時，會以自己原來的位置位移，保留自己原來的空間，不會被其他元素佔據。</li>
+      <li>沒有任何位移屬性時，會留在原地不動，這種相對定位的做法常作為absolute子元素位移目標的依據。</li>
+      <li>進入定位層級，因此可以使用z-index。</li>
+    </ul>
+    <div class="box1">
+      <h1>box1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box2">
+      <h1>box2</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box3 relative right top">
+      <h1>box3</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box4">
+      <h1>box4</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+  </div>
+
+  <div class="container relative">
+    <!-- 讓absolute可以保留在container裡 -->
+    <h1>Position: absolute</h1>
+    <ul>
+      <li>沒有任何位移屬性時，該元素會脫離正常流向，進入定位層級(可以使用z-index)，後方元素依據CSS流動特性會到絕對定位元素的下方(被遮住)</li>
+      <li>如果祖先元素都找不到任何定位點(relative, absolute, fixed)，最後會以初始容器根元素(html)作為位移的目標。</li>
+    </ul>
+    <div class="box1">
+      <h1>box1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box2">
+      <h1>box2</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box3 absolute left top" style="width: 300px;">
+      <h1>box3</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+    <div class="box4">
+      <h1>box4</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquam molestias ipsa? Sapiente consectetur,
+        velit autem laboriosam ratione quod iste qui maiores at rem ab quidem provident magni accusantium atque.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* body 誕生時自帶 margin 8px */
+    body {
+      margin: 0;
+    }
+
+    hr {
+      margin: 30px 0;
+    }
+
+    .box1 {
+      /* 單位 => px, em, rem, %, vw, vh */
+      width: 300px;
+      height: 300px;
+      background: lightcoral;
+    }
+
+    .box2 {
+      background: lemonchiffon;
+      width: 300px;
+    }
+
+    .box3 {
+      background: lightblue;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      /* 內容會被修剪，溢出的內容被隱藏 */
+      overflow: scroll;
+      /* 強制出現卷軸 */
+      overflow: auto;
+      /* 自動偵測，超出範圍時自動出現卷軸 */
+      /* x軸卷軸 */
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .box4 {
+      background: lightgoldenrodyellow;
+      width: 300px;
+      /* margin */
+      /* 各別指定 */
+      margin-top: 50px;
+      margin-right: 50px;
+      margin-bottom: 50px;
+      margin-left: 50px;
+
+      /* 縮寫 */
+      /* 四值 順時針記，trbl, top, right, bottom, left */
+      margin: 50px 50px 50px 50px;
+      /* 三值 上 左右 下 */
+      margin: 50px 50px 50px;
+      /* 雙值 第一個值為上、下，第二個值為左、右 */
+      margin: 50px 50px;
+      /* 單值 四向同值 */
+      margin: 50px;
+
+      /* padding */
+      /* 個別指定 */
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+
+      /* 縮寫 */
+      /* 四值 */
+      padding: 20px 20px 20px 20px;
+      /* 雙值 */
+      padding: 20px 20px;
+      /* 單值 */
+      padding: 20px;
+
+      /* tip: margin 可以設定負數 但padding 不行 */
+      /* margin-top: -50px; */
+      /* tip2: margin, padding 設定 % 時，是根據元素的"寬度"來計算距離，而非高度 */
+
+      /* 設定每一邊的各屬性 */
+      border-top-width: 5px;
+      border-top-style: double;
+      border-top-color: #5f0707;
+
+      border-right-width: 5px;
+      border-right-style: dashed;
+      border-right-color: #5f0707;
+
+      border-bottom-width: 5px;
+      border-bottom-style: dotted;
+      border-bottom-color: #5f0707;
+
+      border-left-width: 5px;
+      border-left-style: groove;
+      border-left-color: #5f0707;
+
+      /* 直接對四邊設定屬性 */
+      border-width: 5px;
+      border-style: outset;
+      border-color: #777;
+
+      /* 每一邊的縮寫 */
+      border-top: 5px #999 ridge;
+      border-right: 5px #999 ridge;
+      border-bottom: 5px #999 ridge;
+      border-left: 5px #999 ridge;
+
+      /* 四邊縮寫 常用 */
+      border: 5px rgb(255, 0, 0) groove;
+
+      /* 外框 */
+      /* 不影響布局，單純作為外觀呈現 (不含在border內) */
+      outline: 10px dashed rgb(0, 100, 25);
+    }
+
+    .box5 {
+      width: 300px;
+      height: 300px;
+      background-color: mediumorchid;
+      margin-bottom: 40px;
+    }
+
+    .box6 {
+      width: 300px;
+      height: 300px;
+      background: rgb(119, 239, 199);
+      margin-top: 20px;
+    }
+
+    /* 上下margin 重疊時會以大的為主，小的margin 會被吃掉 */
+
+    .box7 {
+      background: orange;
+      width: 300px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-left: 5px solid #000;
+      border-right: 5px solid #000;
+      margin-right: 10px;
+      margin-left: 10px;
+
+      /* 計算寬度 */
+      /* 10+5+10+300+10+5+10=350 */
+    }
+
+    .box8 {
+      width: 300px;
+      height: 300px;
+      border: 10px solid #333;
+      border-radius: 50%;
+      /* 順序 左上 右上 右下 左下 */
+      /* border-radius: 100px 100px 100px 100px; */
+      transform: rotate(25deg);
+      /* 陰影 */
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      /* 水平平移 垂直 模糊半徑 new擴散半徑new 顏色 */
+      box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+      /* 內陰影 */
+      box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>box1 畫一個盒子，設定寬、高、背景顏色</h2>
+  <div class="box1"></div>
+
+  <hr>
+
+  <h2>box2 不設定高度，高度會以內容高度長高</h2>
+  <div class="box2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quos placeat est commodi amet, non necessitatibus
+    cupiditate possimus, facilis atque corrupti in optio, alias saepe perferendis repudiandae expedita similique
+    aliquam.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias optio animi reiciendis cum totam dolores ipsa
+    magnam ea iste dolorem quae, sit nostrum ab repellendus velit atque excepturi in ipsam!
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis eaque autem iure nihil, minima ad magnam odit
+    id dolorum deserunt beatae hic consequatur iste perferendis odio tempora possimus a. Minima.
+  </div>
+
+  <hr>
+
+  <h2>box3 設定高度，內容太多超出高度會發生溢出，設定 overflow 防止溢出</h2>
+  <div class="box3">
+    <p style="width: 500px;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolore tenetur corporis nobis nemo temporibus facilis
+      eum! Exercitationem autem fugiat ad atque blanditiis consequatur placeat in numquam, natus accusantium odio at
+      explicabo tempore. Quo architecto quidem veniam sint dignissimos, sunt assumenda accusamus corrupti quis ipsum ea
+      repellat at iste aperiam laboriosam autem mollitia reiciendis eaque nostrum magnam id quisquam incidunt. Animi
+      eius sapiente ipsa, possimus quis reiciendis modi ipsum tempora cumque commodi ratione nesciunt, provident non,
+      ducimus excepturi! Placeat minus debitis error, qui iusto officiis illo aut doloribus at minima modi unde dolor
+      quisquam quam accusamus fugiat. Iusto, ad maiores.
+    </p>
+  </div>
+
+  <hr>
+
+  <h2>box4 設定盒子margin, padding, border</h2>
+  <div class="box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eos dolore natus eaque omnis
+    delectus magnam! Omnis suscipit repellat deserunt dicta hic eos, corporis libero necessitatibus nemo iste dolor non
+    deleniti quod, tenetur odio, veniam enim quia eaque cumque? Cum laborum, est perferendis quidem sequi ut distinctio
+    quae laudantium ducimus. Distinctio, ab. Quibusdam amet molestiae quisquam voluptatibus veritatis nulla aperiam
+    ducimus neque eveniet. Delectus eligendi totam dolorum eius, molestias cupiditate magni ratione eaque velit saepe.
+    Voluptatum adipisci minus at ea voluptates vitae sunt, maxime ad voluptas ut mollitia accusamus, provident facilis
+    rerum, molestiae sit fuga. Iure vel quaerat adipisci tenetur!</div>
+
+  <hr>
+
+  <h2>box5, box6 外距重疊現象，會以大的外距為主，重疊只發生在上下margin，左右不影響</h2>
+  <div class="box5"></div>
+  <div class="box6"></div>
+
+  <hr>
+
+  <h2>box7 計算一個盒子的寬度</h2>
+  <p>實際總寬度 = width + padding + border + margin</p>
+  <div class="box7">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus minus expedita mollitia ducimus beatae.
+    Officiis, voluptas, illo, consectetur ipsum cumque minus veritatis asperiores explicabo eligendi obcaecati vel.
+    Voluptatibus, dolorum. Corporis cupiditate neque laborum qui, error maxime eos ea! Quidem, distinctio. Architecto
+    deserunt aliquid magnam ipsum dolorum et, vitae nam laboriosam quisquam expedita velit reprehenderit natus qui, eos
+    nostrum magni optio rerum enim eaque. Non, laboriosam nulla. Repellendus qui eum quae delectus molestias nesciunt
+    accusantium animi in, cupiditate veniam voluptate repellat, voluptates necessitatibus sunt amet quos minima!
+    Eligendi voluptas architecto voluptates, impedit adipisci iste, dolorem aliquam perspiciatis mollitia omnis ut
+    provident?
+  </div>
+
+  <hr>
+  
+  <h2>畫一個圓形</h2>
+  <div class="box8"></div>
+</body>
+
+</html>

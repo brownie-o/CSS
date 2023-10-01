@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 75%;
+      margin: 2rem auto;
+      background: #ccc;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    .float-left {
+      /* 文繞圖 */
+      float: left;
+      margin: 1rem;
+    }
+
+    .pp {
+      background: black;
+      color: #FFF;
+      padding: 1rem;
+    }
+
+    .clear-left {
+      /* 清除左側浮動 */
+      clear: left;
+      /* 也可 clear: both */
+    }
+
+    .float-right {
+      float: right;
+      margin: 1rem;
+    }
+
+    .clear-right {
+      clear: right;
+    }
+
+    .clear-both {
+      clear: both
+    }
+
+    .menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: #000;
+      color: yellow;
+      text-align: center;
+      overflow: hidden; /* 格式化 把.menu不見的背景叫回來*/
+    }
+    .menu-item {
+      float: left; /* .menu的背景不見了 */
+      width: 16%;
+      background: darkblue;
+      padding: 8px 1%;
+      margin: 0 1%;
+    }
+
+    .menu-item:hover {
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>特性一: 浮動元素會從正常流向獨立出來</h2>
+    <p>獨立出來後，後方元素會在float 元素下方(由後方元素背景得知)，後方元素裡面的文字內容會為圍繞著float 元素。</p>
+
+    <h2>float-left</h2>
+    <img class="float-left" src="https://picsum.photos/300/200/?random=10">
+    <p class="pp">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia temporibus magni quam ipsam veniam tempore
+      laborum sint illo explicabo at! Officia deleniti beatae maiores sit in, adipisci ea veniam unde culpa, porro iste
+      repudiandae reprehenderit harum facere non illum? Quidem tempore eaque quisquam accusantium mollitia veniam quia
+      porro deserunt cumque, vitae, autem consequatur minus eum vel? Similique omnis saepe voluptatibus ratione est
+      voluptas delectus aspernatur recusandae ut aliquid magnam deleniti blanditiis culpa numquam commodi nisi
+      architecto, excepturi explicabo facilis veniam maiores laboriosam optio. Rem ad natus debitis sint nobis,
+      explicabo magni similique quis placeat a quibusdam delectus labore fuga in dolorum repellendus eveniet sed
+      perferendis blanditiis quae laborum molestiae,
+    </p>
+    <p class="pp clear-left">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, nostrum vero tempora nemo id non. Eaque
+      numquam rerum exercitationem quam temporibus nobis voluptatem, officia repellendus ex ea quae maiores quas harum
+      debitis consectetur culpa dolores, facere incidunt odio quo. Pariatur iure autem est atque rerum delectus, alias
+      accusamus quia nulla quas dicta suscipit nihil accusantium perspiciatis adipisci assumenda blanditiis, fugiat
+      incidunt minus quae. Repellendus labore, a ut dolor soluta quia quis, perspiciatis laboriosam ducimus quas non
+      animi omnis totam impedit, explicabo perferendis illo quam? Quos, inventore possimus ratione quod, nemo asperiores
+      ipsam exercitationem non voluptates cupiditate aperiam eum impedit saepe!
+    </p>
+  </div>
+
+  <div class="container">
+    <h2>float-left</h2>
+    <img class="float-right" src="https://picsum.photos/300/200/?random=10">
+    <p class="pp">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia temporibus magni quam ipsam veniam tempore
+      laborum sint illo explicabo at! Officia deleniti beatae maiores sit in, adipisci ea veniam unde culpa, porro iste
+      repudiandae reprehenderit harum facere non illum? Quidem tempore eaque quisquam accusantium mollitia veniam quia
+      porro deserunt cumque, vitae, autem consequatur minus eum vel? Similique omnis saepe voluptatibus ratione est
+      voluptas delectus aspernatur recusandae ut aliquid magnam deleniti blanditiis culpa numquam commodi nisi
+      architecto, excepturi explicabo facilis veniam maiores laboriosam optio. Rem ad natus debitis sint nobis,
+      explicabo magni similique quis placeat a quibusdam delectus labore fuga in dolorum repellendus eveniet sed
+      perferendis blanditiis quae laborum molestiae,
+    </p>
+    <p class="pp clear-right">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, nostrum vero tempora nemo id non. Eaque
+      numquam rerum exercitationem quam temporibus nobis voluptatem, officia repellendus ex ea quae maiores quas harum
+      debitis consectetur culpa dolores, facere incidunt odio quo. Pariatur iure autem est atque rerum delectus, alias
+      accusamus quia nulla quas dicta suscipit nihil accusantium perspiciatis adipisci assumenda blanditiis, fugiat
+      incidunt minus quae. Repellendus labore, a ut dolor soluta quia quis, perspiciatis laboriosam ducimus quas non
+      animi omnis totam impedit, explicabo perferendis illo quam? Quos, inventore possimus ratione quod, nemo asperiores
+      ipsam exercitationem non voluptates cupiditate aperiam eum impedit saepe!
+    </p>
+
+    <hr>
+
+    <h2>float-left & float-right</h2>
+    <img class="float-left" src="https://picsum.photos/300/200/?random=10">
+    <img class="float-right" src="https://picsum.photos/300/200/?random=10">
+    <p class="clear-both">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis aperiam eius id impedit labore
+      dolor similique eaque nostrum ab? Quam qui suscipit commodi numquam esse, vel iste veniam repellat non voluptatem
+      ducimus laudantium a iure ipsum ad voluptas fugiat perspiciatis doloribus? Architecto consequuntur provident, in
+      excepturi impedit officiis voluptatem illum?
+    </p>
+  </div>
+
+  <!-- overflow: hidden 可以做區塊格式化的動作 動作不會溢出 會被限制在container中 -->
+  <div class="container" style="overflow: hidden;">
+    <h2>特性二: 浮動會區塊化元素</h2>
+    <ul>
+      <li>具有區塊化(block)，將元素轉型成block</li>
+    </ul>
+
+    <span>I am span</span> <!-- inline -->
+    <button>I am button</button> <!-- inline-block -->
+    <br>
+
+    <!-- 加上float之後span和button都變成block -->
+    <span style="float: left;">I am span</span>
+    <button style="float: right;">I am button</button>
+
+  </div>
+
+  <div class="container">
+    <h3>選單</h3>
+    <ul class="menu">
+      <li class="menu-item">item</li>
+      <li class="menu-item">item</li>
+      <li class="menu-item">item</li>
+      <li class="menu-item">item</li>
+      <li class="menu-item">item</li>
+    </ul>
+  </div>
+</body>
+
+</html>
