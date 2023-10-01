@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* 讓body長高至瀏覽器的高度 => 滿版 */
+    html,
+    body {
+      height: 100%;
+    }
+
+    section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 設定定位點 待在原本的section */
+      position: relative;
+    }
+
+    section:nth-child(odd) {
+      background: rgb(160, 230, 255);
+    }
+
+    section:nth-child(even) {
+      background: rgb(255, 250, 190);
+    }
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .dashed {
+      display: inline-block;
+      border: 5px dashed #000;
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .translate {
+      /* 移動位移 */
+      /* 無法設定原點 */
+      /* 第一個數值為X軸，正為右，負為左 */
+      /* 第二個數值為Y軸，正為下，負為上(反正常流向) */
+      /* 接受px, em, rem, %...的單位 */
+      /* 若使用 %，實際的長度會以元素本身的尺寸來計算, ex: width 300px => 50%(150px) */
+      /* transform: translate(100%, 0); 自體右移一個自己 */
+      transform: translate(0, 100%);
+      transform: translateX(100px);
+      transform: translateY(100px);
+      /* 以最後一個transform為主 前面都會被discard */
+    }
+
+    .rotate {
+      /* 正為順時針 負為逆時針，記得加上deg單位 */
+      transform: rotate(45deg);
+      /* 以中央為圓心旋轉 - default*/
+      /* 省略第二個值會視為center(50%) */
+      /* 值可為em, px, %, left, right, top, bottom, center */
+      transform-origin: center center;
+      /* 變成以左上為圓心旋轉 */
+      transform-origin: left top;
+    }
+
+    .scale {
+      transform: scale(1.5);
+      /* 數值以倍數顯示，若是負數會倒過來呈現 */
+      /* 可以使用原點 */
+      transform: scale(-1);
+      transform-origin: bottom right;
+    }
+
+    .skew {
+      /* 記得要加單位deg */
+      /* 第一個數值為X的斜角，第二個為Y的斜角 */
+      /* 可以設定原點 */
+      transform: skew(-10deg, 0deg);
+      transform: skewX(-30deg);
+      transform: skewY(-20deg);
+      transform-origin: center left;
+    }
+
+    .more{
+      /* 順序不同 結果可能會不同 */
+      transform: translate(100px) rotate(45deg);
+      /* 先移動再旋轉 */
+      transform: rotate(45deg) translate(100px);
+      /* 先旋轉再移動 */
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>Translate(位移)</h1>
+    <div class="dashed">
+      <div class="box translate">translate(位移)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Rotate(旋轉)</h1>
+    <div class="dashed">
+      <div class="box rotate">rotate(旋轉)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Scale(縮放)</h1>
+    <div class="dashed">
+      <div class="box scale">scale(縮放)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Skew(傾斜)</h1>
+    <div class="dashed">
+      <div class="box skew">skew(傾斜)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>設定多種函式</h1>
+    <div class="dashed">
+      <div class="box more">設定多種函式</div>
+    </div>
+  </section>
+</body>
+
+</html>

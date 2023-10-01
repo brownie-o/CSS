@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .contanier{
+      width: 75%;
+      margin: auto;
+      padding: 1rem;
+      border: 1px solid black;
+    }
+
+    .wrap{
+      border: 5px dashed #333;
+      margin: 50px;
+      padding: 50px 0;
+      position: relative;
+    }
+
+    .box{
+      width: 100px;
+      height: 100px;
+      background: #000;
+      color: white;
+      line-height: 100px;
+      text-align: center;
+      font-size: 2rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* 1. 定義動畫名稱-indetifier (名稱自取: animation) */
+    @keyframes animation {
+      /* 0% */
+      from{
+        background: 	dodgerblue;
+        transform: translate(0,0);
+      }
+
+      50%{
+        background: lightblue;
+        /* transform: rotate(180deg); */
+      }
+
+      /* 100% */
+      to{
+        background: aquamarine;
+        transform: translate(50vw);
+      }
+    }
+
+    .animation1{
+      animation-name: animation;
+      /* 持續時間 ms or s */
+      animation-duration: 2s;
+      /* 播放次數 無限循環: infinite*/
+      animation-iteration-count: 2;
+      animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+
+      /* 播放方向 
+      normal=default= 0%~100% 
+      alternate=交替播放 animation-irteration-count >= 2時才會產生 奇數時正像撥放 偶數時反向撥放
+      reverse 
+      alternate-reverse
+      */
+      animation-direction: normal;
+      animation-delay: 1s;
+
+      /* 
+      none = 從初始狀態回到沒有動畫的初始狀態(.box)
+      forwards = 停留在最後一幀 100%
+      backwards
+      both
+      */
+      animation-fill-mode: forwards;
+      /* 縮寫: 第一個時間是duration 第二個時間是delay */
+      animation: animation 2s 1s 1s infinite reverse both;
+    }
+
+    .animation2{
+      animation-name: animation;
+      animation-duration: 2s;
+      animation-iteration-count: 2;
+      animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+      animation-delay: 1s;
+       /* reverse=反向播放= 100%~0% */
+      animation-direction: reverse;
+      /* backwards = 當有設定delay時 動畫繪從第一幀 0%開始，動畫結束後回到初始狀態(.box) */
+      animation-fill-mode: backwards;
+    }
+
+    .animation3{
+      animation-name: animation;
+      animation-duration: 2s;
+      animation-iteration-count: 2;
+      animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+      animation-delay: 1s;
+      /* 交替播放 => 奇數時反向撥放 偶數時正像撥放 */
+      animation-direction: alternate-reverse;
+      /* both = 動畫從第一幀 0% 開始，結束時停留在最後一幀 100% */
+      animation-fill-mode: both;
+    }
+
+    @keyframes rotateIt {
+      /* 省略 0%(0deg) 跟 100%(360deg) */
+      50%{
+        transform: rotate(360deg);
+      }
+    }
+
+    /* @keyframes moveIt {
+      50%{
+        margin-left: 1000px;
+      }
+    } */
+
+    @keyframes moveIt {
+      50%{
+        left: 1000px;
+      }
+    }
+    /* 要用 top left等屬性作動畫時要記得父元素要有position等定位 */
+
+    .multiple{
+      /* animation-name: rotateIt, moveIt;
+      animation-duration: 3s, 6s; */
+      animation: animation 9s, rotateIt 3s, moveIt 6s;
+    }
+  </style>
+</head>
+<body>
+  <div class="contanier">
+    <h1>動畫(animation)</h1>
+    <p>動畫與轉場的差異</p>
+    <h2>animation</h2>
+    <ul>
+      <li>可以設定關鍵影格(keyframes)控制動畫進度的狀態，產生更複雜的動畫。</li>
+      <li>網頁載入時自動產生，也可以觸發發生(新噌、刪除class)，或是循環重複來回撥放等等。</li>
+    </ul>
+    <h2>transition</h2>
+    <ul>
+      <lu>一定要觸發條件，兩種狀態樣式的改變。</lu>
+      <lu>他是一次性且沒有循環笑過，必須重新再觸發一次。</lu>
+    </ul>
+
+    <div class="wrap">
+      <div class="box animation1"></div>
+    </div>
+    <div class="wrap">
+      <div class="box animation2"></div>
+    </div>
+    <div class="wrap">
+      <div class="box animation3"></div>
+    </div>
+  </div>
+
+  <div class="contanier">
+  <h2>套用多個動畫</h2>
+  <div class="wrap">
+    <div class="box multiple"></div>
+  </div>
+  </div>
+</body>
+</html>

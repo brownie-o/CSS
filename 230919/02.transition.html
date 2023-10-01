@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .hover {
+      /* 起始樣式 */
+      width: 100px;
+      height: 100px;
+      color: white;
+      background: black;
+      font-size: 2rem;
+      /* 文字水平垂直置中 */
+      text-align: center;
+      line-height: 100px;
+      display: inline-block;
+
+      /* 設定轉場屬性 預設是all, 也可以設定none, 也可以指定屬性 */
+      /* 通常不會指定 直接用all */
+      /* transition-property: width, background-color, font-size, transform, box-shadow, border-radius, color, margin, top; */
+      /* 持續時間 預設0秒 */
+      transition-duration: 1s;
+      /* 轉場速率
+      ease : default
+      linear : 線性等速
+      ease-in : 由慢變快
+      ease-out : 由快變慢
+      ease-in-out : 由慢變快 再由快變慢
+      */
+      /* 可參考 easeings.net */
+      transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+      /* 延遲時間 預設是 0 */
+      /* transition-delay: 0.5s; */
+
+      /* 個別指定屬性的transition */
+      transition: width 0.5s ease-in, background-color 1s ease-in-out;
+      /* 直接使用所有屬性 因為all可以省略，設定duration */
+      transition: 0.5s;
+    }
+
+    .hover:hover {
+      /* width: 50vw;
+      /* transform動畫不會影響到其他人，只有自己會做動畫 */
+      /* transform: rotate(115deg);
+      font-size: 3rem;
+      transform: translateX(100px);
+      margin: 15%;
+      color: lightgreen;
+      top: 0;
+      margin-right: 100px; */
+      box-shadow: 0 0 50px 10px rgba(0, 0, 255, 0.8);
+      border-radius: 25%;
+      background-color: red;
+      transform: rotate(360deg)
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      color: white;
+      text-align: center;
+      float: left;
+      background: deeppink;
+    }
+
+    label[for="checked-me"]{
+      background: deepskyblue;
+      color: white;
+      padding: .5rem .75rem;
+      display: inline-block;
+
+      cursor: pointer;
+    }
+
+    .sidebar{
+      width: 100px;
+      color: white;
+      background: lightpink;
+      padding: 1rem;
+      margin-left: -200px;
+      transition: 1s;
+    }
+
+    #checked-me{
+      display: none;
+    }
+
+    #checked-me:checked+.sidebar{
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>轉場(transition)或稱為過度</h1>
+  <ul>
+    <li>轉場是有兩組樣式之間漸進式的轉換過程，起始樣式與結束樣式，瀏覽器會將兩組樣式形成補間動畫。</li>
+    <li>必須要有狀態觸發的動作(狀態有很多種)，最常見的是:hover 或是 media query 媒體查詢尺寸的改變也可以作轉場。</li>
+  </ul>
+
+  <h1>hover 狀態</h1>
+  <div class="hover">
+    <span>hover</span>
+  </div>
+
+  <div class="box">
+    <span>box</span>
+  </div>
+
+  <hr style="clear:both; margin:50px 0; position:relative; top:25px;">
+
+  <h1>checked 狀態</h1>
+  <label for="checked-me">CheckMe</label>
+  <input id="checked-me" type="checkbox">
+  <div class="sidebar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, atque alias mollitia veniam distinctio sunt dolores obcaecati! Dolorum sunt, quasi molestiae iusto neque vel error soluta eveniet rerum, architecto maxime!</div>
+</body>
+
+</html>
