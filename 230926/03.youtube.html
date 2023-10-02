@@ -31,19 +31,35 @@
     #content {
       width: calc(100% - 15%);
       background: lightpink;
-      margin-left: 15%;
+      left: 15%;
+      top: 15%;
+      position: absolute;
+    }
+
+    #content .row {
+      overflow: auto;
     }
 
     #content .col {
-      width: 25%;
-      float: left;
+      width: 100%;
       background: lightskyblue;
+      float: left;
+      position: relative;
     }
-
+    
     #content .card {
       background: lightblue;
+      box-sizing: border-box;
+      padding: 3px;
+      position: relative;
+      top: 15%;
+      width: 25%;
     }
 
+    #content .card .img {
+      width: 100%;
+      position: relative;
+    }
 
   </style>
 </head>
@@ -59,10 +75,10 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <img src="" class="img">
+          <img src="https://i.ytimg.com/vi/3-yMowkv1m4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAUL8jC_agUZ8RWdtLgDFGX0ytMIg" class="img">
           <ul>
-            <li></li>
-            <li></li>
+            <li>とんでもない理由で応援要請を受けるselly【ストグラ】</li>
+            <li>Selly Apex</li>
           </ul>
         </div>
       </div>
