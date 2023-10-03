@@ -9,7 +9,7 @@
       width: 1024px;
       height: 768px;
       margin: auto;
-      background: lightgray;
+      /* background: lightgray; */
     }
 
     #top {
@@ -36,7 +36,7 @@
       width: 770px;
       height: 683px;
       margin-right: 12px;
-      background: lightgoldenrodyellow;
+      /* background: lightgoldenrodyellow; */
     }
 
     #footer {
@@ -105,6 +105,12 @@
       font-size: 24px;
       color: #0000FF;
     }
+
+    iframe{
+      width: 770px;
+      height: 654px;
+      /* background-color: lightgreen; */
+    }
   </style>
 </head>
 <body>
@@ -125,8 +131,10 @@
       <div id="update">最近更新日期：2023/10/03</div>
     </div>
     <div id="right">
+      <!-- 注意marquee 預設就好 -->
       <marquee>歡迎光臨校園社團介紹網，參觀後請支持社團活動並熱烈參與</marquee>
-      <div id="content"></div>
+      <!-- 注意不要用content 直接用iframe連結main -->
+      <iframe src="./main.html" frameborder="0"></iframe>
     </div>
     <div id="footer">網頁設計及維護：10陳予柔</div>
   </div>
