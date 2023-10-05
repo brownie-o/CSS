@@ -36,16 +36,6 @@
       position: absolute;
     }
 
-    #content .row {
-      overflow: auto;
-    }
-
-    #content .col {
-      width: 100%;
-      background: lightskyblue;
-      float: left;
-      position: relative;
-    }
     
     #content .card {
       background: lightblue;
@@ -55,25 +45,47 @@
       top: 15%;
       width: 25%;
       float: left;
+      overflow: auto;
     }
 
     #content .card .img {
       width: 100%;
+      height: 50%;
+      border-radius: 15px;
       position: relative;
+    }
+
+    #content .card .img:hover{
+      border-radius: 0;
+    }
+
+    #content .card .info {
+      display: block;
+      padding-top: 8px;
+    }
+
+    #content .card .info:hover{
+      
     }
 
     #content .card .icon {
       width: 15%;
+      height: 15%;
       border-radius: 50%;
     }
 
     #content .card ul {
       padding: 0;
+      position: relative;
+      float: right;
+      width: 80%;
+      height: 25%;
+      margin: 0 2.5%;
     }
 
     #content .card ul li{
       display: inline-block;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     #content .card ul li+li{
@@ -93,44 +105,56 @@
 
   <div id="content">
     <div class="row">
-      <div class="col">
         <div class="card">
           <img src="https://i.ytimg.com/vi/3-yMowkv1m4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAUL8jC_agUZ8RWdtLgDFGX0ytMIg" class="img">
-          <img src="https://yt3.ggpht.com/ytc/APkrFKa1boXfa25XW2HOPMw4uIclpZXRX-0RhujC_LrxyQ=s68-c-k-c0x00ffffff-no-rj" class="icon">
-          <ul>
-            <li>とんでもない理由で応援要請を受けるselly【ストグラ】</li>
-            <li>Selly Apex</li>
-            <li>觀看次數：4.8萬次  1 天前</li>
-          </ul>
+          <div class="info">
+            <img src="https://yt3.ggpht.com/ytc/APkrFKa1boXfa25XW2HOPMw4uIclpZXRX-0RhujC_LrxyQ=s68-c-k-c0x00ffffff-no-rj" class="icon">
+            <ul>
+              <li>とんでもない理由で応援要請を受けるselly【ストグラ】</li>
+              <li>Selly Apex<br>觀看次數：4.8萬次  1 天前</li>
+            </ul>
         </div>
-      </div>
-      <div id="col">
-        <div id="card">
-          <img src="" id="img">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
         </div>
-      </div>
-      <div id="col">
-        <div id="card">
-          <img src="" id="img">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
+        <div class="card">
+          <img src="" class="img">
+          <div class="info">
+            <img src="" class="icon">
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="col">
-        <div id="card">
-          <img src="" id="img">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
+        <div class="card">
+          <img src="" class="img">
+          <div class="info">
+            <img src="" class="icon">
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <div class="card">
+          <img src="" class="img">
+          <div class="info">
+            <img src="" class="icon">
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img src="" class="img">
+          <div class="info">
+            <img src="" class="icon">
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
     </div>
   </div>
 </body>
