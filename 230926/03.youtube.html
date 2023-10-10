@@ -57,6 +57,70 @@
       padding-left: 20px;
     }
 
+    #header .search {
+      border: rgba(255, 254, 254, 0.2) solid 1px;
+      border-radius: 30px 0px 0px 30px;
+      width: 515px;
+      height: 36px;
+      color: grey;
+      background: #181818;
+      left: 650px;
+      top: 3px;
+      position: relative;
+      transform: translateX(-50%);
+      font-size: 16px;
+    }
+
+    #header span:nth-of-type(2){
+      padding: 8px 10px 8px 20px;
+      border-radius: 0 30px 30px 0;
+      background-color: rgba(255, 254, 254, 0.1);
+      left: 386px;
+      top: 28px;
+      transform: translateY(-50%);
+    }
+
+    #header span:nth-of-type(2):hover{
+      border: none;
+      border-radius: 0 30px 30px 0;
+      background-color: rgba(255, 254, 254, 0.1);
+      cursor: pointer;
+    }
+
+    #header span:nth-of-type(3){
+      display: inline-block;
+      position: relative;
+      top: 30px;
+      left: 396px;
+      transform: translateY(-50%);
+      padding: 10px;
+      background-color: rgba(255, 254, 254, 0.1);
+      border-radius: 50%;
+    }
+
+    #header span:nth-of-type(3):hover{
+      cursor: pointer;
+      background: rgba(255, 254, 254, 0.2);
+    }
+
+    #header span:nth-of-type(4){
+      float: right;
+      left: -150px;
+    }
+
+    #header span:nth-of-type(5){
+      float: right;
+      left: -50px;
+    }
+
+    #header .icon{
+      float: right;
+      width: 40px;
+      height: 40px;
+      left: 60px;
+      border-radius: 50%;
+    }
+
     #sidebar {
       width: 14%;
       height: calc(100vh - 8%);
@@ -78,7 +142,6 @@
 
     #content .row{
       width: 86%;
-      /* padding: 0 0 20px 5px; */
       position: fixed;
       background-color: #181818;
       z-index: 2;
@@ -115,6 +178,7 @@
       height: 50%;
       float: left;
       overflow: auto;
+      margin-bottom: 40px;
     }
 
     #content .card .img {
@@ -134,8 +198,8 @@
     }
 
     #content .card .icon {
-      width: 15%;
-      height: 15%;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       float: left;
     }
@@ -152,11 +216,19 @@
     #content .card ul li{
       display: inline-block;
       font-size: 16px;
+      line-height: 21px;
+      text-overflow: -o-ellipsis-lastline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     #content .card ul li+li{
       font-size: 14px;
       color: rgb(190, 190, 190);
+      line-height: 18px;
     }
 
     #content .card .dot{
@@ -180,6 +252,20 @@
         menu
       </span>
       <a href="#"><img src="./yt icon.png" alt="YouTube 首頁" title="YouTube 首頁"></a>
+      <input type="text" name="search" class="search" value="    搜尋">
+      <span class="material-symbols-outlined">
+        search  
+      </span>
+      <span class="material-symbols-outlined">
+        mic
+      </span>
+      <span class="material-symbols-outlined">
+        video_call
+      </span>
+      <span class="material-symbols-outlined">
+        notifications
+      </span>
+      <img src="https://yt3.googleusercontent.com/yti/ADpuP3PVfEuNiBt7yzDHMkwpWA68qdMoYFnsfz48gzoFfJs=s88-c-k-c0x00ffffff-no-rj" class="icon">
     </div>
     <div class="category"></div>
   </div>
@@ -187,7 +273,7 @@
 
   <div id="content">
     <div class="row">
-      <input type="button" value="全部">
+      <input type="button" value="全部" style="background-color: white;color: black;">
       <input type="button" value="遊戲">
       <input type="button" value="音樂">
       <input type="button" value="動作冒險遊戲">
@@ -311,14 +397,14 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://img.youtube.com/vi/5Z4sL2__bss/maxresdefault.jpg" class="img">
+        <img src="https://img.youtube.com/vi/8ca0xEJH9wY/maxresdefault.jpg" class="img">
         <div class="info">
-          <img src="https://yt3.ggpht.com/OWKVyYFCT4VFHzMojeGyNM0ouRK1puzullCNtG61nB3Fnqz3X1oxFxxNWTthqn3dOou2iIte=s88-c-k-c0x00ffffff-no-rj" class="icon">
+          <img src="https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s88-c-k-c0x00ffffff-no-rj" class="icon">
           <ul>
-            <li>[연애혁명] Q&A 1부</li>
+            <li>세븐틴(SEVENTEEN)의 킬링보이스를 라이브로! - 박수, 예쁘다, 울고 싶지 않아, A-TEEN, HOT, 아낀다, 어쩌나, Left & Right | 딩고뮤직</li>
             <li>
-              둘셋둘<br>
-              觀看次數：8.1萬次  1 天前
+              딩고 뮤직 / dingo music<br>
+              觀看次數：4152萬次  1 年前
             </li>
           </ul>
           <img src="./點點.png" class="dot">
@@ -355,28 +441,29 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://img.youtube.com/vi/xiyWGJzhr5s/maxresdefault.jpg" class="img">
+        <img src="https://img.youtube.com/vi/2uJgZQ9hucc/maxresdefault.jpg" class="img">
         <div class="info">
           <img src="https://yt3.ggpht.com/zyXNGFCO4xxchNr8TJbk8UTSeBEinbfM3KHhhwxilB8I3O9oIOz2c9BtlGSQmMrMiSxe5pAe9Q=s88-c-k-c0x00ffffff-no-rj" class="icon">
           <ul>
-            <li>You'll get reported for cat abuse...</li>
+            <li>This Dog Probably Got Smacked by a Cat His Whole Life
+            </li>
             <li>
               밀키복이탄이MilkyBokiTan<br>
-              觀看次數：11萬次  2 週前
+              觀看次數：43萬次  1 個月前
             </li>
           </ul>
           <img src="./點點.png" class="dot">
         </div>
       </div>
       <div class="card">
-        <img src="https://img.youtube.com/vi/c_yCRwh97M8/maxresdefault.jpg" class="img">
+        <img src="https://img.youtube.com/vi/5ZYmuugIres/maxresdefault.jpg" class="img">
         <div class="info">
           <img src="https://yt3.ggpht.com/rauAHRPwCBGKmTBvZsAOOsZ-fS18yoX-Dio9uhz8LuHZ-BSXmz56ky0idPzCXDdEdA66-EiieJU=s88-c-k-c0x00ffffff-no-nd-rj" class="icon">
           <ul>
-            <li>플레이브 (PLAVE) '여섯 번째 여름' M/V</li>
+            <li>[COVER] 밤비 - 누난 너무 예뻐 (Replay) (원곡 : SHINee (샤이니)) (Covered by Bamby)｜#플레이브 #PLAVE</li>
             <li>
               PLAVE 플레이브<br>
-              觀看次數：480萬次  1 個月前
+              觀看次數：22萬次  3 個月前
             </li>
           </ul>
           <img src="./點點.png" class="dot">
@@ -412,14 +499,14 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://img.youtube.com/vi/8Zn-FlUUgOg/maxresdefault.jpg" class="img">
+        <img src="https://img.youtube.com/vi/Bzjj7DySNkk/maxresdefault.jpg" class="img">
         <div class="info">
           <img src="https://yt3.ggpht.com/MIPR-chE3Vl4vXw20tn_CVhbnhHt3ORu2uGiarDXgzhS7-PdIHqkth0lRQG-L-Ie3dXzowb4Og=s88-c-k-c0x00ffffff-no-rj" class="icon">
           <ul>
-            <li>[ASMR] 여름 이글루 소리 1시간</li>
+            <li>[ASMR] Ceramic Rain in SPACE | 1hour typing sound | no mid-roll ads</li>
             <li>
               드보키 DBOKEY<br>
-              觀看次數：7.1萬次  1 個月前
+              觀看次數：89萬次  1 年前
             </li>
           </ul>
           <img src="./點點.png" class="dot">
