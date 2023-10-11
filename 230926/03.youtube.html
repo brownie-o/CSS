@@ -124,11 +124,19 @@
     #sidebar {
       width: 14%;
       height: calc(100vh - 8%);
-      background: grey;
       position: fixed;
       top: 8%;
       left: 0;
       margin-right: 20px;
+      overflow: auto;
+    }
+
+    #sidebar .button{
+      width: 90%;
+      height: 40px;
+      background-color: black;
+      border-radius: 8px;
+      margin: 0 5px 0 5px;
     }
 
     #content {
@@ -267,10 +275,15 @@
       </span>
       <img src="https://yt3.googleusercontent.com/yti/ADpuP3PVfEuNiBt7yzDHMkwpWA68qdMoYFnsfz48gzoFfJs=s88-c-k-c0x00ffffff-no-rj" class="icon">
     </div>
-    <div class="category"></div>
   </div>
-  <div id="sidebar"></div>
-
+  <div id="sidebar">
+    <div class="button">
+      <span class="material-symbols-outlined">
+        home
+      </span>
+      <span>首頁</span>
+    </div>
+  </div>
   <div id="content">
     <div class="row">
       <input type="button" value="全部" style="background-color: white;color: black;">
