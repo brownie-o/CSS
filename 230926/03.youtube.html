@@ -132,11 +132,32 @@
     }
 
     #sidebar .button{
-      width: 90%;
-      height: 40px;
+      width: 85%;
+      height: 44px;
       background-color: black;
-      border-radius: 8px;
-      margin: 0 5px 0 5px;
+      border-radius: 10px;
+      margin: 0 5px 0 10px;
+    }
+
+    #sidebar .button:hover{
+      background-color: rgba(241, 241, 241, 0.3);
+      cursor: pointer;
+    }
+
+    #sidebar .button span{
+      display: inline-block;
+      text-align: center;
+    }
+
+    #sidebar .button .material-symbols-outlined{
+      top: 7px;
+      left: 10px;
+      position: relative;
+    }
+
+    #sidebar .button .text {
+      position: relative;
+      left: 25px;
     }
 
     #content {
@@ -281,7 +302,7 @@
       <span class="material-symbols-outlined">
         home
       </span>
-      <span>首頁</span>
+      <span class="text">首頁</span>
     </div>
   </div>
   <div id="content">
