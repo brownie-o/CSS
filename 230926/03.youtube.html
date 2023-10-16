@@ -133,16 +133,23 @@
     }
 
     #sidebar .button{
-      width: 85%;
-      height: 44px;
-      background-color: black;
+      width: 180px;
+      height: 40px;
       border-radius: 10px;
       margin: 0 5px 0 10px;
     }
+    
+    #sidebar .button:first-of-type{
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
     #sidebar .button:hover{
-      background-color: rgba(241, 241, 241, 0.3);
+      background-color: rgba(241, 241, 241, 0.1);
       cursor: pointer;
+    }
+
+    #sidebar .button:first-of-type:hover{
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     #sidebar .button span{
@@ -158,7 +165,47 @@
 
     #sidebar .button .text {
       position: relative;
+      display: inline-block;
       left: 25px;
+      font-size: 14px;
+      line-height: 20px;
+      font-family: "Arial";
+    }
+
+    #sidebar hr{
+      border: 1px solid rgba(190, 190, 190, 0.3);
+      margin: 15px 0 15px 0;
+    }
+
+    #sidebar img{
+      width: 24px;
+      height: 24px;
+    }
+
+    #sidebar .icon{
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      position: relative;
+      left: 15px;
+      top: 8px;
+    }
+
+    #sidebar #footer{
+      padding: 0px 24px 24px 24px;
+    }
+
+    #sidebar a{
+      text-decoration: none;
+      color: rgb(170, 170, 170);
+      font-size: 13px;
+      margin: 2px;
+    }
+
+    #sidebar #footer p{
+      color: rgb(113, 113, 113);
+      font-size: 12px;
+      font-family: "Arial";
     }
 
     #content {
@@ -353,6 +400,211 @@
         home
       </span>
       <span class="text">首頁</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        <img src="./shorts.png" width="24" height="24">
+      </span>
+      <span class="text">Shorts</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        subscriptions
+      </span>
+      <span class="text">訂閱內容</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        album
+      </span>
+      <span class="text">YouTube Music</span>
+    </div>
+    <hr>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        video_library
+      </span>
+      <span class="text">媒體庫</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        history
+      </span>
+      <span class="text">觀看紀錄</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        Slideshow
+      </span>
+      <span class="text">你的影片</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        Schedule
+      </span>
+      <span class="text">稍後觀看</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        vertical_align_bottom
+        </span>
+      <span class="text">已下載的內容</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        Cut
+      </span>
+      <span class="text">你的短片</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        expand_more
+      </span>
+      <span class="text">顯示更多</span>
+    </div>
+    <hr>
+    <p style="margin: 0 0 5px 15px;">訂閱內容</p>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/ytc/APkrFKa1boXfa25XW2HOPMw4uIclpZXRX-0RhujC_LrxyQ=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">Selly Apex</span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.ggpht.com/j_b_aXWRCTG_KjQyZPE672rrE1l8Wh62Vi1Pa670IIqtBuvYTDqOW9SNeZClbVfmplPX40fvVw=s88-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">鮪魚｜いよ</span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/qVGEKobz9-uJM3VtfYj6yer9RTZ7H9OG1qbYT7dQEX3LXWDGUV_CPokIPVY3mPjjvXhVUoZWbQ=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">mugi no otakatsu</span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/OWKVyYFCT4VFHzMojeGyNM0ouRK1puzullCNtG61nB3Fnqz3X1oxFxxNWTthqn3dOou2iIte=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">둘셋둘</span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/R_KHJC_kgjWt0D6yZ8O72f_DhJJCgyXD88vox3w04spN9wvLUhlTUM9O4ipR7P16x9CDAFAy-KM=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">Mondo</span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/KVWL6t-4tQVxE8BN3u8pgwb4uv7BhUaqm9EiBO4X0yCP2Cm0IFr22HYT3_t5cIDOnd9UsRdH=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">SEVENTEEN </span>
+    </div>
+    <div class="button">
+      <img src="https://yt3.googleusercontent.com/ytc/APkrFKYIRsJKSdEYsAcTRc8c5KYii3bK_v7xMyqiOejsLA=s176-c-k-c0x00ffffff-no-rj" class="icon">
+      <span class="text">이지금 [IU Official] </span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        expand_more
+      </span>
+      <span class="text">顯示另外944個項目</span>
+    </div>
+    <hr>
+    <p style="margin: 0 0 5px 15px;">探索</p>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        local_fire_department
+        </span>
+      <span class="text">發燒影片</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        music_note
+      </span>
+      <span class="text">音樂</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        movie
+      </span>
+      <span class="text">電影</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        sensors
+      </span>
+      <span class="text">直播</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        stadia_controller
+        </span>
+      <span class="text">遊戲</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        newsmode
+        </span>
+      <span class="text">新聞</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        trophy
+      </span>
+      <span class="text">體育</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        podcasts
+      </span>
+      <span class="text">Podcast</span>
+    </div>
+    <hr>
+    <p style="margin: 0 0 5px 15px; font-family: 'Arial';">更多 YouTube 功能</p>
+    <div class="button">
+      <img src="./工作室.png" style="position: relative; left: 15px; top: 8px;">
+      <span class="text">YouTube 工作室 </span>
+    </div>
+    <div class="button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/1024px-Youtube_Music_icon.svg.png" style="position: relative; left: 15px; top: 8px;">
+      <span class="text">YouTube Music</span>
+    </div>
+    <div class="button">
+      <img src="./youtube-kids-child.png" style="position: relative; left: 15px; top: 8px;">
+      <span class="text">YouTube Kids</span>
+    </div>
+    <hr>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        settings
+      </span>
+      <span class="text">設定</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        flag
+      </span>
+      <span class="text">檢舉紀錄</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        help
+      </span>
+      <span class="text">說明</span>
+    </div>
+    <div class="button">
+      <span class="material-symbols-outlined">
+        feedback
+      </span>
+      <span class="text">提供意見</span>
+    </div>
+    <hr>
+    <div id="footer">
+      <span><a href="#">簡介</a></span>
+      <span><a href="#">媒體</a></span>
+      <span><a href="#">版權</a></span>
+      <span><a href="#">與我們聯絡</a></span>
+      <span><a href="#">創作者</a></span>
+      <span><a href="#">廣告</a></span>
+      <span><a href="#">開發人員</a></span><br>
+      <br>
+      <span><a href="#">條款</a></span>
+      <span><a href="#">隱私權</a></span>
+      <span><a href="#">政策與安全性</a></span>
+      <span><a href="#">YouTube 運作方式</a></span>
+      <span><a href="#">測試新功能</a></span>
+      <br>
+      <br>
+      <p>&copy;  2023 Google LLC</p>
     </div>
   </div>
   <div id="content">
