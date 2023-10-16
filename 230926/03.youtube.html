@@ -10,19 +10,20 @@
   <style>
     * {
       margin: 0;
+      padding: 0;
     }
 
     body {
       width: 100%;
       height: 100%;
-      background: #181818;
+      background: #0f0f0f;
       color: white;
     }
 
     #header {
       width: 100%;
       height: 8%;
-      background-color: #181818;
+      background-color: #0f0f0f;
       position: fixed;
       top: 0;
       left: 0;
@@ -63,7 +64,7 @@
       width: 515px;
       height: 36px;
       color: grey;
-      background: #181818;
+      background: #0f0f0f;
       left: 650px;
       top: 3px;
       position: relative;
@@ -172,7 +173,7 @@
     #content .row{
       width: 86%;
       position: fixed;
-      background-color: #181818;
+      background-color: #0f0f0f;
       z-index: 2;
     }
 
@@ -210,6 +211,55 @@
       margin-bottom: 40px;
     }
 
+    #content #shorts{
+      width: 100%;
+      height: 80%;
+    }
+    
+    #content #shorts span{
+      font-size: 30px;
+      font-family: sans-serif;
+      position: relative;
+      bottom: 3px;
+      margin-left: 10px;
+    }
+
+    #content #shorts .long-card{
+      box-sizing: border-box;
+      position: relative;
+      width: 15.9%;
+      height: 80%;
+      float: left;
+      margin: 0 5px 40px 5px;
+    }
+
+    #content #shorts .long-card .img-short{
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    #content #shorts ul{
+      width: 93%;
+      float: left;
+    }
+
+    #content #shorts .long-card .img-short:hover{
+      cursor: pointer;
+    }
+
+    #content #shorts .info:hover .dot{
+      display: block;
+    }
+
+    #line {
+      width: 1425px;
+      height: 1px;
+      clear: both;
+      margin-bottom: 40px;
+      background-color: rgba(190, 190, 190, 0.3);
+    }
+
     #content .card .img {
       width: 100%;
       border-radius: 10px;
@@ -242,7 +292,7 @@
       margin: 0 0 0 2.5%;
     }
 
-    #content .card ul li{
+    #content ul li{
       display: inline-block;
       font-size: 16px;
       line-height: 21px;
@@ -254,13 +304,13 @@
       -webkit-box-orient: vertical;
     }
 
-    #content .card ul li+li{
+    #content ul li+li{
       font-size: 14px;
       color: rgb(190, 190, 190);
       line-height: 18px;
     }
 
-    #content .card .dot{
+    #content .dot{
       float: right;
       width: 7%;
       height: 7%;
@@ -430,6 +480,94 @@
           <img src="./點點.png" class="dot">
         </div>
       </div>
+      <div id="shorts">
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Youtube_shorts_icon.svg" width="25px">
+          <span>Shorts</span>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/04NMmfr5dvo/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLD6dGDggq8rHY9ff0hdVt_jewaYjg" class="img-short">
+          <div class="info">
+            <ul>
+              <li>#ImSuperShy🫣with #SEVENTEEN #세븐틴 #HOSHI #WONWOO #NewJeans #뉴진스 #HYEIN #HAERIN #NewJeans_SuperShy
+              </li>
+              <li>
+                觀看次數：834萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/OvcEeg-vop8/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLCFi6gupCsbzWUPqQzL5mGwKaH1kA" class="img-short">
+          <div class="info">
+            <ul>
+              <li>
+                NewJeans You & me💚 #NewJeans #뉴진스 #NewJeans_NewJeans #NewJeans_GetUp #Time_to_NewJeans
+              </li>
+              <li>
+                觀看次數：562萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/Vs-shsVbEHU/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLDS5v6sBVlEelytcAGHNQm7LDTTpg" class="img-short">
+          <div class="info">
+            <ul>
+              <li>
+                #Smokechallenge 🔥 #shorts
+              </li>
+              <li>
+                觀看次數：196萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/RKl2y2WKCSE/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBiK6LL7REzxp1n9KZQIZaUSzNriw" class="img-short">
+          <div class="info">
+            <ul>
+              <li>김채원 레전드 가사 실수 사건 ㅋㅋ
+              </li>
+              <li>
+                觀看次數：1245萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/CqxluYhV5Js/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLC4cMScuDLmeW8f7a5zeLpCilPneg" class="img-short">
+          <div class="info">
+            <ul>
+              <li>이게 나다
+              </li>
+              <li>
+                觀看次數：2748萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+        <div class="long-card">
+          <img src="https://i.ytimg.com/vi/e_lst8T9cNw/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAtdSkrVFzIxeMikZb3ZJTwKl5Bhg" class="img-short">
+          <div class="info">
+            <ul>
+              <li>
+                🤟🤟 손모양이 포인트 #RIIZE #라이즈 #RISEandREALIZE #이영지 ​⁠@youngji_2002 #GetAGuitar #RIIZE_GetAGuitar
+              </li>
+              <li>
+                觀看次數：125萬次
+              </li>
+            </ul>
+            <img src="./點點.png" class="dot">
+          </div>
+        </div>
+      </div>
+      <div id="line"></div>
       <div class="card">
         <img src="https://img.youtube.com/vi/8ca0xEJH9wY/maxresdefault.jpg" class="img">
         <div class="info">
