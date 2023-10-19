@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #news{
+            width: 280px;
+            height: 460px;
+            float: left;
+            border: solid 1px #999999;
+        }
+
+        #news h1{
+            font-size: 16px;
+            font-weight: bolder;
+            /* 前方空白 可不加 */
+            margin-left: 30px;
+        }
+
+        #news table{
+            /* 表格加寬 */
+            width: 260px;
+            border-collapse: collapse;
+            line-height: 2;
+            margin: auto;
+        }
+
+        #news th{
+            background-color: #39f;
+            font-size: 14px;
+            color: #FFFFFF;
+        } 
+        
+        #news td{
+            font-size: 12px;
+        }
+
+        #news tr:nth-of-type(even){            
+            background-color: #ffffcc;
+        }
+
+        #news tr:nth-of-type(odd){            
+            background-color: #DDDDDD;
+        }
+
+        #photo{
+            width: 590px;
+            height: 460px;
+            margin: auto;
+            float: right;
+            border: solid 1px #999999;
+            background-color: #333333;
+            font-size: 14px;
+            color: #FFFF00;
+            text-align: center;
+        }
+
+        #photo table{
+            width: 570px;
+            margin: auto;
+            border-collapse: collapse
+        }
+
+        #photo #bigimg{
+            width: 570px;
+            /* 要背! h340 */
+            height: 340px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="news">
+        <h1>最新消息</h1>
+        <!-- table>tr*5>td*2 -->
+        <table>
+            <tr>
+                <!-- 第一列td改th 自動有水平置中，加粗效果 -->
+                <th>主題</th>
+                <th>發布日期</th>
+            </tr>
+            <tr>
+                <!-- .. -> 兩個點點=上一層 -->
+                <td><img src="../images/0201.png">公告全國技能競賽相關事宜</td>
+                <td>112/10/16</td>
+            </tr>
+            <tr>
+                <td><img src="../images/0201.png">公告即測即評及發證相關事宜</td>
+                <td>112/10/16</td>
+            </tr>
+            <tr>
+                <td><img src="../images/0201.png">公告網頁設計修題相關事宜</td>
+                <td>112/10/16</td>
+            </tr>
+            <tr>
+                <td><img src="../images/0201.png">公告網路架設應檢相關事宜</td>
+                <td>112/10/16</td>
+            </tr>
+        </table>
+    </div>
+    <div id="photo">
+        <table>
+            <tr>
+                <td colspan="4"><img src="../images/0202A.png" id="bigimg"></td>
+            </tr>
+            <tr>
+                <td><img src="../images/0202B.png" class="smlimg"></td>
+                <td><img src="../images/0203B.png" class="smlimg"></td>
+                <td><img src="../images/0204B.png" class="smlimg"></td>
+                <td><img src="../images/0205B.png" class="smlimg"></td>
+            </tr>
+            <tr>
+                <td class="text">第30屆倫敦奧運</td>
+                <td class="text">許淑淨奪舉重銀牌</td>
+                <td class="text">第26屆深圳世大運</td>
+                <td class="text">第27屆喀山世大運</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 點小圖換大圖 -->
+    <script src="../others/jquery-2.1.4.min.js"></script>
+    <script>
+        // 原生js
+        // const smlImgs = document.querySelectorAll('.smlimg')
+        // const bigImg = document.getElementById('bigimg')
+
+        // // 用forEach循環smlImgs陣列
+        // smlImgs.forEach((smlimg, index) => {
+        //     smlimg.onclick = function() {
+        //         // 改src的內容 
+        //         bigImg.src=`../images/020${index+2}A.png`
+        //     }
+        // })
+
+        // jQ
+        $('.smlimg').each((index, img) => {
+            $(img).on('click', function(){
+                // 沒放第二個參數=getter 有設定時=setter
+                $('#bigimg').attr('src', `../images/020${index+2}A.png`) 
+            })
+        })
+
+        $('.text').each((index, td) => {
+            $(td).on('click', function(){
+                $('#bigimg').attr('src', `../images/020${index+2}A.png`) 
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 最新消息 --------------------------------------------- */
+    #news {
+      width: 280px;
+      height: 460px;
+      border: 1px solid #999;
+      float: left;
+    }
+
+    /* 標題 */
+    #news h1 {
+      font-size: 16px;
+      font-weight: bolder;
+      /* 可不加 */
+      margin-left: 10px;
+    }
+
+    #news table {
+      width: 260px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    /* 標題列 */
+    #news th {
+      background: #3399FF;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    #news td {
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    #news tr:nth-child(even) {
+      background: #ffc;
+    }
+
+    #news tr:nth-child(odd) {
+      background: #ddd;
+    }
+
+    /* 圖片展示區 ------------------------------------------- */
+    #photo {
+      width: 590px;
+      height: 460px;
+      border: 1px solid #999;
+      float: right;
+      background: #333;
+      font-size: 14px;
+      color: #ff0;
+      text-align: center;
+    }
+
+    #photo table {
+      width: 570px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    #photo #big {
+      width: 570px;
+      /* 340px 這個值記一下 */
+      height: 340px;
+      margin-top: 5px;
+      /* object-fit: cover; */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="news">
+    <h1>最新消息</h1>
+    <table>
+      <tr>
+        <th>主題</th>
+        <th>發布日期</th>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告全國技能競賽相關事宜</td>
+        <td>112/10/16</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告即測即評及發證相關事宜</td>
+        <td>112/10/16</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">公告網頁設計修題相關事宜</td>
+        <td>112/10/16</td>
+      </tr>
+      <tr>
+        <td><img src="../images/0201.png">告網路架設應檢相關事宜</td>
+        <td>112/10/16</td>
+      </tr>
+    </table>
+  </div>
+  <div id="photo">
+    <table>
+      <tr>
+        <td colspan="4"><img id="big" src="../images/0202A.png"></td>
+      </tr>
+      <tr>
+        <td><img class="img" src="../images/0202B.png"></td>
+        <td><img class="img" src="../images/0203B.png"></td>
+        <td><img class="img" src="../images/0204B.png"></td>
+        <td><img class="img" src="../images/0205B.png"></td>
+      </tr>
+      <tr>
+        <td>第30屆倫敦奧運</td>
+        <td>許淑淨奪舉重銀牌</td>
+        <td>第26屆深圳世大運</td>
+        <td>第27屆喀山世大運</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 用 jQuery 一定要引入 -->
+  <script src="../others/jquery-2.1.4.min.js"></script>
+  <script>
+    // 原生 JS
+    // who
+    // const imgs = document.querySelectorAll('.img')
+    // const big = document.querySelector('#big')
+    // console.log(imgs)
+    // imgs.forEach((img, index) => {
+    //   // when + how
+    //   img.onclick = function () {
+    //     big.src = `../images/020${index + 2}A.png`
+    //   }
+    // })
+
+    // jQuery
+    // console.log($('.img'))
+    $('.img').each((index, img) => {
+      $(img).on('click', function () {
+        // console.log($('#big').attr('src')) // 第二參數沒有，是指 getter，取值
+        $('#big').attr('src', `../images/020${index + 2}A.png`) // 第二參數有設定，是指 setter，設定值
+      })
+    })
+  </script>
+</body>
+
+</html>

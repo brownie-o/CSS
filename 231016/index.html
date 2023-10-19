@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>勞動部勞動力發展署─運動廣場連結網</title>
+  <style>
+    body {
+      background-color: #42413C;
+    }
+
+    #main {
+      width: 1024px;
+      height: 768px;
+      margin: auto;
+      background-color: #FFFFFF;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    table td {
+      padding: 0;
+    }
+
+    #top {
+      width: 1024px;
+      height: 90px;
+      background-color: #00B0F0;
+    }
+
+    #top .logo {
+      width: 180px;
+      height: 90px;
+    }
+
+    #top .main-title {
+      font-size: 52px;
+      font-family: "標楷體";
+      color: #fff;
+      text-shadow: 10px 10px 15px #333;
+    }
+
+    #menu {
+      width: 1024px;
+      height: 25px;
+      /* background-color: lightblue; */
+    }
+
+    /* 一般狀態 */
+    #menu a {
+      color: #000;
+      text-decoration: none;
+      background: #eee;
+      /* 讓 a 填滿整個 td */
+      display: block;
+    }
+
+    /* 滑鼠移過去的狀態 */
+    #menu a:hover {
+      font-size: 14px;
+      font-weight: bold;
+      color: #f00;
+      background-color: #ff0;
+      /* 滑鼠游標變成手指頭 */
+      cursor: pointer;
+    }
+
+    #content {
+      /* 加上內距需扣掉左、右 20px， 1024 - 40 = 984 */
+      width: 984px;
+      height: 568px;
+      padding: 20px;
+      background-color: #fff;
+      font-size: 14px;
+      color: #000;
+    }
+
+    #content iframe {
+      width: 984px;
+      height: 568px;
+    }
+
+    #footer {
+      width: 1024px;
+      height: 45px;
+      background-color: #ccc;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      /* 可以不做，題目只有說水平置中 */
+      line-height: 22.5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="top">
+      <table>
+        <tr>
+          <td class="logo">
+            <a href="./index.html">
+              <img src="./images/logo.png" alt="運動廣場連結網-回首頁" title="運動廣場連結網-回首頁">
+            </a>
+          </td>
+          <td class="main-title">
+            運動廣場連結網
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="menu">
+      <!-- table-layout: fixed => hover 時表格不抖動，且平均欄寬 -->
+      <table style="table-layout: fixed;">
+        <tr>
+          <td><a href="./index.html">首頁</a></td>
+          <td><a href="./results/health.html" target="iframe">健康天地</a></td>
+          <td><a href="./results/basketball.html" target="iframe">籃球介紹</a></td>
+          <td><a href="./results/baseball.html" target="iframe">棒球介紹</a></td>
+          <td><a href="./results/swimming.html" target="iframe">游泳介紹</a></td>
+          <td><a href="./results/msgboard.html" target="iframe">訪客留言</a></td>
+          <td><a href="./results/reference.html" target="iframe">資料來源</a></td>
+        </tr>
+      </table>
+    </div>
+    <div id="content">
+      <iframe src="./results/main.html" frameborder="0" name="iframe"></iframe>
+    </div>
+    <div id="footer">
+      網頁設計及維護：00張凱富<br>
+      最近更新日期：2023/10/16
+    </div>
+  </div>
+</body>
+
+</html>
