@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('../images/park0301.jpg');
+            text-align: center;
+        }
+
+        #info{
+            text-align: right;
+            color: #FF00FF;
+        }
+
+        .map{
+            margin: auto;
+            width: 452px;
+            height: 631px;
+            position: relative;
+        }
+
+        .area1{
+            width: 129px;
+            height: 24px;
+            position: absolute;
+            left: 214px;
+            top: 51px;
+            /* background: rgba(0, 0, 0, 0.5); */
+            border-radius: 15px;
+        }
+
+        .area2{
+            width: 53px;
+            height: 42px;
+            position: absolute;
+            left: 270px;
+            top: 181px;
+            /* background: rgba(0, 0, 0, 0.5); */
+            border-radius: 31px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <!-- 1 -->
+        <!-- <div class="map">
+                <img src="../images/national_park.jpg">
+                <a href="../park/yangminshan.html" class="area1"></a>
+                <a href="../park/sheipa.html" class="area2"></a>
+            </div> -->
+
+        <!-- 2 -->
+        <img src="../images/national_park.jpg" usemap="#map">
+        <map name="map">
+            <area shape="rect" coords="220, 52, 334, 75" href="../park/yangminshan.html" target="iframe">
+            <area shape="poly" coords="284, 168, 290, 184, 310, 182, 322, 190, 320, 192, 320, 204, 310, 218, 290, 224, 380, 216, 275, 215, 250, 200, 255, 194, 280, 186, 284, 186, 282, 180" href="../park/sheipa.html" target="iframe">
+        </map>
+    </div>
+    <div id="info">資料來源：內政部營建署『臺灣的國家公園』網站</div>
+</body>
+</html>

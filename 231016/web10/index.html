@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勞動部勞動力發展署─運動廣場連結網</title>
+    <style>
+        body{
+            background-color: #42413C;
+        }
+
+        #main{
+            background-color: #FFFFFF;
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+        }
+
+        #top{
+            width: 1024px;
+            height: 90px;
+            background-color: #00b0f0;
+        }
+
+        /* 把table外的小邊邊消除 */
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td{
+            padding: 0;
+        }
+
+        #top .logo{
+            width: 180px;
+            height: 90px;
+        }
+
+        #top .main-title{
+            font-size: 52px;
+            font-family: "標楷體";
+            color: #FFFFFF;
+            text-shadow: 10px 10px 15px #333333;
+        }
+
+        #menu{
+            width: 1024px;
+            height: 25px;
+        }
+        
+        #menu td{
+            padding: 0;
+            width: 1px;
+            line-height: 25px;
+        }
+
+        #menu td a{
+            text-decoration: none;
+            color: #000000;
+            background-color: #EEEEEE;
+            /* 讓a填滿整個td */
+            display: block;
+
+        }
+        
+        #menu td a:hover{
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ff0;
+            color: #FF0000;
+        }
+
+        #content{
+            /* 要加上padding 上下左右各20px */
+            /* 1024-40(padding20) = 984 */
+            width: 984px;
+            /* 608-40 = 568 */
+            height: 568px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        #content iframe{
+            width: 984px;
+            height: 568px;
+            border: none;
+        }
+
+        #footer{
+            width: 1024px;
+            height: 45px;
+            background-color: #CCCCCC;
+            color: #FFFFFF;
+            font-size: 14px;
+            text-align: center;
+            /* 垂直置中 - 不一定要做 */
+            line-height: 22.5px;
+            /* (45/2-14)/2 */
+        }
+    </style>
 </head>
 <body>
-  
+    <div id="main">
+        <div id="top">
+            <table>
+                <tr>
+                    <td class="logo">
+                        <a href="./index.html">
+                            <img src="./images/logo.png" alt="運動廣場連結網-回首頁" title="運動廣場連結網-回首頁">
+                        </a>
+                    </td>
+                    <td class="main-title">
+                        <span>運動廣場連結網</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="menu">
+            <!-- ***讓表格不抖動 並平均分配欄寬*** -->
+            <table style="table-layout: fixed;">
+                <tr>
+                    <td><a href="./index.html">首頁</a></td>
+                    <td><a href="./results/health.html" target="iframe">健康天地</a></td>
+                    <td><a href="./results/basketball.html" target="iframe">籃球介紹</a></td>
+                    <td><a href="./results/baseball.html" target="iframe">棒球介紹</a></td>
+                    <td><a href="./results/swimming.html" target="iframe">游泳介紹</a></td>
+                    <td><a href="./results/msgboard.html" target="iframe">訪客留言</a></td>
+                    <td><a href="./results/reference.html" target="iframe">資料來源</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="content" iframe>
+            <iframe src="./results/main.html" frameborder="0" name="iframe">
+            </iframe>
+        </div>
+        <div id="footer">
+            網頁設計及維護：10陳予柔<br>
+            最近更新日期：2023/10/16
+        </div>
+    </div>
 </body>
 </html>
