@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- for RWD -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 0 ~ 575 的樣式 */
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+      /* transition: 1s; */
+    }
+
+    :root{
+      /* rwd 文字配合calc */
+      font-size: calc(0.75rem + 1.125vw);
+      /* CSS 原生變數 */
+      /* 宣告在根元素 = 全域變數 */
+      --primary: #0d6efd;
+      --secondary: #6c757d;
+      --success: #198754;
+      --info: #0dcaf0;
+      --warning: #ffc107;
+      --danger: #dc3545;
+    }
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("https://picsum.photos/1920/1080/?random=1") no-repeat center/cover;
+    }
+
+    .container{
+      background-color: #fff;
+      width: 95%;
+      margin: 1rem auto;
+      padding: 15px;
+      border: 1px solid #000;
+      border-radius: calc(3px + 0.5vw);
+    }
+
+    h1{
+      color: var(--warning);
+      background-color: var(--success);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    li{
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar{
+      display: none;
+      width: 150px;
+      color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      background: black;
+      position: fixed;
+      left: 0;
+    }
+
+    .isShow{
+      display: none;
+    }
+
+    /* Media Queries 媒體查詢寫法 */
+    /* min-width: 尺寸以上(包含) */
+    @media (min-width: 576px) {}
+
+    /* max-width: 尺寸以下(不包含) */
+    @media (min-width: 768px) {}
+
+    /* 裝置介於 576px ~ 768px 之間的樣式 */
+    @media (min-width: 576px) and (max-width: 768px){}
+
+    /* 裝置 576 ~ 768 的樣式 */
+    @media (min-width: 576px) {
+      body{
+        background: url("https://picsum.photos/1920/1080/?random=2") no-repeat center/cover;
+      }
+
+      .container{
+        border: 5px solid #6c757d;
+      }
+
+      h1{
+        color: var(--success);
+        background: var(--warning);
+      }
+    }
+
+    /* 裝置 768px以上 的樣式 */
+    @media (min-width: 768px) {
+      :root{
+        font-size: 1.25rem;
+      }
+
+      body{
+        background: url("https://picsum.photos/1920/1080/?random=3") no-repeat center/cover;
+      }
+
+      .container{
+        width: 80%;
+        outline: 10px dashed white;
+        border: 10px outset orange;
+      }
+
+      h1{
+        color: orangered;
+        background: darkseagreen;
+        /* font-size: 2.5rem; */
+      }
+    }
+
+    @media (min-width: 992px) {
+      .sidebar{
+        display: block;
+      }
+
+      .isShow{
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Responsive Web Design <span class="isShow">(RWD 響應式網頁設計)</span></h1>
+    <ul>
+      <li>1. RWD，讓內容如有水般地適應各種形狀的容器，能在每個裝置尺寸正常瀏覽。</li>
+      <li>2. CSS 的媒體查詢(Media Queries)負責響應是最主要的工作</li>
+      <li>3. Media Query的breakpoint(斷點)為不同裝置尺寸設定通過的定位點，當通過設定的位置時就套用該尺寸的樣式。</li>
+      <li>4. 行動裝置優先的漸進增強概念，基於小尺寸開始思考內容的設計模式。</li>
+      <li>5. 使用相對安為設定寬、高或大小(rem, %, vh, vw)，字體大小使用 rem，容器寬度使用 %</li>
+    </ul>
+  </div>
+
+  <div class="sidebar">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quam, nihil exercitationem tempore vel, velit nostrum explicabo blanditiis dolores quod nulla enim natus maiores, sed molestias excepturi eligendi sequi non!
+  </div>
+</body>
+</html>
