@@ -4,8 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    body{
+      height: 100vh;
+      width: 100vw;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)), url('./homework_ff7/bg-full.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content{
+      background: #000;
+      width: 1300px;
+      height: 620px;
+      border: 2px solid #555;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .col{
+      width: 50%;
+      height: 100%;
+      display: flex;
+    }
+
+    .info{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./homework_ff7/main.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "arial";
+      color: white;
+    }
+
+    .info img{
+      width: 25%;
+    }
+
+    .info p{
+      margin: 0 15%;
+      text-align: center;
+    }
+
+    .character{
+      flex-direction: column;
+    }
+
+    .smlcol{
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .text{
+      width: 65%;
+      font-family: "Arial";
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cloud{
+      background: #aaa;
+      /* justify-content: flex-end; */
+    }
+
+    .cloud .text{
+      margin-left: 5%;
+    }
+
+    .tifa{
+      color: white;
+    }
+
+    .tifa .text{
+      margin-right: 5%;
+    }
+
+    .smlcol img{
+      height: 90%;
+      align-self: end;
+    }
+
+  </style>
 </head>
 <body>
-  
+  <div class="content">
+    <div class="col info">
+      <img src="./homework_ff7/ps4-ff7.png">
+      <h1>AVAILABLE NOW</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aliquam, nesciunt corrupti, vero perferendis iure eveniet dicta, nulla sed delectus dolor. Assumenda unde quo sapiente consequatur magnam, accusantium veniam ut.</p>
+    </div>
+    <div class="col character">
+      <div class="smlcol cloud">
+        <div class="text">
+          <h1>Cloud</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo aut provident, quia repudiandae quibusdam natus cupiditate est impedit ex quidem ut autem temporibus consequuntur.</p>
+        </div>
+        <img src="./homework_ff7/cloud.png">
+      </div>
+      <div class="smlcol tifa">
+        <img src="./homework_ff7/tifa.png">
+        <div class="text">
+          <h1>Tifa</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga corrupti voluptatibus totam architecto unde animi consequuntur praesentium doloremque modi ducimus vel, aliquam perferendis repellendus sed?</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
