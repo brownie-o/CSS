@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+      height: 500px;
+      border: 1px solid #FFEE90;
+    }
+
+    .bg{
+      background-image: url('./object-fit/05.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .object-fit{
+      /* 長度寬度一定要100% */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* object-position: X Y (不寫就是預設: 50% = center) */
+      object-position: 75%;
+    }
+  </style>
+</head>
+<body>
+  <h1>背景圖 background-size</h1>
+  <p>調整背景與容器一樣大小時，可以設定backgorund-size: cover</p>
+  <div class="box bg"></div>
+
+  <h1>圖片 object-fit</h1>
+  <p>將圖片放入一個容器時，圖片太大且比例與容器不同，可以使用object-fit</p>
+  <p>使用條件: </p>
+  <p>1. 設定圖片 width, height 100% 先佔滿容器，可能會造成變形</p>
+  <p>2. 對圖片使用object-fit: cover，再使用object-position調整位置。</p>
+  <div class="box">
+    <img src="./object-fit/03.jpg" class="object-fit">
+  </div>
+  <br>
+  <div class="box">
+    <img src="https://www.niusnews.com/upload/imgs/default/202302_Noah/0220/1/kuromi18.jpg"  class="object-fit">
+  </div>
+</body>
+</html>
