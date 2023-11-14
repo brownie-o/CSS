@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: 0.3s;
+    }
+
+    ::after{
+      content: "";
+      position: absolute;
+      background: #999;
+      height: 2px;
+      transform-origin: right center;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      width: 100%;
+      padding: 1rem;
+      border-bottom: 1px solid #b9b9b9;
+      margin: 0 1.5%;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .col img {
+      width: 30%;
+    }
+
+    .col .img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .col h2 {
+      font-size: 2rem;
+    }
+
+    .col h3 {
+      font-size: 1.5rem;
+    }
+
+    .col p {
+      font-size: 1rem;
+    }
+
+    .col img {
+      width: 50%;
+    }
+
+    @keyframes HTML {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(8vw - 50%), calc(20vh - 50%));
+      }
+    }
+
+    @keyframes HTML_line{
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 25vw;
+        opacity: 100%;
+      }
+    }
+
+    @keyframes CSS {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(30vw - 50%), calc(15vh - 50%));
+      }
+    }
+
+    @keyframes CSS_line {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 100px;
+        opacity: 100%;
+      }
+    }
+
+    @keyframes JS {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(10vw - 50%), calc(55vh - 50%));
+      }
+    }
+
+    @keyframes JS_line {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 350px;
+        opacity: 100%;
+      }
+    }
+
+    @keyframes JQ {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(25vw - 50%), calc(85vh - 50%));
+      }
+    }
+
+
+
+    @keyframes BS {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(75vw - 50%), calc(15vh - 50%));
+      }
+    }
+
+    @keyframes SASS {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(86vw - 50%), calc(45vh - 50%));
+      }
+    }
+
+    @keyframes VUE {
+      0% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+      }
+
+      100% {
+        transform: translate(calc(79vw - 50%), calc(80vh - 50%));
+      }
+    }
+
+    @media (min-width: 992px) {
+      .col {
+        border-bottom: none;
+        width: 20%;
+      }
+
+      .text {
+        display: none;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      .title {
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+
+      #HTML {
+        animation: HTML 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #HTML::after{
+        transform: rotate(15deg);
+        animation: HTML_line 1s ease-in 0s 1 normal forwards;
+        left: 70%;
+        top: 120%;
+      }
+
+      #CSS {
+        animation: CSS 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #CSS::after{
+        transform: rotate(30deg);
+        animation: CSS_line 1s ease-in 0s 1 normal forwards;
+        left: 70%;
+        top: 100%;
+      }
+
+      #JS {
+        animation: JS 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #JS::after{
+        transform: rotate(345deg);
+        animation: JS_line 1s ease-in 0s 1 normal forwards;
+        left: 70%;
+        top: 25%;
+      }
+
+      #JQ {
+        animation: JQ 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #JQ::after{
+        transform: rotate(345deg);
+        animation: JQ_line 1s ease-in 0s 1 normal forwards;
+        left: 70%;
+        top: 30%;
+      }
+
+      #BS {
+        animation: BS 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #SASS {
+        animation: SASS 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+      #VUE {
+        animation: VUE 1s ease-in 0s 1 normal forwards;
+        position: absolute;
+        transition: 0s;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="row">
+      <div class="col title">
+        <img src="./media_query/wda.png" alt="泰山職訓局" title="泰山職訓局">
+        <h2>泰山職訓局</h2>
+        <h3>從零開始的網頁設計課程</h3>
+        <p>
+          轉職網頁開發人員 掌握就業必備職能<br>
+          由淺入深學習技術 強化職場的競爭力
+        </p>
+      </div>
+      <div class="col" id="HTML">
+        <div class="img">
+          <img src="./media_query/html.png">
+        </div>
+        <h3>HTML</h3>
+        <p class="text">
+          超文本標記語言（英語：HyperText Markup
+          Language，簡稱：HTML）是一種用於建立網頁的標準標記語言。HTML是一種基礎技術，常與CSS、JavaScript一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取HTML檔案，並將其彩現成視覺化網頁。HTML描述了一個網站的結構語意隨著線索的呈現，使之成為一種標記語言而非程式語言。
+        </p>
+      </div>
+      <div class="col" id="CSS">
+        <div class="img">
+          <img src="./media_query/css.png">
+        </div>
+        <h3>CSS3</h3>
+        <p class="text">
+          階層式樣式表（英語：Cascading Style
+          Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。
+        </p>
+      </div>
+      <div class="col" id="JS">
+        <div class="img">
+          <img src="./media_query/js.png">
+        </div>
+        <h3>JavaScript</h3>
+        <p class="text">
+          JavaScript（通常縮寫為JS）是一門基於原型和頭等函數的多範式進階直譯程式語言，它支援物件導向程式設計、指令式編程和函數式程式設計。它提供方法來操控文字、陣列、日期以及正規表示式等。不支援I/O，比如網路、儲存和圖形等，但這些都可以由它的宿主環境提供支援。它由ECMA（歐洲電腦製造商協會）透過ECMAScript實作語言的標準化。目前，它被世界上的絕大多數網站所使用，也被世界主流瀏覽器（Chrome、IE、Firefox、Safari和Opera）所支援。
+        </p>
+      </div>
+      <div class="col" id="JQ">
+        <div class="img">
+          <img src="./media_query/jq.png">
+        </div>
+        <h3>jQuery</h3>
+        <p class="text">
+          jQuery是一套跨瀏覽器的JavaScript函式庫，用於簡化HTML與JavaScript之間的操作。[2]約翰·雷西格（John Resig）在2006年1月的BarCamp
+          NYC上釋出了第一個版本。目前由Dave Methvin領導的團隊進行開發。全球前10,000個訪問最高的網站中，有65%使用了jQuery，是曾經最受歡迎的JavaScript函式庫。
+        </p>
+      </div>
+      <div class="col" id="BS">
+        <div class="img">
+          <img src="./media_query/bs.png">
+        </div>
+        <h3>Bootstrap</h3>
+        <p class="text">
+          Bootstrap是一組用於網站和網路應用程式開發的開源前端（所謂「前端」，指的是展現給終端使用者的介面。與之對應的「後端」是在伺服器上面執行的代碼）框架，包括HTML、CSS及JavaScript的框架，提供字體排印、表單、按鈕、導航及其他各種元件及Javascript擴充套件，旨在使動態網頁和Web應用的開發更加容易。
+        </p>
+      </div>
+      <div class="col" id="SASS">
+        <div class="img">
+          <img src="./media_query/sass.png">
+        </div>
+        <h3>Sass</h3>
+        <p class="text">
+          Sass（英文全稱：Syntactically Awesome Stylesheets）是一個最初由Hampton Catlin設計並由Natalie
+          Weizenbaum開發的層疊樣式表語言。在開發最初版本之後，Weizenbaum和Chris
+          Eppstein繼續通過SassScript來繼續擴充Sass的功能。SassScript是一個在Sass檔案中使用的小型手稿語言。
+        </p>
+      </div>
+      <div class="col" id="VUE">
+        <div class="img">
+          <img src="./media_query/vue.png">
+        </div>
+        <h3>Vue.js</h3>
+        <p class="text">
+          Vue.js（/vjuː/，簡稱Vue）是一個用於建立使用者介面的開源MVVM前端JavaScript框架，也是一個建立單頁應用的Web應用框架。Vue.js由尤雨溪建立，由他和其他活躍的核心團隊成員維護。
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
