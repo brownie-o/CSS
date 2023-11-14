@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css' integrity='sha512-ZuRTqfQ3jNAKvJskDAU/hxbX1w25g41bANOVd1Co6GahIe2XjM6uVZ9dh0Nt3KFCOA061amfF2VeL60aJXdwwQ==' crossorigin='anonymous'/>
+  <style>
+    /* 
+      CSS 權重
+      1. inline style (黑桃) 1,0,0,0
+      2. ID selector  (紅心) 0,1,0,0
+      3. class selector, 屬性選擇器[], 偽類 (方塊) 0,0,1,0
+      4. tag, 偽元素 (梅花) 0,0,0,1
+
+      連接符號例如 空白、後代選擇器、>(子帶選擇)、+(同層相鄰)、~(同層全體)、||(或)、^(開頭)、$(結尾)、*(通用選擇)、:not()
+      對權重沒有貢獻 0,0,0,0，但是:not(內)的參數會計算分數
+    */
+
+    /* 0 1 0 1 */
+    #box1 p{
+      color: green;
+    }
+
+    /* 0 0 1 1 */
+    .box p{
+      color: blue;
+    }
+
+    /* 0 1 1 2 */
+    #box2 .box h1+p{
+      color: burlywood !important;
+      /* + !important 就可以搶回來 */
+    }
+
+    /* 0 1 0 2 */
+    #box1 h1+p,
+    #box2 h1+p{
+      color: cornflowerblue;
+    }
+
+    /* 
+      第一
+      #section01 .container .row .col .card a:hover => 0 1 5 1
+
+      第二 O
+      #section01 .card a:hover => 0 1 2 1
+
+      第三 
+      .card a:hover => 0 0 2 1
+    */
+  </style>
+</head>
+<body>
+  <h1>階層權重 - 替選擇器打分數</h1>
+  <div id="box1">
+    <div class="box">
+      <h1>標題</h1>
+      <p>Lorem ipsum dolor sit amet, <a href="#">今天吃火鍋</a>consectetur adipisicing elit. Ut quibusdam unde minima, delectus reiciendis laboriosam possimus asperiores nesciunt? Asperiores temporibus quod quo ratione. Ipsam eos ad repudiandae repellat, maiores velit.</p>
+    </div>
+  </div>
+
+  <div id="box2">
+    <div class="box">
+      <h1>標題</h1>
+      <!-- 1 0 0 0 -->
+      <p style="color: darkolivegreen;">Lorem ipsum dolor sit amet, <a href="#">今天吃火鍋</a>consectetur adipisicing elit. Ut quibusdam unde minima, delectus reiciendis laboriosam possimus asperiores nesciunt? Asperiores temporibus quod quo ratione. Ipsam eos ad repudiandae repellat, maiores velit.</p>
+    </div>
+  </div>
+</body>
+</html>
