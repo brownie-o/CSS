@@ -1,11 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .board {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .box {
+      border: 1px solid black;
+    }
+
+    .big {
+      width: 720px;
+      height: 740px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .medium{
+      width: 576px;
+      height: 648px;
+      display: flex;
+      /* justify-content: flex-start; */
+      /* align-items: center; */
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .sml{
+      box-sizing: border-box;
+      width: 72px;
+      height: 72px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+
+    .sml:nth-of-type(8),
+    .sml:nth-of-type(16),
+    .sml:nth-of-type(24),
+    .sml:nth-of-type(32),
+    .sml:nth-of-type(41),
+    .sml:nth-of-type(49),
+    .sml:nth-of-type(57),
+    .sml:nth-of-type(65){
+      border-right: 0;
+    }
+
+    .sml:nth-of-type(4)::after,
+    .sml:nth-of-type(13)::after,
+    .sml:nth-of-type(53)::after,
+    .sml:nth-of-type(62)::after{
+      content: "";
+      position: relative;
+      width: 101px;
+      height: 0.5px;
+      background: #000;
+      display: flex;
+      transform: rotate(45deg);
+      transform-origin: left center;
+      border: 0;
+    }
+
+    .sml:nth-of-type(5)::after,
+    .sml:nth-of-type(12)::after,
+    .sml:nth-of-type(54)::after,
+    .sml:nth-of-type(61)::after{
+      content: "";
+      position: relative;
+      width: 101px;
+      height: 0.5px;
+      background: #000;
+      display: flex;
+      transform: rotate(-45deg);
+      transform-origin: right center;
+      border: 0;
+      left: -30px;
+    }
+
+    p{
+      writing-mode: vertical-lr;
+      font-size: 2.3rem;
+      margin: 0 2rem;
+      font-family: "標楷體";
+    }
+
+    .center{
+      width: 100%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-family: "標楷體";
+      font-size: 42px;
+      border-bottom: 1px solid black;
+    }
+
+    .chess{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+    }
+
+    .red{
+      color: red;
+    }
+
+    .piece{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-family: "標楷體";
+    }
+    
+    .show{
+      background: white;
+      border: 1px solid black;
+    }
+
+    .outer{
+      width: 650px;
+      height: 720px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .row{
+      width: 650px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+  </style>
 </head>
+
 <body>
-  
+  <div class="board">
+    <p>棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</p>
+    <div class="box big">
+      <div class="box medium">
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+
+        <div class="center">
+          <div class="text">楚河</div>
+          <div class="text">漢界</div>
+        </div>
+
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+        <div class="sml"></div>
+      </div>
+    </div>
+    <p>圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</p>
+  </div>
+
+  <div class="chess">
+    <div class="outer">
+      <div class="row">
+        <div class="piece show">車</div>
+        <div class="piece show">馬</div>
+        <div class="piece show">象</div>
+        <div class="piece show">士</div>
+        <div class="piece show">將</div>
+        <div class="piece show">士</div>
+        <div class="piece show">象</div>
+        <div class="piece show">馬</div>
+        <div class="piece show">車</div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece show">包</div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece show">包</div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece show">卒</div>
+        <div class="piece"></div>
+        <div class="piece show">卒</div>
+        <div class="piece"></div>
+        <div class="piece show">卒</div>
+        <div class="piece"></div>
+        <div class="piece show">卒</div>
+        <div class="piece"></div>
+        <div class="piece show">卒</div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece show red">兵</div>
+        <div class="piece"></div>
+        <div class="piece show red">兵</div>
+        <div class="piece"></div>
+        <div class="piece show red">兵</div>
+        <div class="piece"></div>
+        <div class="piece show red">兵</div>
+        <div class="piece"></div>
+        <div class="piece show red">兵</div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece show red">炮</div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece show red">炮</div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+        <div class="piece"></div>
+      </div>
+      <div class="row">
+        <div class="piece show red">俥</div>
+        <div class="piece show red">傌</div>
+        <div class="piece show red">相</div>
+        <div class="piece show red">仕</div>
+        <div class="piece show red">帥</div>
+        <div class="piece show red">仕</div>
+        <div class="piece show red">相</div>
+        <div class="piece show red">傌</div>
+        <div class="piece show red">俥</div>
+      </div>
+
+    </div>
+  </div>
 </body>
+
 </html>
