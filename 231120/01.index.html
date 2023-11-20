@@ -4,13 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- 1. 引入bootstap.css 以使用樣式 -->
   <link rel="stylesheet" href="./css/bootstrap.css">
   <style>
+    .row{
+      background: #eee;
+      margin-bottom: 1rem;
+    }
     
+    .row>*:nth-child(1){
+      background: var(--bs-teal);
+    }
+
+    .row>*:nth-child(2){
+      background: var(--bs-cyan);
+    }
+
+    .row>*:nth-child(3){
+      background: var(--bs-yellow);
+    }
+
+    .row>*:nth-child(4){
+      background: var(--bs-pink);
+    }
+
+    .row>*:nth-child(5){
+      background: var(--bs-purple);
+    }
+
+    h3{
+      margin: 1.5rem 0;
+    }
+
+    h4{
+      margin-bottom: 1.5rem;
+    }
   </style>
 </head>
 <body>
-  <h1 class="bg-danger">1234</h1>
+  <!-- .container 和 .container-fulid(滿版) 較常用 -->
+  <!-- 有breakpoint: sm md lg xl xxl => 從哪種版面開始設定 -->
+  <div class="container bg-info">
+    12345
+  </div>
+  <br>
+
+  <div class="container">
+    <h1>等寬</h1>
+    <div class="row">
+      <!-- 等分 .col{flex: 1 0 0%} -->
+      <div class="col">column</div>
+      <div class="col">column</div>
+      <div class="col">column</div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>設定寬度</h1>
+    <div class="row">
+      <div class="col">
+        3 of 12
+      </div>
+      <!-- 12份中分配6份給這個col -->
+      <div class="col-6">
+        6 of 12
+      </div>
+      <div class="col">
+        3 of 12
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        3.5 of 12
+      </div>
+      <div class="col-5">
+        5 of 12
+      </div>
+      <div class="col">
+        3.5 of 12
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>可變寬度內容</h1>
+    <p>col-auto 欄位寬度根據內容寬度變化</p>
+    <div class="row justify-content-md-center">
+      <div class="col-2">
+        2 of 12
+      </div>
+      <div class="col-auto">
+        <!-- 寬度隨內容寬度變化 -->
+        Variable width content Variable width
+      </div>
+      <div class="col-2">
+        2 of 12
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <!-- 在md以上時 寬度=內容寬度 md以下時不會有col設定-> div為100% -->
+      <div class="col-md-auto">
+        Variable width content
+      </div>
+      <!-- lg以下時 col自動分配寬度, lg以上時 分配12份中的兩份 -->
+      <div class="col col-lg-2">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 引入bootstrap.bundle.js 以使用元件 -->
   <script src="./js/bootstrap.bundle.js"></script>
 </body>
 </html>
