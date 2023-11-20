@@ -213,8 +213,7 @@
       </div>
     </div>
   </div>
-  
-
+  <br>
   <div class="container">
     <h1>Column Breaks</h1>
     <h2>範例1</h2>
@@ -240,6 +239,112 @@
   
       <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
       <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>Order 排序</h1>
+    <div class="row">
+      <div class="col order-md-last order-lg-0">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorem dignissimos sequi, officia explicabo quo repellendus aperiam, corporis non iusto eum suscipit veritatis provident! Dicta velit recusandae libero ipsa voluptatum?
+      </div>
+      <div class="col-auto order-md-first order-lg-1">
+        <img src="https://picsum.photos/400/300/?random=1">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>欄的推移 .offset</h1>
+    <h2>範例1</h2>
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <!-- md時往右推4等分 lg時往右推兩等分 -->
+      <div class="col-md-4 offset-md-4 offset-lg-2">.col-md-4 .offset-md-4</div>
+    </div>
+    <div class="row">
+      <!-- 右邊各留三等份 -->
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+    </div>
+    <h2>範例2</h2>
+    <p>rest offest with breakpoint</p>
+    <div class="row">
+      <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+      <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+      <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>Margin 通用類別</h1>
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-auto me-auto">.col-auto .me-auto</div>
+      <div class="col-auto">.col-auto</div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container px-4">
+    <h1>水平 Gutters : gx</h1>
+    <div class="row gx-5">
+      <div class="col">
+      <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="container overflow-hidden">
+    <h1>垂直 Gutters : gy</h1>
+    <div class="row gy-5">
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>水平&垂直 Gutters</h1>
+    <div class="row g-5">
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
     </div>
   </div>
 
