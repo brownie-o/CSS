@@ -13,13 +13,13 @@
       transition: 0.3s;
     }
 
-    ::after{
+    /* ::after{
       content: "";
       position: absolute;
       background: #999;
       height: 2px;
       transform-origin: right center;
-    }
+    } */
 
     .row {
       display: flex;
@@ -74,14 +74,14 @@
       }
     }
 
-    @keyframes HTML_line{
+    @keyframes HTML_line {
       0% {
         width: 0;
         opacity: 0;
       }
 
       100% {
-        width: 25vw;
+        width: 130%;
         opacity: 100%;
       }
     }
@@ -103,7 +103,7 @@
       }
 
       100% {
-        width: 100px;
+        width: 30%;
         opacity: 100%;
       }
     }
@@ -125,7 +125,7 @@
       }
 
       100% {
-        width: 350px;
+        width: 120%;
         opacity: 100%;
       }
     }
@@ -136,11 +136,21 @@
       }
 
       100% {
-        transform: translate(calc(25vw - 50%), calc(85vh - 50%));
+        transform: translate(calc(25vw - 50%), calc(85vh - 51%));
       }
     }
 
+    @keyframes JQ_line {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
 
+      100% {
+        width: 65%;
+        opacity: 100%;
+      }
+    }
 
     @keyframes BS {
       0% {
@@ -149,6 +159,17 @@
 
       100% {
         transform: translate(calc(75vw - 50%), calc(15vh - 50%));
+      }
+    }
+
+    @keyframes BS_line{
+      0%{
+        width: 0;
+        opacity: 0;
+      }
+      100%{
+        width: 50%;
+        opacity: 100%;
       }
     }
 
@@ -162,6 +183,17 @@
       }
     }
 
+    @keyframes SASS_line {
+      0%{
+        width: 0;
+        opacity: 0;
+      }
+      100%{
+        width: 80%;
+        opacity: 100%;
+      }
+    }
+
     @keyframes VUE {
       0% {
         transform: translate(calc(50vw - 50%), calc(50vh - 50%));
@@ -169,6 +201,17 @@
 
       100% {
         transform: translate(calc(79vw - 50%), calc(80vh - 50%));
+      }
+    }
+
+    @keyframes VUE_line {
+      0%{
+        width: 0;
+        opacity: 0;
+      }
+      100%{
+        width: 80%;
+        opacity: 100%;
       }
     }
 
@@ -201,7 +244,12 @@
         transition: 0s;
       }
 
-      #HTML::after{
+      #HTML::after {
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
         transform: rotate(15deg);
         animation: HTML_line 1s ease-in 0s 1 normal forwards;
         left: 70%;
@@ -214,7 +262,12 @@
         transition: 0s;
       }
 
-      #CSS::after{
+      #CSS::after {
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
         transform: rotate(30deg);
         animation: CSS_line 1s ease-in 0s 1 normal forwards;
         left: 70%;
@@ -227,11 +280,16 @@
         transition: 0s;
       }
 
-      #JS::after{
-        transform: rotate(345deg);
+      #JS::after {
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
+        transform: rotate(347deg);
         animation: JS_line 1s ease-in 0s 1 normal forwards;
         left: 70%;
-        top: 25%;
+        top: 35%;
       }
 
       #JQ {
@@ -240,11 +298,16 @@
         transition: 0s;
       }
 
-      #JQ::after{
-        transform: rotate(345deg);
+      #JQ::after {
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
+        transform: rotate(320deg);
         animation: JQ_line 1s ease-in 0s 1 normal forwards;
-        left: 70%;
-        top: 30%;
+        left: 65%;
+        top: -30%;
       }
 
       #BS {
@@ -253,16 +316,52 @@
         transition: 0s;
       }
 
+      #BS::after {
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
+        transform: rotate(-25deg);
+        animation: BS_line 1s ease-in 0s 1 normal forwards;
+        left: -30%;
+        top: 70%;
+      }
+
       #SASS {
         animation: SASS 1s ease-in 0s 1 normal forwards;
         position: absolute;
         transition: 0s;
       }
 
+      #SASS::after{
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
+        transform: rotate(3deg);
+        animation: SASS_line 1s ease-in 0s 1 normal forwards;
+        left: -70%;
+        top: 50%;
+      }
+
       #VUE {
         animation: VUE 1s ease-in 0s 1 normal forwards;
         position: absolute;
         transition: 0s;
+      }
+
+      #VUE::after{
+        content: "";
+        position: absolute;
+        background: #999;
+        height: 2px;
+        transform-origin: right center;
+        transform: rotate(35deg);
+        animation: VUE_line 1s ease-in 0s 1 normal forwards;
+        left: -60%;
+        top: 40%;
       }
 
     }
