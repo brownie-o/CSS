@@ -115,6 +115,78 @@
       </div>
     </div>
   </div>
+  <br>
+  <div class="container">
+    <h1>水平堆疊</h1>
+    <p>col-12 可省略 = 100% width</p>
+    <div class="row">
+      <div class="col-sm-8">col-sm-8</div>
+      <div class="col-sm-4">col-sm-4</div>
+    </div>
+    <div class="row">
+      <div class="col-sm">col-sm</div>
+      <div class="col-sm">col-sm</div>
+      <div class="col-sm">col-sm</div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>混合和匹配</h1>
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+  
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    </div>
+  
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <div class="row">
+      <div class="col-6">.col-6</div>
+      <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>列與欄</h1>
+    <div class="row row-cols-3">
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col-6">Column</div>
+    </div>
+    <div class="row row-cols-auto">
+      <!-- auto = 和內容等寬 -->
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>巢狀</h1>
+    <div class="row">
+      <div class="col-sm-3">
+        Level 1: .col-sm-3
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-8 col-sm-6">
+            Level 2: .col-8 .col-sm-6
+          </div>
+          <div class="col-4 col-sm-6">
+            Level 2: .col-4 .col-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 2. 引入bootstrap.bundle.js 以使用元件 -->
   <script src="./js/bootstrap.bundle.js"></script>
