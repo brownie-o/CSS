@@ -6959,6 +6959,13 @@ textarea.form-control-lg {
   flex-direction: column-reverse !important;
 }
 
+/* 自創一個 當作平均欄寬使用 */
+.flex-1{
+  /* flex: grow shrink basis) */
+  /* flex: 1 1 0% */
+  flex: 1;
+}
+
 .flex-grow-0 {
   flex-grow: 0 !important;
 }

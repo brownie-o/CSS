@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .container{
+      margin-bottom: 30px;
+    }
+
+    span {
+      width: 50px;
+      height: 50px;
+      display: block;
+    }
+
+    .row>div{
+      height: 100px;
+      border: 1px dashed #aaa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .d-flex{
+      color: white;
+      background: var(--bs-gray-200);
+      margin-bottom: 20px;
+      height: 200px;
+    }
+
+    /* > : direct descendant/child */
+    .d-flex>:nth-child(1){
+      background: var(--bs-purple);
+    }
+    
+    .d-flex>:nth-child(2){
+      background: var(--bs-yellow);
+    }
+
+    .d-flex>:nth-child(3){
+      background: var(--bs-pink);
+    }
+
+    .d-flex>:nth-child(4){
+      background: var(--bs-green);
+    }
+
+    .d-flex>:nth-child(5){
+      background: var(--bs-cyan);
+    }
+
+    .d-flex>:nth-child(6){
+      background: var(--bs-gray);
+    }
+
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 5px solid #333;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>.bg-gradient</h1>
+    <div class="p-3 mb-2 bg-primary text-white bg-gradient">.bg-gradient</div>
+    <div class="p-3 mb-2 bg-secondary text-white bg-gradient">.bg-gradient</div>
+  </div>
+  <br>
+  <div class="container">
+    <h1>Border</h1>
+    <h3>增加</h3>
+    <div class="row">
+      <div class="col">
+        <!-- .rounded-5: 自訂義樣式表 style.css -->
+        <span class="border border-success border-1 rounded-5"></span>
+      </div>
+      <div class="col">
+        <span class="border-top border-danger border-2"></span>
+      </div>
+      <div class="col">
+        <span class="border-end border-info border-3"></span>
+      </div>
+      <div class="col">
+        <span class="border-bottom border-dark border-4"></span>
+      </div>
+      <div class="col">
+        <span class="border-start border-secondary border-5"></span>
+      </div>
+    </div>
+    <br>
+    <h3>減少</h3>
+    <div class="row">
+      <div class="col">
+        <span class="border border-0"></span>
+      </div>
+      <div class="col">
+        <span class="border border-top-0 border-secondary rounded-bottom"></span>
+      </div>
+      <div class="col">
+        <span class="border border-end-0 border-info rounded-start"></span>
+      </div>
+      <div class="col">
+        <span class="border border-bottom-0 border-warning rounded-top"></span>
+      </div>
+      <div class="col">
+        <span class="border border-start-0 border-primary rounded-end"></span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h2>Display</h2>
+    <div class="d-block">XS</div>
+    <div class="d-sm-block">sm</div>
+    <div class="d-none d-sm-block d-md-none d-lg-inline d-xl-none bg-primary text-white">飲料</div>
+    <div class="d-none d-md-block d-lg-none">md</div>
+  </div>
+  <br>
+  <div class="container">
+    <h2>Flex</h2>
+    <h2>水平</h2>
+    <p>.flex-row 設定水平方向 .flex-row-reverse 反轉</p>
+    <div class="d-flex flex-row">
+      <div class="p-2">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2">flex item3</div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <div class="p-2">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2">flex item3</div>
+    </div>
+    <br>
+    <h2>垂直</h2>
+    <p>.flex-column 設定水平方向 .flex-column-reverse 反轉</p>
+    <div class="d-flex flex-column">
+      <div class="p-2">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2">flex item3</div>
+    </div>
+    <div class="d-flex flex-column-reverse">
+      <div class="p-2">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2">flex item3</div>
+    </div>
+    <br>
+    <h2>屬性支援 RWD 斷點尺寸</h2>
+    <div class="d-flex flex-row flex-sm-column flex-md-row-reverse flex-lg-column-reverse">
+      <div class="p-2">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2">flex item3</div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center justify-content-lg-around justify-content-xl-between align-items-md-end">
+      <div class="p-2 align-self-xl-stretch">flex item1</div>
+      <div class="p-2">flex item2</div>
+      <div class="p-2 align-self-center">flex item3</div>
+      <div class="p-2">flex item4</div>
+      <div class="p-2">flex item5</div>
+      <div class="p-2 align-self-lg-start">flex item6</div>
+    </div>
+    <br>
+    <h2>填滿</h2>
+    <p>.flex-fill 不是平均欄寬，寬度會隨著內容變寬</p>
+    <div class="d-flex">
+      <!-- .flex-fill = flex: 1 1 auto (flex-basis: auto 會隨內容長度變化) -->
+      <div class="p-2 flex-fill">flex item111111111111111111111</div>
+      <div class="p-2 flex-fill">flex item22222222222</div>
+      <div class="p-2 flex-fill">flex item3</div>
+    </div>
+    <p>.flex-fill & .flex-grow-1 相同作用</p>
+    <div class="d-flex">
+      <!-- .flex-grow-1 = .flex-fill -->
+      <div class="p-2 flex-grow-1">flex item111111111111111111111</div>
+      <div class="p-2 flex-grow-1">flex item22222222222</div>
+      <div class="p-2 flex-grow-1">flex item3</div>
+    </div>
+    <br>
+    <h2>平均欄寬</h2>
+    <p>自訂一個.flex-1 作為平均欄寬的class</p>
+    <div class="d-flex">
+      <div class="p-2 flex-1">flex item111111111111111111111</div>
+      <div class="p-2 flex-1">flex item22222222222</div>
+      <div class="p-2 flex-1">flex item3</div>
+    </div>
+    <br>
+    <h2>margin auto</h2>
+    <div class="d-flex bd-highlight mb-3">
+      <!-- margin-end(right): auto -->
+      <div class="me-auto p-2 bd-highlight">Flex item</div>
+      <div class="p-2 bd-highlight">Flex item</div>
+      <div class="p-2 bd-highlight">Flex item</div>
+    </div>
+    
+    <div class="d-flex bd-highlight mb-3">
+      <div class="p-2 bd-highlight">Flex item</div>
+      <div class="p-2 bd-highlight">Flex item</div>
+      <!-- margin-start(left): auto -->
+      <div class="ms-auto p-2 bd-highlight">Flex item</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Media object</h1>
+    <div class="d-flex">
+      <div class="flex-shrink-0">
+        <img src="https://picsum.photos/200/200/?random=10">
+      </div>
+      <div class="flex-grow-1 ms-3">
+        This is some content from a media component. You can replace this with any content and adjust it as needed.
+      </div>
+    </div>
+    <br>
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0">
+        <img src="https://picsum.photos/200/200/?random=9">
+      </div>
+      <div class="flex-grow-1 ms-3">
+        This is some content from a media component. You can replace this with any content and adjust it as needed.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Float</h1>
+    <div class="float-sm-end">Float start on viewports sized SM (small) or wider</div><br>
+    <div class="float-md-end">Float start on viewports sized MD (medium) or wider</div><br>
+    <div class="float-lg-end">Float start on viewports sized LG (large) or wider</div><br>
+    <div class="float-xl-end">Float start on viewports sized XL (extra-large) or wider</div><br>
+    <div class="bg-info overflow-hidden">
+      <img class="float-start" src="https://picsum.photos/300/200/?random=10">
+      <img class="float-start" src="https://picsum.photos/300/200/?random=8">
+      <img class="float-start" src="https://picsum.photos/300/200/?random=5">
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Shadow</h1>
+    <p>.shadow-sm/lg 指的是陰影大小不是RWD</p>
+    <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+    <div class="shadow-sm p-3 mb-5 bg-body rounded">Small shadow</div>
+    <div class="shadow p-3 mb-5 bg-body rounded">Regular shadow</div>
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">Larger shadow</div>
+  </div>
+
+  <div class="container">
+    <h1>文字</h1>
+    <h2>文字斷行</h2>
+    <p>box 需設定寬度</p>
+    <p>使用.text-break設定word-wrap: break-word 和 word-break: break-word 預防長文字破壞元件的排版。</p>
+    <p class="text-break w-25 bg-info">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+    <br>
+    <h2>monospace</h2>
+    <p class="font-monospace">This is in monospace</p>
+    <br>
+    <h3>line-height</h3>
+    <p class="lh-1"><i><b>lh-1</b></i>  This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+    <p class="lh-sm"><i><b>lh-sm</b></i>  This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+    <p class="lh-base"><i><b>lh-base</b></i>  This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+    <p class="lh-lg"><i><b>lh-lg</b></i>  This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+  </div>
+
+  <div class="container">
+    <h2>overflow-auto</h2>
+    <p>自動偵測是否依內容寬度或高度溢出而出現捲動軸</p>
+    <p>水平捲動軸出現依據是：內容需要有寬度，且大於外容器寬度</p>
+    <div class="box overflow-auto">
+      <p style="width: 500px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minima repudiandae enim commodi, earum tempore ipsam ab impedit? Deserunt tempora enim fugiat quod amet ducimus facilis deleniti delectus hic officia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sint expedita. Corrupti et itaque deleniti ab, quas doloribus architecto fugiat vel voluptatem repudiandae. Nostrum harum fugit, quos quo quidem autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam magni maiores porro optio enim dolorem et voluptatem temporibus sequi cum eligendi dignissimos, ducimus possimus. Corrupti, ullam? Fugiat, eum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil sequi labore commodi animi nobis eaque, sed consequatur esse explicabo tempora repudiandae nostrum pariatur ullam ratione ex eveniet sapiente ipsa. Mollitia!
+      </p>
+    </div>
+    <br>
+    <h2>overflow-hidden</h2>
+    <p>溢出內容會被隱藏</p>
+    <div class="box overflow-hidden">
+      <p style="width: 500px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minima repudiandae enim commodi, earum tempore ipsam ab impedit? Deserunt tempora enim fugiat quod amet ducimus facilis deleniti delectus hic officia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sint expedita. Corrupti et itaque deleniti ab, quas doloribus architecto fugiat vel voluptatem repudiandae. Nostrum harum fugit, quos quo quidem autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam magni maiores porro optio enim dolorem et voluptatem temporibus sequi cum eligendi dignissimos, ducimus possimus. Corrupti, ullam? Fugiat, eum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil sequi labore commodi animi nobis eaque, sed consequatur esse explicabo tempora repudiandae nostrum pariatur ullam ratione ex eveniet sapiente ipsa. Mollitia!
+      </p>
+    </div>
+    <br>
+    <h2>overflow-visible</h2>
+    <p>default，內容會被顯示，溢出元素框外</p>
+    <div class="box overflow-visible">
+      <p style="width: 500px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minima repudiandae enim commodi, earum tempore ipsam ab impedit? Deserunt tempora enim fugiat quod amet ducimus facilis deleniti delectus hic officia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sint expedita. Corrupti et itaque deleniti ab, quas doloribus architecto fugiat vel voluptatem repudiandae. Nostrum harum fugit, quos quo quidem autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam magni maiores porro optio enim dolorem et voluptatem temporibus sequi cum eligendi dignissimos, ducimus possimus. Corrupti, ullam? Fugiat, eum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil sequi labore commodi animi nobis eaque, sed consequatur esse explicabo tempora repudiandae nostrum pariatur ullam ratione ex eveniet sapiente ipsa. Mollitia!
+      </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2>overflow-scroll</h2>
+    <p>不管是否溢出，都會出現捲動軸</p>
+    <div class="box overflow-scroll">
+      <p style="width: 500px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni minima repudiandae enim commodi, earum tempore ipsam ab impedit? Deserunt tempora enim fugiat quod amet ducimus facilis deleniti delectus hic officia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sint expedita. Corrupti et itaque deleniti ab, quas doloribus architecto fugiat vel voluptatem repudiandae. Nostrum harum fugit, quos quo quidem autem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam magni maiores porro optio enim dolorem et voluptatem temporibus sequi cum eligendi dignissimos, ducimus possimus. Corrupti, ullam? Fugiat, eum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil sequi labore commodi animi nobis eaque, sed consequatur esse explicabo tempora repudiandae nostrum pariatur ullam ratione ex eveniet sapiente ipsa. Mollitia!
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>間隔</h2>
+    <div class="box pt-3 ps-3 ps-lg-5 pe-lg-5">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ea quaerat tempore incidunt vel, cupiditate vitae quia fuga accusantium earum?
+    </div>
+    <div class="box mt-1 mt-md-3 mt-lg-6"></div>
+  </div>
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
