@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+    }
+
+    .container{
+      margin-bottom: 3rem;
+    }
+
+    .text-truncate-mutiple{
+      overflow: hidden;
+      text-overflow: ellipisis;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>清除浮動</h2>
+    <h5>1. overflow</h5>
+    <div class="bg-dark overflow-auto">
+      <div class="box bg-danger float-start"></div>
+      <div class="box bg-success float-end"></div>
+    </div>
+    <br>
+    <h5>2. clearfix (利用偽元素)</h5>
+    <div class="bg-dark clearfix">
+      <!-- 
+        .clearfix::after {
+          display: block;
+          clear: both;
+          content: ""; 
+      -->
+      <div class="box bg-danger float-start"></div>
+      <div class="box bg-success float-end"></div>
+    </div>
+    <br>
+    <h5>3. display: flow-root</h5>
+    <!-- BFC => Block Formatting Context 區塊格式化 -->
+    <!-- flow-root 是BFC 家族成員之一 -->
+    <div class="bg-dark" style="display: flow-root;">
+      <div class="box bg-danger float-start"></div>
+      <div class="box bg-success float-end"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>單行文字截斷</h2>
+    <!-- Block level -->
+    <div class="row">
+      <div class="w-25 text-truncate">
+        This text is quite long, and will be truncated once displayed.
+      </div>
+    </div>
+
+    <!-- Inline level -->
+    <span class="d-inline-block text-truncate" style="max-width: 150px;">
+      This text is quite long, and will be truncated once displayed.
+    </span>
+    <br>
+    <h2>多行文字截斷</h2>
+    <div class="w-25">
+      <p class="text-truncate-mutiple">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis, velit odit ab perspiciatis non. Sint maiores voluptate optio molestias. Dolorum quisquam officiis consequuntur voluptatem vero dolor odio, et quo!
+      </p>
+    </div>
+  </div>
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+</html>
