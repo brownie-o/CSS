@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+  <h1>顯示標題</h1>
+  <h1 class="display-1">Display 1</h1>
+  <h1 class="display-2">Display 2</h1>
+  <h1 class="display-3">Display 3</h1>
+  <h1 class="display-4">Display 4</h1>
+  <h1 class="display-5">Display 5</h1>
+  <h1 class="display-6">Display 6</h1>
+  <br>
+  <h1>表格</h1>
+  <table class="table table-dark table-striped table-hover table-bordered border-primary">
+    <!-- thead: 標題; th -->
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1>無框線; caption-top</h1>
+  <table class="table table-borderless caption-top">
+    <caption>List of users</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1>小表格</h1>
+  <h3>table-sm的sm指的是表格尺寸，不是RWD</h3>
+  <table class="table table-sm">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+  <br>
+  <h1>垂直置中</h1>
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col" class="w-25">Heading 1</th>
+        <th scope="col" class="w-25">Heading 2</th>
+        <th scope="col" class="w-25">Heading 3</th>
+        <th scope="col" class="w-25">Heading 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+        <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+        <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+        <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+      </tr>
+      <tr class="align-bottom">
+        <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
+        <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
+        <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
+        <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+      </tr>
+      <tr>
+        <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+        <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+        <td class="align-top">This cell is aligned to the top.</td>
+        <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1>RWD table</h1>
+  <h5>table-responsive-sm: 0~575px之間才會有捲動條</h5>
+  <table class="table table-responsive-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1>圖片</h1>
+  <h5>.img-fluid 的 max-width:100%，圖片的大小要比容器還大，才會有作用</h5>
+  <div style="width: 500px; height: 500px;" class="border border-1">
+    <img class="img-fluid" src="https://picsum.photos/800/800/?random=10">
+  </div>
+  <br>
+  <h1>水平置中圖片</h1>
+  <div style="width: 1000px; height: 300px;" class="border border-1">
+    <!-- mx-auto: margin-left/right:auto -->
+    <!-- d-block: display:block -->
+    <img class="rounded mx-auto d-block" src="https://picsum.photos/300/300/?random=10">
+  </div>
+  <br>
+  <div style="width: 1000px; height: 300px;" class="border border-1 text-center">
+    <img class="rounded" src="https://picsum.photos/300/300/?random=9">
+  </div>
+
+
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+</html>
