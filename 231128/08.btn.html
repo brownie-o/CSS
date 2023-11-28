@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+  <style>
+    .container{
+      padding: 3rem;
+    }
+
+    .row{
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+    <br>
+    <br>
+    <h2>Disabled 禁用</h2>
+    <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+    <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+    <!-- a 沒有disabled屬性 要自己加class -->
+    <a class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Link</a>
+  </div>
+  <script src="./JS/bootstrap.bundle.js"></script>
+</body>
+</html>

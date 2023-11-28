@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+  <style>
+    .breadcrumb-item+.breadcrumb-item::before {
+      --bs-breadcrumb-divider: "\1F498"
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+
+  <script src="./JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>
