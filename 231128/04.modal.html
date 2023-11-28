@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+  <style>
+    .col{
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>互動視窗(modal)</h1>
+    <h2>觸發按鈕</h2>
+    <ul>
+      <li>使用 btn 或 a 觸發modal，並啟動data-bs-toggle="modal"效果</li>
+      <li>兩者處發需對應modal主體的id</li>
+      <li>使用 btn 需設定 data-bs-target (要和ID一致)</li>
+      <li>使用 a 需設定 href (要是#ID)</li>
+    </ul>
+    <div class="row" style="flex-direction: column;">
+      <div class="col">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
+          btn launch demo modal
+        </button>
+      </div>
+      <div class="col">
+        <a href="#modalId" class="btn btn-primary" data-bs-toggle="modal">a launch demo modal</a>
+      </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<!-- data-bs-backdrop: 可鎖定，點擊背景不會關閉modal -->
+<div class="modal fade" id="modalId" data-bs-backdrop="static">
+  <!-- 
+    在modal-dialog加入 .modal-* : 可調整modal大小 
+    - 沒寫是預設大小 500px
+    - .modal-sm (300px)
+    - .modal-lg(800px)
+    - .mmodal-xl(1140px)
+  -->
+  <!-- .modal-dialog-centered : 讓modal水平垂直置中 -->
+  <!-- .modal-dialog-scrollable : 讓modal本身出現捲動軸，可被捲動 -->
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal(互動視窗)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit porro consequatur animi maiores aliquid ipsum tempora enim, debitis odit eius! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, natus repellat. Unde quos dicta accusantium eveniet alias ducimus! Perferendis consequatur odit, totam voluptates, eligendi impedit ab et consectetur vero quidem veritatis hic quas repudiandae consequuntur facilis obcaecati perspiciatis mollitia expedita dolorum a voluptatem. Facilis, distinctio nesciunt eaque quia, repudiandae quo doloremque eum labore amet quis qui. Nam, similique vel ipsa error nihil laudantium vitae, commodi dignissimos numquam est recusandae officiis delectus exercitationem aut eos illum libero voluptas earum, consectetur doloribus rem ratione eum tempora? Accusamus dolorum a accusantium eaque, aut voluptate ipsa in totam. At, iusto nisi. Vel molestias laudantium nobis qui in incidunt necessitatibus animi suscipit odit, vero provident iusto et aut maxime illo voluptatum quas ad laboriosam, corporis neque saepe reiciendis. Minima voluptatem quos tempora vero consequuntur quis voluptate labore. Voluptas culpa dolorum nisi ullam incidunt beatae neque? Saepe incidunt quidem itaque excepturi ipsam alias eius fugiat tenetur et nemo? Aliquid quisquam suscipit incidunt quia dignissimos voluptas excepturi nobis facere? Ipsum doloremque, adipisci molestiae molestias suscipit esse dolore a nemo facilis voluptate voluptas ex ut quisquam quas quia exercitationem eos sequi eveniet cupiditate doloribus officiis? Ipsum a molestiae asperiores ea ut laborum expedita veritatis pariatur, quo tempore praesentium, mollitia vel quibusdam illo repellendus. Est incidunt alias in maiores velit adipisci, commodi fugit amet possimus ipsum cumque hic exercitationem! Magnam, nisi voluptatibus quaerat illo odio officiis pariatur deserunt nesciunt, ad reiciendis asperiores dicta at assumenda laudantium neque nostrum ut, consectetur non dignissimos sapiente. Natus omnis blanditiis aut nisi tempore pariatur earum fugiat optio, fugit nobis magni maxime officia deserunt, neque quas mollitia accusantium sapiente dolores qui a odit culpa, impedit reprehenderit voluptatibus. Aliquam in, hic minima quos architecto, nisi iure facilis dolorum impedit et accusamus consequuntur ducimus. Quis officiis vel sequi quibusdam nobis perferendis dolores nesciunt minima dolor magni velit, error iste atque consequatur nemo laboriosam eius! Voluptate voluptatibus ex quae? Aliquid placeat iste, vel id quam nam illum excepturi sit quod dolores deserunt debitis molestias consequatur possimus consequuntur similique temporibus ad laudantium impedit aut at numquam. Excepturi doloremque veniam iure suscipit! Quasi cum vel sunt natus voluptas. Labore ab asperiores tenetur voluptatem culpa fugit amet temporibus dolore perferendis eligendi doloremque, repellat non neque accusantium nostrum tempora iusto natus consequatur facere vitae adipisci. Repellat provident quo accusantium nesciunt fugiat numquam eius eaque rem, sequi voluptas consequuntur tempore voluptatum officiis, repudiandae recusandae aperiam natus animi illum. Laborum repellat nihil exercitationem error doloremque sint provident commodi deserunt, nulla in quos sunt quae nam odio, maxime dicta dolorum, tempore corporis autem! Dignissimos atque eos debitis, sit omnis illo optio vero maxime. Cumque, illo inventore. Fuga quas inventore magni facere quibusdam! Aliquam repellat nobis eius doloribus. Nam, repellat fuga? Sunt voluptatum repudiandae tenetur commodi ipsum cupiditate laborum dolorum deserunt pariatur obcaecati, similique doloribus nulla minus error tempora consequuntur, quidem repellendus provident eos, ab recusandae quibusdam. Deserunt quaerat quibusdam iste molestiae, officia quia recusandae laborum porro. Suscipit ea exercitationem, dolore provident quam qui doloribus reprehenderit repudiandae at, enim ducimus, ullam eligendi? Excepturi dolorum nemo laborum magnam hic facere placeat ratione commodi labore exercitationem minus rerum molestiae voluptatem voluptatibus voluptate alias at odit fuga nesciunt dolorem repellat nobis, repellendus magni repudiandae? Voluptates tenetur asperiores enim hic odio amet quas quam odit laudantium ipsa? Temporibus sunt eius ullam dicta cumque commodi harum, laborum sed natus. Earum eveniet vitae adipisci vel error cum rem tempore dolorem, exercitationem quaerat dicta aliquam beatae voluptate sit ipsa incidunt iusto aliquid autem sapiente cupiditate maxime voluptatum? Nihil explicabo officia veritatis dicta, delectus omnis quam. Eos facere vero ad earum, itaque sequi deleniti odio necessitatibus enim aliquid molestias repellat eveniet corrupti tempore architecto magni dolorem veniam provident totam laudantium ex cupiditate delectus? Ducimus sint consequatur repellendus reiciendis possimus autem expedita quam voluptatum, ipsa aperiam! Blanditiis nam quasi facere est exercitationem repudiandae doloribus, error deserunt animi recusandae adipisci, sed fugiat inventore iste voluptate nemo qui iusto natus eveniet molestias hic! Qui ex accusamus distinctio! Fugiat est error aperiam cum qui laborum itaque accusamus. Similique odit nemo rem eaque, inventore iure reiciendis dolorum laudantium? Dicta eius perferendis corporis, aut earum quibusdam qui ducimus ratione atque. Cumque laborum omnis earum eius iusto aspernatur minus. Voluptatibus nesciunt, quam provident corrupti porro in culpa facilis accusamus veniam odio sit voluptas nostrum, numquam illo consequatur assumenda veritatis suscipit consequuntur repellat id tenetur temporibus natus soluta sint. Ut reprehenderit repudiandae hic. Quas officia quis quo aliquam reiciendis repellat quos odio placeat nam. Accusantium vero sequi earum adipisci ipsum atque repudiandae tenetur, error quasi quas nam ut asperiores! Officiis cupiditate libero voluptate ullam maiores est illum, dolorum veritatis quia voluptas enim, fugiat totam magnam voluptatibus harum asperiores fugit, ea alias dicta odit! Blanditiis ullam officiis quos sunt eligendi. Doloribus qui adipisci repellendus, officia voluptatum quos ratione saepe ipsum culpa nulla sed. Veritatis nemo animi sint amet placeat magni in, repudiandae delectus assumenda voluptatibus, quaerat ab vel quisquam quia nobis voluptas, rem sunt cum commodi dignissimos? Debitis doloribus voluptatibus temporibus, labore exercitationem magni? Error suscipit, adipisci soluta ut rem, laudantium commodi fuga, cumque odit porro voluptatum itaque laborum reiciendis earum veniam velit facilis exercitationem id excepturi aliquam nemo tempore illum. Sapiente ipsa accusantium quibusdam deserunt recusandae assumenda porro harum quidem obcaecati numquam, architecto ipsum explicabo unde, quisquam quod accusamus? Perspiciatis molestiae fugit fugiat dolores, eaque illum ullam consectetur, incidunt quos quisquam dignissimos distinctio! Quia necessitatibus a sapiente facilis ea quam cupiditate veniam dicta distinctio voluptate quasi animi minima reiciendis provident aperiam magni perferendis, laboriosam eligendi optio, unde consequuntur minus. Repellat perspiciatis distinctio cupiditate facere sequi, voluptatem dolor amet dicta quos inventore, sit architecto tempora at velit? Qui cupiditate nesciunt itaque quisquam dicta cum ad temporibus vero? Iusto at praesentium quia voluptatem harum sunt, labore vitae in sed iste minima, officiis repellendus repudiandae exercitationem magni suscipit excepturi itaque quibusdam quos reiciendis perspiciatis, odit dolorem? Facere dicta dolore harum nobis. Pariatur ut voluptatem sed vel cupiditate rerum, quaerat asperiores similique, est officiis magnam velit iste dolor! Voluptatem natus in ad itaque dolorum asperiores! Necessitatibus quis reiciendis dolorem. Corporis voluptas quo itaque id laborum!</p>
+        <div class="row">
+          <div class="col">
+            <!-- 設定寬高，讓圖片可以fit在內 -->
+            <img class="w-100 h-100" src="https://picsum.photos/1920/600/?random=10" style="object-fit: cover;">
+          </div>
+          <div class="col">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, nemo?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./JS/bootstrap.bundle.js"></script>
+</body>
+</html>
