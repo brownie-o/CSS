@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+  <style>
+    :root {
+      --bs-LS-rgb: 124, 166, 222;
+    }
+
+    .bg-LS-rgb {
+      --bs-bg-opacity: 1;
+      background-color: rgba(var(--bs-LS-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    #btn .carousel-indicators img {
+      object-fit: cover;
+    }
+
+    @media (min-width: 576px) {
+      #myCarousel {
+        height: calc(40vh + 10vw);
+      }
+
+      #btn.carousel {
+        height: 100%;
+      }
+
+      #btn .carousel-inner {
+        height: 100%;
+      }
+
+      #btn .carousel-item {
+        height: 100%;
+      }
+
+      #btn .carousel-item img {
+        height: 100%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #myCarousel {
+        /* 992時滿版 */
+        height: 100vh;
+      }
+    }
+
+    .carousel-indicators [data-bs-target] {
+      text-indent: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+      --bs-breadcrumb-divider: "\1F498"
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-LS-rgb fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://media.tenor.com/L4TD4MWFy40AAAAj/kirby.gif" style="width: 40px; padding-right: 8px;">Notes
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 992以上 -->
+  <section id="myCarousel">
+    <div id="btn" class="carousel slide carousel-fade carousel-light" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#btn" data-bs-slide-to="0" class="active">1</button>
+        <button type="button" data-bs-target="#btn" data-bs-slide-to="1">2</button>
+        <button type="button" data-bs-target="#btn" data-bs-slide-to="2">3</button>
+        <button type="button" data-bs-target="#btn" data-bs-slide-to="3">4</button>
+        <button type="button" data-bs-target="#btn" data-bs-slide-to="4">5</button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/1080/?random=1" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=2" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=3" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=4" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=5" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#btn" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#btn" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <nav aria-label="breadcrumb" class="bg-light">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Notes</li>
+      </ol>
+    </nav>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal (互動視窗) </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, debitis. Provident non maiores ut quos est
+            sapiente ducimus, autem nulla minima optio, voluptatem cupiditate asperiores unde architecto tenetur
+            inventore laboriosam impedit? Velit nihil sint dolore! Distinctio doloremque rem vel porro. Suscipit,
+            quisquam culpa! Id rerum accusantium sunt qui saepe vitae reiciendis! Nobis quidem eveniet iure ipsum optio,
+            aperiam obcaecati quaerat quis dolorem fugiat nisi ut commodi ab culpa! Ad corporis voluptatum, quas
+            molestiae quis minima totam, dicta, deleniti provident repudiandae ipsum soluta voluptatem? Iusto incidunt
+            veritatis iure? Obcaecati at fuga molestias quod fugiat sequi vitae sunt ipsum error omnis exercitationem
+            non deserunt itaque praesentium recusandae quaerat amet, delectus possimus, hic placeat numquam veniam eius
+            debitis. Consectetur veniam repellendus blanditiis asperiores quaerat iste quam fuga laborum nostrum,
+            voluptates iusto animi iure necessitatibus exercitationem voluptatem perferendis. Rem consequatur odit
+            totam, fugit veniam sit porro laboriosam architecto, deleniti voluptas ad! Voluptate tempora deleniti quia
+            incidunt nisi natus, voluptates itaque facilis perspiciatis placeat dolores dignissimos quam cum soluta
+            iure? Neque adipisci, nostrum esse veritatis asperiores sint quasi consequuntur tempora harum ea, ullam enim
+            inventore mollitia ex! Eius quaerat ex odit natus ut, modi aspernatur rerum pariatur aperiam, beatae
+            repudiandae fugiat doloribus repellendus totam consequuntur ipsa voluptatum quae? Minima nobis enim
+            molestias ducimus, dignissimos rem facilis mollitia harum! Error beatae ullam rem minima, aperiam at
+            voluptatum sint possimus totam sunt quas, fugit veritatis consectetur blanditiis repellendus. Totam rerum
+            maiores sequi ea possimus omnis et nesciunt beatae excepturi dolores ipsam fugit, vero aspernatur quidem
+            voluptatem molestiae corrupti. Earum, iusto minima quasi accusamus eligendi tenetur aliquam repellat
+            consequatur? Modi repellendus dolorem, quos quae dignissimos qui laudantium voluptate reiciendis accusamus
+            soluta amet commodi ex excepturi culpa doloribus explicabo iusto fugit dolorum blanditiis nesciunt ab
+            perferendis? Dicta veritatis voluptatum labore, sint tempore cumque quia, esse iste soluta distinctio
+            accusantium enim eligendi quos incidunt cum! Earum doloribus impedit voluptatem in. Dignissimos voluptatibus
+            corrupti suscipit, esse aspernatur nulla. Architecto itaque sunt dolore praesentium at molestias ad,
+            dignissimos corporis cum veritatis quasi ab dicta numquam hic minus doloremque commodi culpa, repellendus
+            explicabo soluta nobis reiciendis! Animi rem ea aut sunt excepturi qui, in voluptatem impedit sequi neque
+            ipsum eius at porro hic commodi numquam. Tempora ducimus assumenda aspernatur doloribus et nesciunt ex quas
+            a voluptate sequi quibusdam nam, odio sapiente nobis recusandae deserunt perferendis beatae optio quaerat
+            minus hic? Optio eligendi accusantium asperiores hic unde libero provident dignissimos itaque eaque nobis ea
+            sapiente quae minus, quas nihil atque ullam veritatis voluptas alias dolorum error? Dolore veniam tempore
+            temporibus dicta, assumenda totam adipisci necessitatibus possimus repudiandae commodi quas, unde fugit hic
+            dolorum quia ipsa cum in amet magnam dolor modi iusto repellat nobis? Dolor deserunt, soluta excepturi natus
+            tempore eos inventore, nostrum expedita, non vel voluptatibus reiciendis. Quae est ex fugiat voluptatum
+            voluptates. Nobis perspiciatis dolor vel excepturi optio mollitia aut labore reprehenderit quia. Quia
+            asperiores molestiae ut cumque impedit. Illum facilis deserunt necessitatibus. Eum possimus at nihil quis
+            sequi molestias modi ex enim, omnis nobis? Illum blanditiis aspernatur ipsam amet vel illo delectus
+            assumenda aut rem voluptatum neque repellat quos, quia veniam eaque! Eaque incidunt quam eligendi ad
+            corporis consequuntur porro! Atque reiciendis, impedit porro, natus aliquam labore aperiam asperiores ipsum
+            corrupti, repudiandae harum reprehenderit veritatis deserunt placeat recusandae sed dolor omnis explicabo.
+            Debitis nulla exercitationem quidem natus pariatur vero molestiae quam odit nisi corrupti. Dolorem quisquam
+            repudiandae laborum distinctio porro repellendus, recusandae deserunt obcaecati aliquid? Explicabo dolorem
+            est illo nihil vitae molestiae quasi aperiam asperiores velit unde porro praesentium a maxime, atque
+            repellat, dolor aliquid! Voluptatem pariatur, ad optio commodi eum eligendi dolores modi facere et autem,
+            laborum sit laboriosam laudantium quis tempora quia provident amet! Non omnis culpa nam commodi distinctio
+            magni, ut reiciendis. Labore earum illum repellat pariatur animi aliquid inventore eius. Dolor voluptas enim
+            laudantium fugit cum saepe, ut vero ducimus at iste quo, molestiae et deserunt sit quia magnam harum
+            recusandae impedit ex cupiditate dolorum, hic error quibusdam? Laudantium harum officiis animi! Aliquid
+            impedit sed dolores nostrum! Nihil, iste. Optio magni earum aut nihil sit at nam, quia perferendis obcaecati
+            iusto quos? Aspernatur neque esse architecto natus placeat laborum perferendis, dicta nostrum porro.
+            Deserunt est modi dolores nemo ipsum omnis ab voluptas commodi sed laboriosam reprehenderit non, incidunt
+            saepe magnam rerum porro quibusdam eum error sint. Eos assumenda quibusdam molestias commodi dolorum. Quidem
+            cumque sed quia exercitationem, illum ipsam, saepe nihil voluptatibus laudantium aut voluptas! Ipsam, fugit.
+            Optio recusandae assumenda veniam, quae sed quisquam excepturi provident ex enim doloribus consectetur fuga,
+            velit at minus. Aliquam minus unde hic dolores ea ad totam ex quae possimus. Unde maiores cumque vel quos
+            error voluptates incidunt animi, officiis in? Voluptatum distinctio saepe nobis esse sed, reiciendis natus?
+            Error repellendus ullam ipsa praesentium animi, beatae quae. Fugiat minima illum amet hic nam velit sapiente
+            libero reprehenderit quasi, quam expedita explicabo. Ipsam.
+            <div class="row">
+              <div class="col">
+                <!-- 設定寬高，讓圖片可以fit在內 -->
+                <img class="w-100 h-100" src="https://picsum.photos/1920/600/?random=10" style="object-fit: cover;">
+              </div>
+              <div class="col">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, nemo?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin
+            adds the appropriate classes that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+            CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+            <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
+            plugin adds the appropriate classes that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+            CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+            <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin
+            adds the appropriate classes that we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+            CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+            <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col">
+        <!-- 要把card的 style="width: 18rem;"拿掉，才會符合container -->
+        <!-- .card:  -->
+        <div class="card">
+          <img src="https://picsum.photos/800/500/?random=1" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/800/500/?random=2" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/800/500/?random=3" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">卡片內的列表</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-success">
+          <div class="card-header bg-transparent">
+            Featured
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <br>
+  <br>
+
+    <div class="row">
+      <div class="card">
+        <img src="https://picsum.photos/800/500/?random=4" class="card-img-top w-100 h-100">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="card-group">
+      <div class="card">
+        <img src="https://picsum.photos/800/500/?random=5" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/800/500/?random=6" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/800/500/?random=7" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>
