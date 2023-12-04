@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+    <h1>導覽與頁籤</h1>
+    <p>.nav本身是彈性盒(display: flex)，彈性盒的屬性、bootstrap提供的class皆可使用。</p>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>垂直對齊</h4>
+    <p>.nav .flex-column</p>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>分頁標籤 .nav-tabs</h4>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>膠囊狀 .nav-pills</h4>
+    <p>.active = 作用在該選項上，.disable 禁用</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h2>填充和對齊</h2>
+    <p>.nav有兩種寬度擴展用的class，.nav-fill 和 .nav-justified</p>
+    <h4>.nav-fill</h4>
+    <p>每個.nav-item不是等寬，是將剩餘的空間平均分配給所有item，因此內容較多的會較寬</p>
+    <p style="color: grey;">(flex-basis: auto)</p>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link bg-success" href="#">Much longer nav link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link bg-warning" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+    <br>
+    <h4>.nav-justified</h4>
+    <p>每個.nav-item 等寬</p>
+    <p style="color: grey;">(flex-basis: 0)</p>
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Much longer nav link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div class="container">
+    <h4>dropdown menu</h4>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Dropdown</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item active" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+  <div class="container">
+    <h1>Javascript 行為</h1>
+    <h4>使用data屬性設定</h4>
+    <!-- 分頁選單區 -->
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home">Home</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Contact</button>
+      </li>
+    </ul>
+    <!-- 內容呈現區 -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="home">
+        <ul style="padding: 10px;">
+          <li>分頁選單曲按鈕加上 data-bs-toggle="tab" </li>
+          <li>若item要呈現分頁頁籤，加上data-bs-toogle=tab 啟動tab功能</li>
+          <li>若item要呈現膠囊狀態，加上data-bs-toggle="pill" 啟動pill功能</li>
+          <li>data-bs-target 的值要對應內容呈現區的id，例如: #home 對應 id="home"</li>
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="profile">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae officia ut earum eligendi aspernatur reprehenderit molestias nemo alias, quis vero magnam, eveniet, ex ratione iusto voluptas. Aut earum veniam quas!</div>
+      <div class="tab-pane fade" id="contact">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae officia ut earum eligendi aspernatur reprehenderit molestias nemo alias, quis vero magnam, eveniet, ex ratione iusto voluptas. Aut earum veniam quas!</div>
+    </div>
+  </div>
+  <script src="./JS/bootstrap.bundle.js"></script>
+</body>
+</html>
