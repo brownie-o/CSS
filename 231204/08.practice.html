@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/bootstrap.css">
+  <style>
+    #offcanvas_navbar .btn-close {
+      filter: invert(100);
+    }
+
+    #carousel .carousel-indicators img,
+    #picInfo img {
+      object-fit: cover;
+    }
+
+    @media (min-width: 576px) {
+      #myCarousel {
+        height: calc(40vh + 10vw);
+      }
+
+      #carousel.carousel {
+        height: 100%;
+      }
+
+      #carousel .carousel-inner {
+        height: 100%;
+      }
+
+      #carousel .carousel-item {
+        height: 100%;
+      }
+
+      #carousel .carousel-item img {
+        height: 100%;
+      }
+    }
+
+    @media (min-width: 992px) {
+
+      #myCarousel,
+      #cards,
+      #picInfo,
+      #picInfo2,
+      #map,
+      #form {
+        height: 100vh;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .googleMap {
+        position: relative;
+        padding-bottom: 75%;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+
+    #picInfo img,
+    #picInfo2 img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark opacity-75">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">泰山咖啡莊園</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-top bg-dark" id="offcanvas_navbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-white">泰山咖啡莊園</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">菜單餐點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">莊園位置</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">聯絡我們</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">咖啡故事</a>
+            </li>
+        </div>
+      </div>
+  </nav>
+
+  <section id="myCarousel">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/1080/?random=1" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=2" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=3" class="d-block w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="cards">
+    <div class="container d-flex align-items-center justify-content-center h-100 flex-md-column flex-lg-row">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-3 mt-3">
+          <div class="card">
+            <img src="https://picsum.photos/800/500/?random=1" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-3 mt-3">
+          <div class="card">
+            <img src="https://picsum.photos/800/500/?random=2" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-3 mt-3">
+          <div class="card">
+            <img src="https://picsum.photos/800/500/?random=3" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="picInfo" class="bg-light">
+    <div class="row flex-row h-100 m-0 flex-sm-column flex-lg-row">
+      <div class="col-12 col-lg-6 p-0">
+        <img src="https://picsum.photos/1920/1080/?random=10">
+      </div>
+      <div class="col-12 col-lg-6 d-flex flex-column m-auto text-center p-4">
+        <h1>Coffee Shop</h1>
+        <p class="m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro saepe labore architecto?
+          Beatae amet numquam ex ad quia laboriosam commodi sunt impedit quisquam a. Necessitatibus praesentium minima,
+          consectetur suscipit repellendus ullam nam optio earum explicabo itaque vitae commodi, nemo recusandae
+          laudantium laborum beatae inventore hic vel sapiente asperiores ducimus. Eveniet, ipsum ex praesentium enim
+          distinctio doloribus asperiores perspiciatis consectetur fuga tempore. Possimus vel, consequuntur ullam atque
+          amet neque! Fugit culpa, harum obcaecati perspiciatis dolores dolorum rerum, dicta amet consectetur totam
+          delectus? Quaerat sunt deleniti inventore nulla accusantium quas illo, dolorem laborum tempora labore quasi
+          harum quis maiores. Placeat, natus!</p>
+        <a class="btn btn-success align-self-center" href="#" role="button">VIEW COLLECTION</a>
+      </div>
+    </div>
+  </section>
+  <section id="picInfo2" class="bg-light">
+    <div class="row flex-row h-100 m-0 flex-sm-column flex-lg-row">
+      <div class="col-12 col-lg-6 d-flex flex-column m-auto text-center p-4">
+        <h1>Coffee Shop</h1>
+        <p class="m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro saepe labore architecto?
+          Beatae amet numquam ex ad quia laboriosam commodi sunt impedit quisquam a. Necessitatibus praesentium minima,
+          consectetur suscipit repellendus ullam nam optio earum explicabo itaque vitae commodi, nemo recusandae
+          laudantium laborum beatae inventore hic vel sapiente asperiores ducimus. Eveniet, ipsum ex praesentium enim
+          distinctio doloribus asperiores perspiciatis consectetur fuga tempore. Possimus vel, consequuntur ullam atque
+          amet neque! Fugit culpa, harum obcaecati perspiciatis dolores dolorum rerum, dicta amet consectetur totam
+          delectus? Quaerat sunt deleniti inventore nulla accusantium quas illo, dolorem laborum tempora labore quasi
+          harum quis maiores. Placeat, natus!</p>
+        <a class="btn btn-success align-self-center" href="#" role="button">VIEW COLLECTION</a>
+      </div>
+      <div class="col-12 col-lg-6 p-0 order-first order-lg-last">
+        <img src="https://picsum.photos/1920/1080/?random=9">
+      </div>
+    </div>
+  </section>
+  <section id="map">
+    <div class="googleMap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.016776824419!2d121.41965157706235!3d25.043120529994827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1701695732470!5m2!1szh-TW!2stw"
+        class="w-100 h-100 position-absolute" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+  <section id="from" class="bg-light">
+    <div class="container">
+      <div class="text-center pt-5">
+        <h1>聯絡我們</h1>
+        <h4>泰山咖啡莊園，傳承熱情coding 精神</h4>
+        <p class="fs-6">任何服務問題或建議，歡迎您透過克服表單告知我們，謝謝！</p>
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <label for="name" class="form-label">姓名</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control">
+          <div class="input-group-text">
+            先生<input class="form-check-input mt-0 ms-1 me-3" type="radio" value="先生" name="gender">
+            女士<input class="form-check-input mt-0 ms-1" type="radio" value="女士" name="gender">
+          </div>
+        </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label for="phone" class="form-label">電話</label>
+              <input type="tel" class="form-control" id="phone">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label for="email" class="form-label">電子信箱</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label for="email" class="form-label">問題類型</label>
+              <select class="form-select">
+                <option selected>餐飲建議</option>
+                <option value="1">衛生建議</option>
+                <option value="2">運送建議</option>
+                <option value="3">服務建議</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="email" class="form-label">問題類型</label>
+          <select class="form-select">
+            <option selected>餐飲建議</option>
+            <option value="1">衛生建議</option>
+            <option value="2">運送建議</option>
+            <option value="3">服務建議</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">意見需求</label>
+          <textarea class="form-control" style="height: 200px;"></textarea>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">訂閱泰山莊園最新資訊</label>
+        </div>
+        <div class="d-grid pb-5">
+          <button type="submit" class="btn btn-secondary mx-auto">送出</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section id="footer" class="w-100 h-50 bg-black">
+    <div class="container text-white py-5">
+      <div class="row flex-wrap">
+        <div class="col-6 col-lg-3">
+          <img src="https://picsum.photos/300/300/?random=10" class="rounded-circle w-50">
+        </div>
+        <div class="col-6 col-lg-3">
+          <span class="fw-bold">Address</span><br>
+          <span>1234 Street Name City, AA 99999</span>
+        </div>
+        <div class="col-6 col-lg-3">
+          <span class="fw-bold">Links</span><br>
+          <span><a href="#" class="text-white text-decoration-none">Website builder</a></span><br>
+          <span><a href="#" class="text-white text-decoration-none">Download for Windows</a></span><br>
+          <span><a href="#" class="text-white text-decoration-none">Downlaod for Mac</a></span>
+        </div>
+        <div class="col-6 col-lg-3">
+          <span class="fw-bold">Contacts</span><br>
+          <span>Email: support@mobirise.com</span><br>
+          <span>Phone: +1 (0) 000 0000 001</span><br>
+          <span>Fax: +1 (0) 000 0000 002</span>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <br class="d-lg-none">
+          <p> &copy; 2021 Amy Chen - All Rights Reserved </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>
