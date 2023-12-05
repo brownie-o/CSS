@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 不能引用SCSS，瀏覽器看不懂 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <section id="section01">
+    <div class="container">
+      <h1>01. 變數</h1>
+      <p>宣告用 $ ，變數位置即是它的作用域。</p>
+      <P>變數底線 _ 和連接線 - 可以互換使用。ex: $bg-dark = $bg_dark</P>
+    </div>
+  </section>
+
+  <section id="section02">
+    <div class="container">
+      <h1>02. 流程控制</h1>
+      <h3>@if, @else if, @else</h3>
+      <div class="mybox">白金之星</div>
+      <h3>@for 迴圈有兩種 through 與 to</h3>
+      <h4>through</h4>
+      <div class="through-1"></div>
+      <div class="through-2"></div>
+      <div class="through-3"></div>
+      <h4>to</h4>
+      <div class="to-1"></div>
+      <div class="to-2"></div>
+    </div>
+  </section>
+
+  <section id="section03">
+    <div class="container">
+      <h1>03. 嵌套巢狀(nested)</h1>
+      <ul class="menu">
+        <li><a href="#">LINK</a></li>
+        <li><a href="#">LINK</a></li>
+        <li><a href="#">LINK</a></li>
+        <li><a href="#">LINK</a></li>
+        <li><a href="#">LINK</a></li>
+      </ul>
+      <!-- 清除浮動 -->
+      <div class="clearfix">
+        <img src="https://picsum.photos/300/200/?random=10" style="float: left; margin: 0 5px 0 0;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo magnam nam accusantium, quam obcaecati perferendis placeat vel distinctio consectetur, dolor, recusandae libero maxime fugiat dicta? Id numquam asperiores odit repudiandae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis molestiae, iste, perferendis delectus beatae ipsa fugit accusamus officia harum aliquam, veritatis autem possimus est perspiciatis iusto distinctio. Explicabo, autem animi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="exercise">
+    <div class="container">
+      <h1>練習:使用巢狀建立三欄結構</h1>
+      <div class="row">
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=10">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=9">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=8">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ans">
+    <div class="container">
+      <h1>老師:</h1>
+      <div class="row">
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=10">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=9">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+        <div class="col">
+          <img src="https://picsum.photos/400/300/?random=8">
+          <h2><a href="#">Title</a></h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda atque voluptate quia aspernatur minus consequuntur dicta fugiat, ducimus tenetur, illo eaque doloribus voluptas ad voluptatum qui, sapiente velit ex pariatur?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section04">
+    <div class="container">
+      <h1>04. extend(繼承、擴展) %</h1>
+      <div id="extend">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section5">
+    <div class="container">
+      <h1>05. 計算</h1>
+      <div class="box4"></div>
+    </div>
+  </section>
+
+  <section id="section6">
+    <div class="container">
+      <h1>06. 函式</h1>
+      <div class="funcbox"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorum est atque perspiciatis nam voluptatum excepturi natus recusandae officiis. Harum hic sapiente debitis maxime tempore unde. Ratione, impedit maxime! Dolores!</p>
+        </div>
+        <div class="col">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorum est atque perspiciatis nam voluptatum excepturi natus recusandae officiis. Harum hic sapiente debitis maxime tempore unde. Ratione, impedit maxime! Dolores!</p>
+        </div>
+        <div class="col">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorum est atque perspiciatis nam voluptatum excepturi natus recusandae officiis. Harum hic sapiente debitis maxime tempore unde. Ratione, impedit maxime! Dolores!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="section07">
+    <div class="container">
+      <h1>07. Mixins </h1>
+      <h2>flexbox</h2>
+      <div class="boxflex"></div>
+    </div>
+  </section>
+</body>
+
+</html>
