@@ -444,3 +444,177 @@ $lineHeightLevel: 1.5;
     }
   }
 }
+
+/* 07 mixin */
+// 定義一個 mixin，可以不用@return
+@mixin mininTry {
+  width: 100px;
+  height: 100px;
+  background: #333;
+}
+
+.mixinTry {
+  // @include 呼叫 mixin
+  @include mininTry();
+}
+
+@mixin box($width, $height, $bg, $border, $outline) {
+  width: $width;
+  height: $height;
+  background: $bg;
+  border: $border;
+  outline: $outline;
+}
+
+@mixin flex($main, $cross) {
+  display: flex;
+  justify-content: $main;
+  align-items: $cross;
+}
+
+.boxflex {
+  @include box(100px, 100px, red, 5px solid #333, 5px solid yellow);
+  @include flex(center, center);
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 0.3rem 0.75rem;
+  margin: 0 0.2rem;
+  border-radius: 0.25rem;
+}
+
+@mixin btn-bg($bgColor) {
+  & {
+    background-color: $bgColor;
+  }
+
+  &:hover {
+    @if ($bgColor ==#000) {
+      // lighten() 變亮
+      background-color: lighten($bgColor, 20%);
+    }
+
+    @else {
+      // darken() 變暗
+      background-color: darken($bgColor, 10%);
+    }
+  }
+}
+
+.btn-dark {
+  @include btn-bg(#000);
+}
+
+.btn-primary {
+  @include btn-bg($primary);
+}
+
+.btn-success {
+  @include btn-bg($success);
+}
+
+.btn-danger {
+  @include btn-bg($danger);
+}
+
+/* 08 使用mixin + @content 設計 RWD */
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// 不需要傳參數，() 可省略
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+
+#section8{
+  // xs
+  .container{
+    width: 100%;
+  }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col{
+    width: 100%;
+  }
+
+  .col + .col{
+    margin-top: 20px;
+  }
+
+  // sm
+  @include sm{
+    // @content = 以下內容
+    .container{
+      width: 75%;
+    }
+
+    .col{
+      width: 50%;
+    }
+
+    .col + .col {
+      margin-top: 0;
+    }
+  }
+
+  @include md{
+    .col{
+      width: 33.33333%;
+    }
+  }
+
+  @include lg {
+    .col{
+      width: 25%;
+    }
+  }
+
+  @include xl{
+    .col{
+      width: 20%;
+    }
+  }
+
+  @include xxl {
+    .col{
+      width: 10%;
+    }
+  }
+}

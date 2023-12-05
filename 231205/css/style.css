@@ -58,7 +58,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
+  background: green;
   color: #fff !important;
   /* 使用 or 判斷兩運算式其中之一是否成立 不能用|| */
   font-weight: bolder;
@@ -247,7 +247,7 @@ h1 {
   width: 100px;
   height: 100px;
   color: white;
-  font-size: 20px;
+  font-size: 60px;
   width: 200px;
   height: 100px;
   background: deeppink;
@@ -271,4 +271,106 @@ h1 {
   width: 33.3333333333%;
   padding: 1%;
   margin: 1% 0;
+}
+
+/* 07 mixin */
+.mixinTry {
+  width: 100px;
+  height: 100px;
+  background: #333;
+}
+
+.boxflex {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border: 5px solid #333;
+  outline: 5px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 0.3rem 0.75rem;
+  margin: 0 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+.btn-dark:hover {
+  background-color: #333333;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+}
+.btn-primary:hover {
+  background-color: #0257d5;
+}
+
+.btn-success {
+  background-color: #198754;
+}
+.btn-success:hover {
+  background-color: #115c39;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+.btn-danger:hover {
+  background-color: #bd2130;
+}
+
+/* 08 使用mixin + @content 設計 RWD */
+#section8 .container {
+  width: 100%;
+}
+#section8 .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#section8 .col {
+  width: 100%;
+}
+#section8 .col + .col {
+  margin-top: 20px;
+}
+@media (min-width: 576px) {
+  #section8 .container {
+    width: 75%;
+  }
+  #section8 .col {
+    width: 50%;
+  }
+  #section8 .col + .col {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  #section8 .col {
+    width: 33.33333%;
+  }
+}
+@media (min-width: 992px) {
+  #section8 .col {
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  #section8 .col {
+    width: 20%;
+  }
+}
+@media (min-width: 1400px) {
+  #section8 .col {
+    width: 10%;
+  }
 }
