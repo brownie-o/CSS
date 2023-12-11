@@ -1,0 +1,482 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.container {
+  width: 75%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 20px;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* css原生變數 */
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* 多行註解 會被編譯出去 */
+h1 {
+  background: linear-gradient(0deg, rgb(0, 0, 50) 0%, rgb(0, 50, 200) 50%, rgb(0, 0, 255) 100%);
+  color: #fff;
+  border: 5px solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+/* 02 流程控制 */
+.mybox {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  color: #fff !important;
+  /* 使用 or 判斷兩運算式其中之一是否成立 不能用|| */
+  font-weight: bolder;
+  font-size: 30px;
+  border: 10px dashed yellow;
+  /* 內建提供的函式，類似三原運算子，函示沒有 @ */
+  outline: 10px solid green;
+}
+
+.through-1 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #aaa;
+}
+
+.through-2 {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-color: #aaa;
+}
+
+.through-3 {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background-color: #aaa;
+}
+
+.to-1 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #333;
+}
+
+.to-2 {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-color: #333;
+}
+
+#section03 .menu {
+  margin-top: 2rem;
+  padding: 0;
+  font-size: 0;
+}
+#section03 .menu li {
+  display: inline-block;
+  font-size: 1rem;
+  width: 100px;
+  text-align: center;
+}
+#section03 .menu li a {
+  display: block;
+  background: black;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+#section03 .menu li a:hover {
+  background: yellow;
+  color: darkgoldenrod;
+}
+#section03 .menu li + li {
+  /* 權重較高(含.menu) */
+  border-left: 1px solid #fff;
+}
+#section03 li + li {
+  border-left: 1px solid green;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#exercise .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+#exercise .row .col {
+  width: 33%;
+  height: 100%;
+}
+#exercise .row .col img {
+  width: 100%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* 
+  嵌套有利有弊，嵌套階層不控制的話，會產生CSS選擇器過長，檔案會變大
+  因此在嵌套時，思考如何快速有效選擇到目標，
+  一般使用 #id 限制一個大區塊，再選擇裡面的某個元件區塊，再選擇到目標
+*/
+#ans .row {
+  display: flex;
+}
+#ans .col {
+  width: 31.3333%;
+  margin: 1%;
+  border: 1px solid #333;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+#ans a {
+  text-decoration: none;
+  color: red;
+}
+#ans a:hover {
+  transform: translateY(-20px);
+}
+#ans img {
+  max-width: 100%;
+}
+
+/* 04 extend */
+/* 使用CSS 選擇器擴展(.extend)，擴展後的樣式會被編譯到css檔案中 */
+.extend {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+/* 使用佔位選擇器%擴展(%extend)，擴展後不會被編譯到css檔案中 */
+.box3, .box2, .box1 {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+#extend {
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+.box1 {
+  background: red;
+}
+
+.box2 {
+  background: green;
+}
+
+.box3 {
+  background: blue;
+}
+
+/* 05 計算 */
+.box4 {
+  /* 加法 */
+  width: 100px;
+  width: 100px;
+  height: 100px;
+  /* 減法 */
+  width: 50px;
+  width: 50px;
+  height: 50px;
+  /* 乘法 */
+  width: 100px;
+  height: 100px;
+  /* 除法 */
+  width: 50px;
+  height: 50px;
+  line-height: 1;
+  /* 取餘數 */
+  margin-top: 20px;
+  margin-bottom: calc(20px + 1vw);
+  background: black;
+}
+
+/* 06 函式 */
+/* 
+  @function & @mixin 有點像，都需要宣告，但 @function需要使用@return 來返回結果，返回結果並不是樣式，而是符合CSS規範的值
+  @mixin 可以return一段CSS樣式
+*/
+.funcbox {
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  height: 100px;
+  background: deeppink;
+}
+
+.rem {
+  font-size: 1rem;
+  padding: 3rem;
+}
+
+#section6 .container p {
+  font-size: 18px;
+  line-height: 27px;
+}
+#section6 .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#section6 .row .col {
+  border: 1px solid #333;
+  width: 33.3333333333%;
+  padding: 1%;
+  margin: 1% 0;
+}
+
+/* 07 mixin */
+.mixinTry {
+  width: 100px;
+  height: 100px;
+  background: #333;
+}
+
+.boxflex {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border: 5px solid #333;
+  outline: 5px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 0.3rem 0.75rem;
+  margin: 0 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.btn-dark {
+  background-color: #000;
+}
+.btn-dark:hover {
+  background-color: #333333;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+}
+.btn-primary:hover {
+  background-color: #0257d5;
+}
+
+.btn-success {
+  background-color: #198754;
+}
+.btn-success:hover {
+  background-color: #115c39;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+.btn-danger:hover {
+  background-color: #bd2130;
+}
+
+/* 08 使用mixin + @content 設計 RWD */
+#section8 .container {
+  width: 100%;
+}
+#section8 .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#section8 .col {
+  width: 100%;
+}
+#section8 .col + .col {
+  margin-top: 20px;
+}
+@media (min-width: 576px) {
+  #section8 .container {
+    width: 75%;
+  }
+  #section8 .col {
+    width: 50%;
+  }
+  #section8 .col + .col {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  #section8 .col {
+    width: 33.33333%;
+  }
+}
+@media (min-width: 992px) {
+  #section8 .col {
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  #section8 .col {
+    width: 20%;
+  }
+}
+@media (min-width: 1400px) {
+  #section8 .col {
+    width: 10%;
+  }
+}
+
+/* list 列表，像JS的陣列，索引從1開始取值，不是從0 */
+/* 格式: 以逗號或是空格分隔 */
+/* nth函式: nth(list, index) */
+.list {
+  width: 100px;
+  width: 200px;
+  width: 300px;
+}
+
+/* index(list, value) */
+.index {
+  line-height: 1;
+  line-height: 2;
+  line-height: 3;
+}
+
+/* length($list) 抓list的長度 */
+.length {
+  z-index: 3;
+}
+
+/* 配合 @for 使用 - 用@for迴圈取陣列的值 */
+/* # {} 像js的 ${} => 模板語法/差值語法 */
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+/* 配合 @each 使用 */
+.each-bg-red {
+  background-color: red;
+}
+
+.each-bg-green {
+  background-color: green;
+}
+
+.each-bg-blue {
+  background-color: blue;
+}
+
+/* map */
+/* 類似js的物件 */
+/* 跑迴圈時class命名不一定要跟內容一樣 */
+.nth-map {
+  color: primary red;
+}
+
+/* 對map物件取出key & value */
+.bg-each-primary {
+  background-color: red;
+}
+
+.bg-each-secondary {
+  background-color: yellow;
+}
+
+.bg-each-warning {
+  background-color: grey;
+}
+
+/* 
+  const students =[
+    {
+      name: 'kaifu',
+      age: 18,
+      skill: {
+        s1: '睡覺',
+        s2: '吃飯'
+      }
+    },
+    {
+      name: '小明',
+      age: 18,
+      skill: {
+        s1: '寫作業',
+        s2: '吃飯'
+      }
+    }
+  ]
+  students[0].name => 'kaifu'
+  students[1].age => '18'
+*/
+/* 雙層物件 */
+.btn-default {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-box1 {
+  width: 200px;
+  height: 200px;
+}
+
+.btn-box2 {
+  width: 300px;
+  height: 300px;
+}

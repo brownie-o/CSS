@@ -1,0 +1,26 @@
+/* partials概念: 指拆分scss檔，組合成自己的scss結構 */
+/* 
+  1. 底線開頭 _ 來命名，表示是partials
+  2. 用 @import 引入， _ & 副檔名 可以省略，sass會自行判斷是否為partials
+  3. partials 不會被編譯為css檔, are only meant to be loaded as modules
+  4. 通常會用一支入口來引入，ex: main.scss
+  5. pratials 載入順序很重要，ex: function, viraibles, mixins 需先被載入，才能確保能被使用
+  6. 函式，變數需要最先引入
+*/
+
+/* 函式 */
+// 以完整檔名import (可省略開頭底線 & 副檔名)
+@import 'function';
+
+/* 變數 */
+@import 'variables';
+
+/* mixins */
+@import 'mixins';
+
+/* components */
+// @import './components'
+@import 'components';
+
+/* layout */
+@import 'layout';
