@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'>
+  <style>
+    html, body{
+      height: 100%;
+    }
+
+    #particles-js{
+      /* 固定定位，縮限範圍 */
+      position: fixed;
+      /* 重置寬高 */
+      width: 100%;
+      height: 100%;
+      /* 點擊時可穿透 (因為動畫通常會用在絕對、固定定位，會蓋住下方連結或按鈕) */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-dark">
+  <!-- 3. 設定結構 -->
+  <div id="particles-js"></div>
+  <a href="https://google.com">GOOGLE</a>
+  <!-- 1. 套件使用規則: 一定要引入主程式 -->
+  <script src="./particles.min.js"></script>
+  <!-- 2. 套用設定檔(&樣式檔) -->
+  <script src="./app.js"></script>
+</body>
+</html>
