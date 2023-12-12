@@ -1,17 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css' integrity='sha512-ZuRTqfQ3jNAKvJskDAU/hxbX1w25g41bANOVd1Co6GahIe2XjM6uVZ9dh0Nt3KFCOA061amfF2VeL60aJXdwwQ==' crossorigin='anonymous'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css'
+    integrity='sha512-ZuRTqfQ3jNAKvJskDAU/hxbX1w25g41bANOVd1Co6GahIe2XjM6uVZ9dh0Nt3KFCOA061amfF2VeL60aJXdwwQ=='
+    crossorigin='anonymous'/>
+  <!-- 1. 設定swiper css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper{
+      height: 100%;
+    }
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+      opacity: 0.6;
+    }
+
+    .swiper-button-prev, 
+    .swiper-button-next{
+      color: white;
+      opacity: 0.5;
+    }
+
+    .cube {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -150px;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Swiper</h1>
-    
   </div>
+  <!-- 3. 設定swiper 結構 -->
+  <div class="container" style="height: 350px;">
+    <!-- Slider main container -->
+    <div id="swiper01" class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=1">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=2">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=3">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=4">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=5">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=6">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=7">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=8">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=9">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=10">
+        </div>
+      </div>
+
+      <!-- 分頁 If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+  <br>
+  <div class="container" style="height: 350px;">
+    <!-- Slider main container -->
+    <div id="swiper02" class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=1">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=2">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=3">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=4">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=5">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=6">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=7">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=8">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=9">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=10">
+        </div>
+      </div>
+
+      <!-- 分頁 If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
+  <br>
+  <div class="container" style="height: 350px;">
+    <div id="cube" class="swiper cube">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=1">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=2">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=3">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=4">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=5">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=6">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=7">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=8">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=9">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/1920/1080/?random=10">
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+  <!-- 2. 設定swpier主程式 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // initalize swiper
+    // Swiper("抓目標, 通常是id", {optional object, 主要設定套件的屬性})
+    const swiper01 = new Swiper("#swiper01", {
+      loop: true,
+      speed: 300, // 動畫轉場的持續時間
+      mousewheel: true,
+      keyboard: {
+        enabled: true,
+      },
+      // 自動播放 幾秒後下一張
+      autoplay: {
+        delay: 1500
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        576: {
+          slidesPerView: 2, 
+          spcaeBetween: 20,
+        },
+        768: {
+          slidesPerView: 3, 
+          spcaeBetween: 30,
+        },
+        992: {
+          slidesPerView: 4, 
+          spcaeBetween: 40,
+        },
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        }
+      },
+      // 啟用上下頁btn功能
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      // 啟用分頁指示器功能
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true, // 下方指示器動態效果
+        // type: "fraction", // 指示器以分數顯示 ex: 1/5
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+    });
+
+    const swiper02 = new Swiper("#swiper02", {
+      rewind: true,
+      direction: "vertical",
+      mousewheel: true,
+      keyboard: {
+        enabled: true,
+      },
+      autoplay: {
+        delay: 1500
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    })
+
+    const cube = new Swiper("#cube", {
+      loop: true,
+      mousewheel: true,
+      autoplay: {
+        delay: 1500
+      },
+      effect: "cube",
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 10,
+        shadowScale: 0.9,
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+    })
+  </script>
 </body>
+
 </html>
