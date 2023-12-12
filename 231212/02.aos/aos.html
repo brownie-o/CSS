@@ -19,7 +19,7 @@
       margin: auto;
       padding: 24px;
       border: 1px solid #333;
-      overflow: auto;
+      overflow: hidden;
     }
 
     h1{
@@ -42,11 +42,20 @@
 
     section:nth-of-type(even) img{
       float: left;
-      margin: 0 0 1rem 1rem;
+      margin: 0 1rem 0 1rem;
     }
 
     img{
       max-width: 100%;
+    }
+
+    html:not(.no-js) [data-aos=slide-right] {
+      -webkit-transform: translate3d(-200%, 0, 0);
+      transform: translate3d(-200%, 0, 0);
+    }
+    html:not(.no-js) [data-aos=slide-left] {
+      -webkit-transform: translate3d(200%, 0, 0);
+      transform: translate3d(200%, 0, 0);
     }
   </style>
 </head>
@@ -84,7 +93,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolor quasi quia maiores voluptate praesentium blanditiis repudiandae perferendis corrupti quas necessitatibus iste iusto dolorum totam, rem ratione possimus suscipit. Dolore nam quasi explicabo corrupti fuga voluptas quo laboriosam nostrum voluptatibus dolores consectetur, voluptatum natus placeat, necessitatibus doloribus aliquam eos fugiat repellat provident possimus quisquam. Libero odit et quam ea, eius vitae rem culpa, quidem labore, fugiat illo obcaecati quas at consequuntur perspiciatis dicta! Eum quod aperiam, magnam quam reiciendis, distinctio aliquam repellendus asperiores at mollitia quidem. Obcaecati ea unde nobis doloremque dolor tenetur tempora, aspernatur ex! Deserunt assumenda aspernatur dolore. Nesciunt unde ad aperiam, obcaecati nihil eligendi nam reiciendis ducimus veritatis soluta eaque nemo repellendus iste. Quibusdam, quas? Aut quisquam est, beatae error delectus itaque, velit fuga nobis iusto in mollitia non sunt doloremque exercitationem vel aliquid autem consequatur dignissimos omnis, neque nulla! Molestias maiores, dicta suscipit magni ea quis odit voluptatem quae laudantium iusto, consequatur tempora consectetur rem, quam labore voluptates facere numquam esse totam accusantium? Illum tempore sequi dicta voluptates ipsam voluptatibus dignissimos saepe, ex eveniet ullam aut, totam consequuntur. Beatae repudiandae, distinctio fugiat dignissimos, fugit excepturi eius vel corrupti iure iusto laudantium laborum dicta, culpa enim. Eius.
       </p>
     </section>
-    <section class="section02" data-aos="slide-left" data-aos-duration="1000" data-aos-offset="0" data-aos-anchor-placement="bottom-bottom" data-aos-once="false">
+    <section class="section02" data-aos="slide-left" data-aos-duration="2000" data-aos-offset="0" data-aos-anchor-placement="bottom-bottom" data-aos-once="false">
       <img src="https://picsum.photos/200/200/?random=10">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolor quasi quia maiores voluptate praesentium blanditiis repudiandae perferendis corrupti quas necessitatibus iste iusto dolorum totam, rem ratione possimus suscipit. Dolore nam quasi explicabo corrupti fuga voluptas quo laboriosam nostrum voluptatibus dolores consectetur, voluptatum natus placeat, necessitatibus doloribus aliquam eos fugiat repellat provident possimus quisquam. Libero odit et quam ea, eius vitae rem culpa, quidem labore, fugiat illo obcaecati quas at consequuntur perspiciatis dicta! Eum quod aperiam, magnam quam reiciendis, distinctio aliquam repellendus asperiores at mollitia quidem. Obcaecati ea unde nobis doloremque dolor tenetur tempora, aspernatur ex! Deserunt assumenda aspernatur dolore. Nesciunt unde ad aperiam, obcaecati nihil eligendi nam reiciendis ducimus veritatis soluta eaque nemo repellendus iste. Quibusdam, quas? Aut quisquam est, beatae error delectus itaque, velit fuga nobis iusto in mollitia non sunt doloremque exercitationem vel aliquid autem consequatur dignissimos omnis, neque nulla! Molestias maiores, dicta suscipit magni ea quis odit voluptatem quae laudantium iusto, consequatur tempora consectetur rem, quam labore voluptates facere numquam esse totam accusantium? Illum tempore sequi dicta voluptates ipsam voluptatibus dignissimos saepe, ex eveniet ullam aut, totam consequuntur. Beatae repudiandae, distinctio fugiat dignissimos, fugit excepturi eius vel corrupti iure iusto laudantium laborum dicta, culpa enim. Eius.
