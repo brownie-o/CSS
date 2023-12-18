@@ -96,6 +96,19 @@
     <div class="box8"></div>
     <div class="box8"></div>
     <div class="box8"></div>
+
+    <h3>7. 設定CSS屬性</h3>
+    <div class="box9" style="margin: auto;"></div>
+    <p id="word">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nisi. Consequatur, sapiente. Nostrum, hic dolor pariatur quod, sequi nobis odio ullam non qui a blanditiis architecto iure facilis reiciendis nisi.
+    </p>
+
+    <hr>
+
+    <h3>8. 設定動畫屬性</h3>
+    <div class="box10"></div>
+    <button id="play">play</button>
+    <button id="pause">pause</button>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
@@ -137,6 +150,83 @@
       x: 500, 
       duration: 3
     })
+
+    // 3. 絕對數值 -----------------------------------
+    const tween3 = gsap.to('.box5', {
+      // x: 500, // 絕對數值，使用無單位的數字
+      // x: '500px', // 絕對數值，使用有單位的數字
+      // x: '100%', =
+      xPercent: 100, // 100 = translateX(100%)
+      duration: 3
+    })
+
+    // 4. 相對數值 -----------------------------------
+    // 鄉對數值的好處: 可以搭配repeat、repeatRefresh 使用，做到紀錄每次動畫的屬性值，並在下次重複動畫時，以此屬性值作為開始
+    let myVar = 300
+    const tween4 = gsap.to('.box6', {
+      x: '+=200', // 相對數值，使用 += or -=
+      x: `+=${myVar}`,
+      repeat: 3,  // 不包含初始撥放的那一次 所以總共播四次
+      repeatRefresh: true, // 記錄到每個結束位置，繼續做動畫下去 (須配合相對數值)
+      duration: 1
+    })
+
+    // 5. 隨機函式值(字串) ---------------------------
+    const tween5 = gsap.to('.box7', {
+      // x: 'random(0, 1000)', // 0~1000隨機數字
+      x: 'random(500, 1000, 500)', // 500~1000隨機數字，且每次都是500的倍數
+      background: 'random([red, green, blue])', // 從陣列中隨機選擇
+      border: '7px random([solid, dashed, double]) rgb(random(0, 255), random(0, 255), random(0, 255))',
+      duration: 3
+    })
+
+    // 6. 函式做為值 ---------------------------------
+    const tween6 = gsap.to('.box8', {
+      x: function (index, target, targets) {
+        console.log(index, target, targets)
+        // index: 索引值
+        // target: 目標
+        // targets: 目標陣列
+        return 100 * (index + 1)
+      }, 
+      duration: 3
+    })
+
+    // 7. 設定 CSS 屬性
+    const tween7 = gsap.to('.box9', {
+      // 設定CSS屬性
+      x: '+=random(-50, 50)', 
+      y: '+=random(-50, 50)',
+      rotation: 720, 
+      scale: 1.5, 
+      skewX: 10, 
+      skewY: 10,
+      width: 100, 
+      height: 100,
+      border: '2px solid red',
+      boxShadow: '0 0 10px rgba(255, 0, 0, 1)',
+      backgroundColor: 'transparent',
+      backdropFilter: 'blur(5px)',
+      // 設定動畫控制屬性
+      repeat: 5, 
+      repeatRefresh: true, 
+      duration: 1
+    })
+
+    // 設定CSS文字屬性
+    const word = gsap.to('#word', {
+      // random也可以用 repeat
+      color: 'random([red, green, blue])',
+      fontWeight: 'bold',
+      fontSize: '1.5rem', 
+      lineHeight: 1.5, 
+      letterSpacing: '1rem',
+      repeat: 5, 
+      repeatRefresh: true, 
+      duration: 2
+    })
+
+    // 
   </script>
 </body>
 </html>
