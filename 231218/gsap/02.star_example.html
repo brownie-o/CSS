@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    body{
+      overflow: hidden;
+    }
+    
+    .contanier-fulid{
+      perspective: 100px
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid vh-100 bg-dark"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+
+  <script>
+    // 1. 產生指定數量的星星，並隨機分布在畫面上
+    function createStar(starCount) {
+      for (let i = 0; i < starCount; i++){
+        $('.container-fluid').append(`<div class='star'>★</div>`)
+      }
+      $('.star').each(function(index, element){
+        $(this).css({
+          position: 'absolute',
+          left: gsap.utils.random(0, 100) + '%',
+          top: gsap.utils.random(0, 100) + '%',
+          color: 'yellow'
+        })
+      })
+    }
+
+    createStar(50)
+    // 2. 替星星加入gsap動畫
+    gsap.to('.star', {
+      fontSize: 'random(12, 50)',
+      filter: 'drop-shadow(0 0 20px rgba(255, 255, 0, 1))',
+      transformOrigin: 'center',
+      left: '+=random(-10, 10)%',
+      x: 'random(-50, 50)',
+      y: 'random(-50, 50)',
+      rotationY: '-=180',
+      scale: 'random(1, 2)',
+      duration: 'random(3, 6)',
+      delay: 'random(0, 5)',
+      repeat: -1, 
+      repeatRefresh: true, 
+      ease: 'back',
+      color: 'rgb(random(0, 255), random(0, 255), random(0, 255))'
+    })
+  </script>
+</body>
+</html>
