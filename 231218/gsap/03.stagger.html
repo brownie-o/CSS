@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    body{
+      padding-bottom: 200px;
+    }
+
+    h3, 
+    h4{
+      margin-bottom: 20px;
+    }
+
+    .wrap{
+      width: 600px;
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .box1, 
+    .box2, 
+    .box3, 
+    .box4, 
+    .box5, 
+    .box6,
+    .box7{
+      width: 50px;
+      height: 50px;
+      background: black;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Stagger 交錯效果</h3>
+    <div class="wrap">
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+
+  <script>
+    gsap.to('.box1', {
+      y: 100, 
+      stagger: 0.1, // 每個元素動畫交錯的時間，可以設定數值或使用物件
+      stagger: {
+        each: 0.1, // 每個元素動畫交錯的時間
+        from: 'edges', // 動畫起點: center, start, end, random, edges
+      },
+      delay: 0.5, 
+      duration: 1,
+    })
+  </script>
+</body>
+</html>
