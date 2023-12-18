@@ -54,7 +54,13 @@
       repeat: -1, 
       repeatRefresh: true, 
       ease: 'back',
-      color: 'rgb(random(0, 255), random(0, 255), random(0, 255))'
+      color: 'rgb(random(0, 255), random(0, 255), random(0, 255))', 
+      stagger: {
+        each: 0.1,
+        from: 'random',
+        // repeat: -1, 
+        // yoyo: true,
+      }
     })
   </script>
 </body>
