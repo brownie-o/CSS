@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    body{
+      padding-bottom: 500px;
+    }
+
+    h3{
+      margin: 20px 0;
+    }
+
+    .box1,
+    .box1-1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10,
+    .box11{
+      width: 50px;
+      height: 50px;
+      background: #000;
+      margin: 5px;
+    }
+
+    .box2{
+      background: red;
+    }
+
+    .box3{
+      background: blue;
+    }
+
+    .box4{
+      background: green;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>gsap 全域物件</h2>
+    <ul>
+      <li>
+        使用 gsap.to()、gsap.from()、gsap.fromTo() 三種建立tween補件動畫。
+      </li>
+      <li>
+        使用 gsap.timeline() 建立時間軸，他是補間動畫或其他時間軸的容器。
+      </li>
+    </ul>
+    <h3>1. 選擇目標</h3>
+    <div class="box1"></div>
+    <div class="box1-1"></div>
+
+    <hr>
+
+    <h3>2. 選擇幾個群組時使用陣列</h3>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box3"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box4"></div>
+    <div class="box4"></div>
+
+    <hr>
+    <h3>3. 絕對數值</h3>
+    <div class="box5"></div>
+
+    <hr>
+
+    <h3>4. 相對數值</h3>
+    <div class="box6"></div>
+
+    <hr>
+
+    <h3>5. 隨機函式值(字串)</h3>
+    <div class="box7"></div>
+    <div class="box7"></div>
+    <div class="box7"></div>
+
+    <hr>
+
+    <h3>6. 函式做為值</h3>
+    <div class="box8"></div>
+    <div class="box8"></div>
+    <div class="box8"></div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+  <script>
+    // 1. 選擇目標 ---------------------------------
+    // (1) 用js選擇目標
+    const b1 = document.querySelector('.box1')
+    // (2) 用jQ選擇目標
+    const b2 = $('.box1')
+    // gsap.to('目標', {物件}) 建立一個補間動畫，從目前狀態 到 設定狀態
+    // 在{物件}設定屬性，ex: CSS屬性或是gsap動畫屬性
+    const tween1 = gsap.to(b1, {
+      x: 500,
+      duration: 3
+    })
+    // (3) 直接在tween 內使用CSS規範選擇器來選擇目標 (推薦)
+    const tween11 = gsap.to('.box1-1', {
+      x: 400, 
+      duration: 2
+    })
+
+    // 2. 選擇幾個群組時使用陣列 ----------------------
+    const dom1 = document.querySelectorAll('.box2')
+    const dom2 = document.querySelectorAll('.box3')
+    const dom3 = document.querySelectorAll('.box4')
+
+    const jq1 = $('.box2')
+    const jq2 = $('.box3')
+    const jq3 = $('.box4')
+
+    const tween2 = gsap.to(['.box2', '.box3'], {
+      x: 500, 
+      duration: 3
+    })
+
+    const tween2_2 = gsap.to('.box3, .box4', {
+      x: 500, 
+      duration: 3
+    })
+  </script>
+</body>
+</html>
