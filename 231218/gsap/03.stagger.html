@@ -52,6 +52,27 @@
       <div class="box1"></div>
       <div class="box1"></div>
     </div>
+
+    <hr>
+
+    <h3>動畫狀態與事件函式</h3>
+    <div class="box2"></div>
+    <div class="progress mb-3">
+      <div class="progress-bar"></div>
+    </div>
+    <button id="btn1">play</button>
+    <button id="btn2">paused</button>
+    <button id="btn3">reversed</button>
+
+    <hr>
+
+    <h3>gsap.from() 與 gsap.fromTo()</h3>
+    <h4>gsap.from()</h4>
+    <p>指定元素補間動畫從 設定狀態 到目前狀態，可使用於進場動畫。</p>
+    <div class="box3"></div>
+    <h4>gsap.fromTo()</h4>
+    <p>指定元素補間動畫 從form 設定狀態1 到 to設定狀態2</p>
+    <div class="box4"></div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
@@ -64,10 +85,106 @@
       stagger: 0.1, // 每個元素動畫交錯的時間，可以設定數值或使用物件
       stagger: {
         each: 0.1, // 每個元素動畫交錯的時間
-        from: 'edges', // 動畫起點: center, start, end, random, edges
+        from: 'start', // 動畫起點: center, start, end, random, edges，也可以設定 index 從第幾個開始
+        repeat: -1, // 設定重複次數
+        yoyo: true // 重複動畫時，是否反向來回撥放
+        // 單個做完馬上重複
       },
+      // 可以比較stagger內的 repeat, yoyo 與外面的repeat, yoyo的差異
+      // repeat: -1, 
+      // yoyo: true, 會等全部做完才重複
       delay: 0.5, 
-      duration: 1,
+      duration: 0.3,
+    })
+
+    const array = [2, 4, 6]
+    
+    // 動畫狀態與事件函式
+    const tween = gsap.to('.box2', {
+      x: '80vw',
+      duration: 5, 
+      repeat: 1, 
+      yoyo: true, 
+      paused: true, // 是否為暫停狀態
+      reversed: true, // 是否為反轉狀態
+      ease: 'linear',
+
+      // 動畫開始
+      // 注意不要寫箭頭函式 
+      // 和下面onStartParmas陣列內容對應，這邊只是代號，不一定要一樣
+      onStart: function(p1, p2, p3, p4, p5){
+        console.log(p1, p2, p3)
+        p4()
+        p5 += 6
+        console.log(p5)
+        console.log(this) // this = tween本身
+      },
+      onStartParams: ['動畫開始了', 'p2在此', '!!!!', sayHi, array[2]],
+
+      // 動畫完成
+      // 結束時執行onComplete function
+      onComplete: onComplete,
+      onCompleteParams: ['動畫結束', 'bye 55'],
+
+      // 動畫更新中
+      onUpdate(p1, p2){
+        // console.log(this.progress()) // 動畫進度: 0~1
+        $('.progress-bar').css({
+          // .toFixed(2) -> 取到小數點二位數
+          width: `${Math.floor(this.progress().toFixed(2)*100)}%`
+        })
+      },
+      onUpdateParams: ['動畫更新中', 'goodgood']
+    })
+    
+    console.log(array[2])
+
+
+    // play (一定是)正向撥放
+    $('#btn1').on('click', ()=> {
+      tween.play()
+    })
+
+    // paused 暫停狀態
+    $('#btn2').on('click', ()=> {
+      // .paused() 可以取出是否為暫停狀態的布林值
+      console.log(tween.paused()) // = true (paused: true)
+      // 按下後把true轉false，用狀態控制動畫是否撥放
+      tween.paused(!tween.paused())
+    })
+
+    // reversed 反轉狀態
+    $('#btn3').on('click', ()=> {
+      tween.reversed(!tween.reversed())
+    })
+
+    // 可以在任何地方使用，會被提前 有上升性
+    function sayHi () {
+      console.log('hi')
+    }
+    
+    // 現在才產生 無法上升
+    // const sayHi = () => {
+    //   console.log('hi')
+    // }
+
+    function onComplete(p1, p2){
+      console.log(p1, p2)
+    }
+
+    // gsap.from() 與 gsap.fromTo()
+    gsap.from('.box3', {
+      x: -500,
+      duration: 1
+    })
+
+    gsap.fromTo('.box4', {
+      x: 1000
+    },
+    {
+      x: 0, 
+      delay: 1, 
+      duration: 1 // duration & delay 要設定在第二組
     })
   </script>
 </body>
