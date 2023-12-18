@@ -100,7 +100,7 @@
     <h3>7. 設定CSS屬性</h3>
     <div class="box9" style="margin: auto;"></div>
     <p id="word">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nisi. Consequatur, sapiente. Nostrum, hic dolor pariatur quod, sequi nobis odio ullam non qui a blanditiis architecto iure facilis reiciendis nisi.
+      家人看出結婚哪些措施家電原則價格網上一句我很大戰，不了制定第一個放在圖片本帖由此，當時資產，二十對外，禁止手機鈴聲身體我國實際上生活調查無比禁止給我們，回到以便填寫他說從而回應利用其他保護圖像化讓她短信參與，業主昨日學院分類夥伴目標有一定及其，後來女人面。
     </p>
 
     <hr>
@@ -109,6 +109,12 @@
     <div class="box10"></div>
     <button id="play">play</button>
     <button id="pause">pause</button>
+
+    <hr>
+
+    <h3>9. keyframes 關鍵影格</h3>
+    <p>讓單一補間動畫具有更多連續動作</p>
+    <div class="box11"></div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
@@ -214,6 +220,7 @@
     })
 
     // 設定CSS文字屬性
+    // 實例化物件 ex: new Date()
     const word = gsap.to('#word', {
       // random也可以用 repeat
       color: 'random([red, green, blue])',
@@ -221,12 +228,74 @@
       fontSize: '1.5rem', 
       lineHeight: 1.5, 
       letterSpacing: '1rem',
-      repeat: 5, 
+      repeat: 4, 
       repeatRefresh: true, 
       duration: 2
     })
 
-    // 
+    // 8. 設定動畫屬性
+    // 動畫播放次數 = 4, 初始撥放1次 + 重複播放3次 
+    gsap.to('.box10', {
+      x: 1000,
+      borderRadius: (i, t, a) => {
+        return '50%'
+      },
+      paused: true, 
+      duration: 2,
+      delay: 1, // 初始播放延遲時間
+      yoyo: true, // 重複來回播放
+      repeat: 3, // 重複次數-1 = 無限repeat
+      repeatDelay: 2, // 重複播放延遲時間
+      // https://gsap.com/docs/v3/Eases
+      ease: "steps(12)",
+      y: -500,
+      yoyoEase: 'back', // 重複來回撥放的動畫速度曲線
+    })
+    $('#play').on('click', function() {
+      tween8.play()
+    })
+
+    $('#pause').on('click', function(){
+      tween8.pause()
+    })
+
+    // 9. keyframes 關鍵影格
+    const tween9 = gsap.to('.box11', {
+      // 整圈要重覆要寫在最外面 不能放在影格內 不然會是每個影格都重複
+      repeat: -1,
+      // 關鍵影格重複的程式碼可以提取到defaults中
+      defaults: {
+        duration: 1, 
+        delay: 1, 
+        ease: 'elastic'
+      },
+      // 有多個 所以用陣列
+      keyframes: [
+        // A
+        {
+          x: 200, 
+          rotation: 360,
+        }, 
+        // B
+        {
+          y: 100, 
+          scale: 0.1,
+          duration: 3,  // 可覆蓋 defaults值
+          ease: 'steps(3)' // 可覆蓋
+        },
+        // C
+        {
+          x: 0, 
+          rotation: -360, 
+          scale: 1.5,
+        },
+        // D
+        {
+          y: 0, 
+          scale: 1, 
+        }
+      ]
+    })
   </script>
 </body>
 </html>
