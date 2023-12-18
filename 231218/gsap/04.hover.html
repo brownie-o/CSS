@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css'
+    integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=='
+    crossorigin='anonymous' />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1>卡片</h1>
+    <p>
+      給我找到，智慧現代星座也在富岡，古代也有完善歡迎您生日最為距離，總數威望項目故障策略溫度沉默加盟如何一致處理器，消除你自己初步優質，並不是充滿垃圾有意台中轉身一天，小七力道畢業生曝光結婚電子商務，項目江湖系列，筆者離開簡單天然回來天然緊急批評任何臺灣，情。
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/800/600/?random=10" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/800/600/?random=2" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/800/600/?random=3" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+
+  <script>
+    // gsap.set() 初始化卡片樣式
+    gsap.set('.card', {
+      boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)'
+    })
+
+    $('.card').each(function (index, card) {
+      const tween = gsap.to(card, {
+        y: -30,
+        rotationY: 20,
+        boxShadow: '0 30px 30px rgba(0, 0, 0, 0.2)',
+        paused: true,
+        duration: 0.5,
+        ease: 'back'
+      })
+      // card.addEventListener('mouseenter', ()=> tween.play())
+      // card.addEventListener('mouseleave', ()=> tween.reverse())
+
+      $(card).hover(() => tween.play(), () => tween.reverse())
+    })
+  </script>
+</body>
+
+</html>
