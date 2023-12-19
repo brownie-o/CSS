@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    .box1, 
+    .box2, 
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10,
+    .box11, 
+    .box12, 
+    .box13,
+    .box14,
+    .box15,
+    .box16,
+    .box17,
+    .box18,
+    .box19,
+    .box20,
+    .box21, 
+    .box22, 
+    .box23,
+    .box24,
+    .box25,
+    .box26,
+    .box26,
+    .box27,
+    .box28,
+    .box29,
+    .box30,
+    .box31,
+    .box32,
+    .box33,
+    .box34,
+    .box35,
+    .box36,
+    .box37{
+      width: 50px;
+      height: 50px;
+      background: black;
+      margin: 5px;
+    }
+
+    body{
+      padding-bottom: 300px;
+    }
+    </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>timeline - 時間軸</h2>
+    <ul>
+      <li>一種用來組織動畫的方式，是tween與其他容器，可以管理動畫的排序</li>
+      <li>可以使用tween的方法，也有自己獨特的方法</li>
+      <li>有自己的vars物件可以設定，有些屬性與tween是相同的。</li>
+    </ul>
+
+    <hr>
+
+    <h3>tween 與 timeline的差異</h3>
+    <h4>tween 佇列動畫</h4>
+    <p>侷限: 調動其中一個delay就需要調整其他的動畫，控制動畫不易</p>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    <h4>timeline 佇列動畫</h4>
+    <p>容易控制動畫，動畫之間也可以有等待間隙或重疊出場。</p>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+
+    <hr>
+
+    <h3>defaults 設定</h3>
+    <p>補間動畫屬性值相同時，會有重複不必要的程式碼，可以用defaults提取出來。</p>
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <div class="box9"></div>
+    <br>
+    <h4>使用defaults提取</h4>
+    <div class="box10"></div>
+    <div class="box11"></div>
+    <div class="box12"></div>
+
+    <hr>
+
+    <h3>timeline的 vars物件設定</h3>
+    <p>vars除了可以設定defaults，還可以設定一些與補間動畫tween相同的屬性</p>
+    <div class="box13"></div>
+    <div class="box14"></div>
+    <div class="box15"></div>
+
+    <hr>
+
+    <h3>timeline的methods</h3>
+    <div class="box16"></div>
+    <div class="box17"></div>
+    <div class="box18"></div>
+
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+    <button id="resume">resume</button>
+
+    <hr>
+
+    <h3>timeline 的 position</h3>
+    <h4>絕對位置</h4>
+    <!-- https://gsap.com/docs/v3/GSAP/gsap.timeline()#positioning-animations-in-a-timeline -->
+    <!-- https://gsap.com/docs/v3/GSAP/Timeline/add()#position-parameter-interactive-demo -->
+    <div class="box19"></div>
+    <div class="box20"></div>
+    <div class="box21"></div>
+    <div class="box22"></div>
+    <div class="box23"></div>
+    <div class="box24"></div>
+
+    <button id="play2" class="mt-2">play</button>
+
+    <h4>相對位置</h4>
+    <p>+=, -=</p>
+    <div class="box25"></div>
+    <div class="box26"></div>
+    <div class="box27"></div>
+    <div class="box28"></div>
+    <div class="box29"></div>
+    <div class="box30"></div>
+
+    <button id="play3" class="mt-2">play</button>
+    <br>
+    <p>< (start of the previous animation), > (end of the previous animation)</p>
+    <div class="box31"></div>
+    <div class="box32"></div>
+    <div class="box33"></div>
+    <div class="box34"></div>
+    <div class="box35"></div>
+    <div class="box36"></div>
+
+    <button id="play4" class="mt-2">play</button>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+  <script>
+    gsap.to('.box1', { x: 500, duration: 1 })
+    gsap.to('.box2', { x: 500, duration: 1, delay: 1 })
+    gsap.to('.box3', { x: 500, duration: 1, delay: 2 })
+
+    // 建立時間軸容器 tl1 (sequencing tool)
+    const tl1 = gsap.timeline()
+    tl1
+      .to('.box4', { x: 500, duration: 1 })
+      .to('.box5', { x: 500, duration: 2 })
+      .to('.box6', { x: 500, duration: 3 })
+
+    const tl2 = gsap.timeline()
+    tl2
+      .to('.box7', { x: 500, duration: 1, ease: 'back' })
+      .to('.box8', { x: 750, duration: 1, ease: 'back' })
+      .to('.box9', { x: 1000, duration: 1, ease: 'back' })
+
+    // defaults 設定
+    const tl3 = gsap.timeline({
+      defaults: {
+        duration: 1, 
+        ease: 'back'
+      }
+    })
+    tl3
+      .to('.box10', { x: 500 })
+      .to('.box11', { x: 750 })
+      .to('.box12', { x: 1000, duration: 5 }) // 可以覆蓋defaults設定
+
+    
+    // timeline的vars物件設定
+    const tl4 = gsap.timeline({
+      defaults: {
+        duration: 1, ease: 'power1.inOut'
+      },
+      // timeline 的屬性設定(指的是整體時間軸)
+      repeat: 2,
+      repeatDelay: 0,
+      // yoyo: true,
+      delay: 0, 
+      paused: false, 
+      repeatRefresh: true,
+      onStart(p1, p2){
+        console.log(p1, p2);
+      },
+      onStartParams: ['時間軸播放開始', 'hello'],
+      onComplete(p1, p2){
+        console.log(p1, p2)
+      },
+      onCompleteParams: ['結束了', '8888'],
+      onUpdate(p1, p2){
+        console.log(p1, p2, this.progress().toFixed(2))
+      },
+      onUpdateParams: ['更新中', '燈燈燈']
+    })
+
+    tl4
+      .to('.box13', {x: '+=100'})
+      .to('.box14', {x: '+=150'})
+      .to('.box15', {x: '+=200'})
+
+    // timeline的methods
+    const tl5 = gsap.timeline({
+      defaults: {
+        duration: 1, 
+      },
+      paused: true,
+      yoyo: true,
+      repeat:1
+    })
+    tl5
+      .to('.box16', { x: 100 })
+      .to('.box17', { x: 200 })
+      .to('.box18', { x: 300 })
+    
+    $('#play').on('click', ()=> {
+      tl5.play()
+    })
+    $('#pause').on('click', ()=> {
+      tl5.pause()
+    })
+    $('#resume').on('click', ()=> {
+      tl5.resume()
+    })
+
+    // timeline的position
+    // https://gsap.com/docs/v3/GSAP/gsap.timeline()#positioning-animations-in-a-timeline
+    // https://gsap.com/docs/v3/GSAP/Timeline/add()#position-parameter-interactive-demo
+    const tl6 = gsap.timeline({
+      paused: true
+    })
+
+    // 01. 插入絕對位置 
+    // , n = Absolute time
+    tl6
+      .to('.box19', { x: 500, duration: 1 })
+      .to('.box20', { x: 500, duration: 1 })
+      .to('.box21', { x: 500, duration: 1 }, 6)
+      .to('.box22', { x: 500, duration: 1 }, 8)
+      .to('.box23', { x: 500, duration: 1 }, 5)
+      .to('.box24', { x: 500, duration: 1 }, 10)
+
+    $('#play2').on('click', ()=> {
+      tl6.play()
+    })
+
+    // 02. 插入相對位置
+    // 1=>2=>3=>6=>4=>5
+    const tl7 = gsap.timeline({
+      paused: true
+    })
+    tl7
+      .to('.box25', { x: 500, duration: 1 })
+      .to('.box26', { x: 500, duration: 1 })
+      .to('.box27', { x: 500, duration: 1 }, '+=2')
+      .to('.box28', { x: 500, duration: 1 }, '+=3')
+      .to('.box29', { x: 500, duration: 1 }, '-=1')
+      .to('.box30', { x: 500, duration: 1 }, '-=2')
+
+    $('#play3').on('click', ()=>{
+      tl7.play()
+    })
+
+    // 03. <(前動畫的開頭), >(前動前動畫的以吧)
+    const tl8 = gsap.timeline({
+      paused: true
+    })
+    tl8
+      .to('.box31', { x: 500, duration: 1 })
+      .to('.box32', { x: 500, duration: 1 })
+      .to('.box33', { x: 500, duration: 1 }, '<2')
+      .to('.box34', { x: 500, duration: 1 }, '<-1')
+      .to('.box35', { x: 500, duration: 1 }, '>2')
+      .to('.box36', { x: 500, duration: 1 }, '>-1')
+
+    $('#play4').on('click', ()=>{
+      tl8.play()
+    })
+  </script>
+</body>
+</html>
