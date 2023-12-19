@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    body{
+      height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .banner{
+      width: 800px;
+      height: 100px;
+      position: relative;
+    }
+
+    /* .banner::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    } */
+
+    .item{
+      width: 100%;
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="item">HTML</div>
+    <div class="item">CSS</div>
+    <div class="item">JavaScript</div>
+    <div class="item">Bootstrap</div>
+    <div class="item">SASS</div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+  <script>
+    /* 
+      1. repeat: -1 無限重複
+      2. repeatDelay: 重複間隔
+      3. timeline
+      4. from 
+      5. to
+    */
+
+    gsap.set('.banner', {
+      perspective: 200 // 視角，透視效果
+    })
+
+    const tl = gsap.timeline({
+      repeat: -1, 
+      // repeatDelay: 1,
+    })
+
+    let staggerTime = 2.5
+
+    tl
+      // 進場，從A狀態開始到現在的B狀態
+      .from('.item', {
+        y: 60, 
+        rotationX: -90, 
+        autoAlpha: 0, // 透明度
+        stagger: staggerTime, // 每個元素動畫交錯的時間: 2s
+      })
+
+      // 離場，從現在的B狀態到C狀態
+      .to('.item', {
+        y: -60, 
+        rotationX: 90,
+        autoAlpha: 0,
+        stagger: staggerTime,
+      }, 2)
+  </script>
+</body>
+</html>
