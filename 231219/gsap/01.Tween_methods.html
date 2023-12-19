@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    body{
+      padding: 20px 0;
+    }
+
+    .wrap{
+      width: 600px;
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .box1{
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      background: #000;
+    }
+
+    button{
+      margin-bottom: 10px;
+    }
+
+    h4{
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>tween的method</h3>
+    <div style="background-color: #eee;">
+      <div class="box1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h4>控制動畫的方法</h4>
+        <button id="play">play 正向播放</button>
+        <button id="reverse">reverse 反向播放</button>
+        <button id="pause">pause</button>
+        <button id="resume">resume</button>
+        <button id="restart">restart</button>
+
+        <h4>延遲、重複的方法</h4>
+        <button id="delay">delay</button>
+        <button id="repeat">repeat(1)</button>
+        <button id="repeatDelay">repeatDelay</button>
+
+        <h4>進度相關的方法</h4>
+        <button id="progress">progress 與 totalProgress</button>
+        <button id="time">time 與 totalTime</button>
+        <button id="duration">duration 與 totalDuration</button>
+
+        <h4>其他方法</h4>
+        <button id="iteration">iteration</button>
+      </div>
+      <div class="col">
+        <h4>狀態</h4>
+        <p id="paused-text">paused狀態 (動畫目前是否暫停)</p>
+        <p id="reversed-text">reversed狀態 (動畫是否反向進行)</p>
+        <p id="isActive-text">isActive狀態 (動畫是否進行中)</p>
+
+        <hr>
+
+        <h4>進度</h4>
+        <p id="progress-text">progress:</p>
+        <p id="totalProgress-text">totalProgress:</p>
+        <p id="time-text">time:</p>
+        <p id="totalTime-text">totalTime:</p>
+        <p id="duration-text">duration:</p>
+        <p id="totalDuration-text">totalDuration:</p>
+
+        <hr>
+
+        <h4>其他</h4>
+        <p id="iteration-text">iteration:</p>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap.js"></script>
+  <script>
+    const tweenText = {
+      paused: 'paused狀態 (動畫目前是否暫停)',
+      reversed: 'reversed狀態 (動畫是否反向進行)',
+      isActive: 'isActive狀態 (動畫是否進行中)',
+    }
+
+    const tween = gsap.to('.box1', {
+      x: $('.container').width() - $('.box1').width(),
+      duration: 5, 
+      paused: true, 
+      reversed: false, 
+      ease: 'none',
+      onUpdate(){
+        $('#paused-text').text(tweenText.paused + ': ' + tween.paused())
+        $('#reversed-text').text(tweenText.reversed + ': ' + tween.reversed())
+        $('#isActive-text').text(tweenText.isActive + ': ' + tween.isActive())
+      }
+    })
+
+    // 正向播放
+    $('#play').on('click', ()=>{
+      tween.play() // 播放頭(play head)正向播放
+      // tween.play(3) // 從三秒開始播放
+    })
+
+    // 反向播放
+    $('#reverse').on('click', ()=>{
+      tween.reverse() // play head 反向播放
+      // $('#reversed-text').text(tweenText.reversed + ':' + tween.reversed())
+      // tween.reverse(3) // 從三秒開始reverse
+    })
+  </script>
+</body>
+</html>
