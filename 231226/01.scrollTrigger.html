@@ -55,15 +55,29 @@
 
   <section id="section01">
     <h2>1. 設定triggeer, start, end</h2>
-    <div class="box a1"></div>
+    <div class="box a1">a1</div>
   </section>
 
   <section></section>
 
   <section id="section02">
-    <h2>1. 設定toggleActions 與 endTrigger</h2>
+    <h2>2. 設定toggleActions 與 endTrigger</h2>
     <div class="box b1">b1</div>
     <div class="box b2 mt-5">b2</div>
+  </section>
+
+  <section></section>
+
+  <section id="section03">
+    <h2>3. 設定scrub</h2>
+    <div class="box c1">c1</div>
+  </section>
+
+  <section></section>
+
+  <section id="section04">
+    <h2>4. timeline 與 scrollTrigger</h2>
+    <div class="box d1">d1</div>
   </section>
 
   <section></section>
@@ -136,10 +150,32 @@
         onLeaveBack() {
           $('.b2').removeClass('hello');
         },
-        markers: true
+        // markers: true
       },
       x: '85vw',
       duration: 4,
+      ease: 'none'
+    })
+
+    // scrub 的設定方式
+    /* 
+      在 scrollTrigger 處於活動狀態時，之間的動畫進度會直接連結到滾動條的範圍進度
+      在這範圍內滾動上下移動，可以像滑塊控制動畫的進度
+    */
+    const tween3 = gsap.to('.c1', {
+      scrollTrigger: {
+        trigger: '.c1',
+        start: 'top 50%',
+        end: 'bottom 80%',
+        // scrub: 滾動時，動畫會跟著滾動
+        // 值可以為 true, 或是數值(1 為1秒趕上動畫進度)
+        scrub: 3, 
+        markers: true
+      },
+      x: '85vw',
+      rotation: 3600,
+      background: 'red',
+      duration: 5,
       ease: 'none'
     })
   </script>
