@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    section{
+      height: 50vh;
+      font-size: 3rem;
+      color: white;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <section id="section01">section01</section>
+  <section id="section02">section02</section>
+  <section id="section03">section03</section>
+  <section id="section04">section04</section>
+  <section id="section05">section05</section>
+  <section id="section06">section06</section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <script src="./gsap/ScrollTrigger.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger)
+
+    $('section').each(function (index, section){
+      $(section).css({
+        backgroundImage: `url(https://picsum.photos/1920/1080/?random=${index})`
+      })
+
+      // 每一個section都被綁 scrollTrigger
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section, 
+          start: 'top 50%',
+          end: 'bottom 0%',
+          scrub: true, // 用 true 最自然
+          markers: true
+        },
+        // 增加動畫效果
+        backgroundPosition: '50% -50%', // y軸動 -50%
+        ease: 'none'
+      })
+    })
+  </script>
+</body>
+</html>
