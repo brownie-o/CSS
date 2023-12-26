@@ -38,6 +38,15 @@
       justify-content: center;
       align-items: center;
     }
+
+    .active{
+      background: red;
+    }
+
+    .hello{
+      color: black;
+      background: yellow;
+    }
   </style>
 </head>
 <body>
@@ -47,6 +56,14 @@
   <section id="section01">
     <h2>1. 設定triggeer, start, end</h2>
     <div class="box a1"></div>
+  </section>
+
+  <section></section>
+
+  <section id="section02">
+    <h2>1. 設定toggleActions 與 endTrigger</h2>
+    <div class="box b1">b1</div>
+    <div class="box b2 mt-5">b2</div>
   </section>
 
   <section></section>
@@ -77,13 +94,52 @@
       // start animation when ".box" enters the viewport
       scrollTrigger:{
         trigger: '.a1',
-        start: 'center bottom',
-        end: 'bottom center',
+        // start: 'box本人的start 頁面的trigger start'
+        start: 'top 50%',
+        end: 'bottom 50%',
         // 讓不可見的線(trigger line)變可見
-        markers: true
+        // markers: true
       },
       x: '85vw',
       duration: 3,
+      ease: 'none'
+    })
+
+    // toggleActions 與 endTrigger 的設定方式
+    const tween2 = gsap.to('.b1', {
+      scrollTrigger: {
+        trigger: '.b1',
+        start: 'top center',
+        end: 'bottom 20%',
+        /* 
+          toggleActions 四個進出點觸發的動作，依序為 onEnter, onLeave, onEnterBack, onLeaveBack
+          進入時:
+          onEnter => scroll-start(綠線) 與 trigger的 start(綠線) 相交時的動作
+          onLeave => scroll-end(紅線) 與 trigger的 end(紅線) 相交時的動作
+          返回時:
+          onEnterBack => scroll-end(紅線) 返回時觸發 trigger 的 end(紅線) 相交時的動作
+          onLeaveBack => scroll-start(綠線) 返回時觸發 trigger 的 start(綠線) 相交時的動作
+
+          預設: play none none none
+          可用值: play, pause, resume, reverse, restart, reset, complete, none
+        */
+        toggleActions: 'play pause resume reverse',
+        // 在active時加上class
+        // toggleClass: 'active',
+        toggleClass: {
+          targets: ['.b1', '.b2'], // targets 為複數時，使用陣列，對多個目標增加class
+          className: 'active'
+        },
+        onEnterBack() {
+          $('.b2').addClass('hello');
+        },
+        onLeaveBack() {
+          $('.b2').removeClass('hello');
+        },
+        markers: true
+      },
+      x: '85vw',
+      duration: 4,
       ease: 'none'
     })
   </script>
