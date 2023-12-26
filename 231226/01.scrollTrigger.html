@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
+  <title>Document</title>
+  <style>
+    section{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    section:nth-child(odd){
+      background: lightblue;
+    }
+    
+    section:nth-child(even){
+      background: lightgray;
+      justify-content: center;
+    }
+
+    section h2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .box{
+      width: 100px;
+      height: 100px;
+      color: white;
+      font-size: 2rem;
+      background: darkorchid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 創造上下有個滿版的section, 才有空間做滾動 -->
+  <section></section>
+
+  <section id="section01">
+    <h2>1. 設定triggeer, start, end</h2>
+    <div class="box a1"></div>
+  </section>
+
+  <section></section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <!-- 使用 gsap scrollTrigger 的 plugin  -->
+  <script src="./gsap/ScrollTrigger.js"></script>
+
+  <script>
+    // 引用完要註冊 gsap plugin
+    gsap.registerPlugin(ScrollTrigger)
+    /* 
+      start 與 end 的設定方式
+      雙數值
+      1. 第一數值為trigger 的位置，第二數值為滾動軸的位置
+      2. 值可以為 
+        - top, center, bottom 
+        - px, %, rem, vh, vw...
+        - 相對位置 +=100, -=100
+        - 函式返回值
+      原理
+      1. 當滾動軸 scroll-start(綠線) 與 觸發者的 start(綠線)相交時，動畫開始
+    */
+
+    const tween1 = gsap.to('.a1', {
+      // start animation when ".box" enters the viewport
+      scrollTrigger:{
+        trigger: '.a1',
+        start: 'center bottom',
+        end: 'bottom center',
+        // 讓不可見的線(trigger line)變可見
+        markers: true
+      },
+      x: '85vw',
+      duration: 3,
+      ease: 'none'
+    })
+  </script>
+</body>
+</html>
