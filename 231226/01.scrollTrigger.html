@@ -170,7 +170,7 @@
         // scrub: 滾動時，動畫會跟著滾動
         // 值可以為 true, 或是數值(1 為1秒趕上動畫進度)
         scrub: 3, 
-        markers: true
+        // markers: true
       },
       x: '85vw',
       rotation: 3600,
@@ -178,6 +178,37 @@
       duration: 5,
       ease: 'none'
     })
+
+    // timeline 與 scrollTrigger的設定方式
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.d1',
+        start: 'center 80%',
+        end: 'center 20%',
+        scrub: 3,
+        markers: true
+      }
+    })
+
+    // 時間軸子動畫之間的距離比例與動畫的總持續時間有關
+    // 時間軸子動畫 duration 會與整體 scrub 進度分配比例綁在一起
+    // 例如 1, 1, 1 進度會被分為 1/3, 1/3, 1/3
+
+    tl
+      .to('.d1', {
+        x: '85vw',
+        duration: 1
+      })
+      .to('.d1', {
+        rotation: 360, 
+        background: 'red',
+        duration: 1
+      })
+      .to('.d1', {
+        x: 0,
+        background: 'darkorichd',
+        duration: 1
+      })
   </script>
 </body>
 </html>
