@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css'
+    integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=='
+    crossorigin='anonymous' />
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+    }
+
+    section {
+      height: 100vh;
+      background: lightcyan;
+      position: relative;
+    }
+
+    .bar {
+      display: none;
+      width: 0;
+      color: black;
+      background: lightblue;
+      text-align: right;
+      border-radius: 0.3rem;
+      padding-right: 1rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <section id="section01"></section>
+  <section id="section02">
+    <div class="container">
+      <table class="table table-dark ranking">
+        <tr>
+          <td width="1">HTML</td>
+          <td>
+            <!-- 進度 -->
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>PHP</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>TypeScript</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section id="section03"></section>
+  <section id="section04"></section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <!-- 設定gsap主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <script src="./gsap/ScrollTrigger.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger)
+
+    const language = {
+      html: 60,
+      css: 70,
+      js: 80,
+      php: 55,
+      ts: 40
+    }
+
+    const tween = gsap.to('.bar', {
+      scrollTrigger: {
+        trigger: '.ranking',
+        start: 'top center',
+        end: 'bottom center',
+        toggleActions: 'play none none reverse',
+        markers: true
+      },
+      width: function (index, target, targets) {
+        switch (index) {
+          case 0: // index = 0時 做以下動作
+            $(target).append(language.html + '%')
+            return `${language.html}%` // return width = 60%
+            break
+          case 1:
+            $(target).append(language.css + '%')
+            return `${language.css}%`
+            break
+          case 2:
+            $(target).append(language.js + '%')
+            return `${language.js}%`
+            break
+          case 3:
+            $(target).append(language.php + '%')
+            return `${language.php}%`
+            break
+          case 4:
+            $(target).append(language.ts + '%')
+            return `${language.ts}%`
+            break
+        }
+      },
+      display: 'block',
+      duration: 1, 
+      // 讓動畫之間有間隔
+      stagger: 0.5
+    })
+  </script>
+</body>
+
+</html>
