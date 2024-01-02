@@ -1,4 +1,4 @@
-#section01 .content .frame {
+#section02 .content .frame, #section01 .content .frame {
   color: rgb(50, 20, 0);
   font-size: 1.1rem;
   padding: 0 3rem;
@@ -7,7 +7,7 @@
   margin-bottom: -30px;
   position: relative;
 }
-#section01 .content .frame h1 {
+#section02 .content .frame h1, #section01 .content .frame h1 {
   margin-top: 0.5rem;
   font-size: 2rem;
   color: white;
@@ -18,43 +18,43 @@
   top: -60px;
   transform: translateX(-50%);
 }
-#section01 .content::before {
+#section02 .content::before, #section01 .content::before {
   content: "";
   display: block;
   height: 90px;
   background: url("../../images/frame_top_xs.png") no-repeat center/contain;
 }
-#section01 .content::after {
+#section02 .content::after, #section01 .content::after {
   content: "";
   display: block;
   height: 50px;
   background: url("../../images/frame_bottom_xs.png") no-repeat center/contain;
 }
 @media (min-width: 768px) {
-  #section01 .content .frame {
+  #section02 .content .frame, #section01 .content .frame {
     background: url("../../images/frame_middle_xs.png") repeat-y center;
     padding: 1rem 7rem;
   }
-  #section01 .content::before {
+  #section02 .content::before, #section01 .content::before {
     background: url("../../images/frame_top_xs.png") no-repeat center;
   }
-  #section01 .content::after {
+  #section02 .content::after, #section01 .content::after {
     background: url("../../images/frame_bottom_xs.png") no-repeat center;
   }
 }
 @media (min-width: 992px) {
-  #section01 .content .frame {
+  #section02 .content .frame, #section01 .content .frame {
     background: url("../../images/frame_middle_small.png") repeat-y center/contain;
     padding: 1rem 5rem;
   }
-  #section01 .content .frame h1 {
+  #section02 .content .frame h1, #section01 .content .frame h1 {
     left: calc(50% - 10px);
     top: -58px;
   }
-  #section01 .content::before {
+  #section02 .content::before, #section01 .content::before {
     background: url("../../images/frame_top.png") no-repeat center/contain;
   }
-  #section01 .content::after {
+  #section02 .content::after, #section01 .content::after {
     background: url("../../images/frame_bottom.png") no-repeat center/contain;
   }
 }
