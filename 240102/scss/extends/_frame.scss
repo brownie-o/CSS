@@ -1,0 +1,54 @@
+// %: 群組化
+%frame{
+  .content{
+    .frame{
+      color: rgb(50, 20, 0);
+      font-size: 1.1rem;
+      padding: 0 3rem;
+      background: url('../../images/frame_middle_xs.png') repeat-y center/contain;
+      margin-top: -25px;
+      margin-bottom: -30px;
+      position: relative;
+      h1{
+        margin-top: 0.5rem;
+        font-size: 2rem;
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgb(60, 50, 0), 2px 2px 1px rgb(60, 50, 0);
+        position: absolute;
+        left: 50%;
+        top: -60px;
+        transform: translateX(-50%);
+      }
+    }
+    &::before{
+      content: '';
+      display: block;
+      height: 90px;
+      background: url('../../images/frame_top_xs.png') no-repeat center/contain;
+    }
+    &::after{
+      content: '';
+      display: block;
+      height: 50px;
+      background: url('../../images/frame_bottom_xs.png') no-repeat center/contain;
+    }
+  }
+
+  // md
+  @include md{
+    .content{
+      .frame{
+        background: url('../../images/frame_middle_xs.png') repeat-y center/contain;
+        padding: 1rem 7rem;
+        margin-bottom: -1px;
+      }
+      &::before{
+        background: url('../../images/frame_top_xs.png') no-repeat center;
+      }
+      &::after{
+        background: url('../../images/frame_bottom_xs.png') no-repeat center;
+      }
+    }
+  }
+}
