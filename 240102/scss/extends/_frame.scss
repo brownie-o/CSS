@@ -39,15 +39,35 @@
   @include md{
     .content{
       .frame{
-        background: url('../../images/frame_middle_xs.png') repeat-y center/contain;
+        background: url('../../images/frame_middle_xs.png') repeat-y center;
         padding: 1rem 7rem;
-        margin-bottom: -1px;
+        // margin-bottom: -1px;
       }
       &::before{
         background: url('../../images/frame_top_xs.png') no-repeat center;
       }
       &::after{
         background: url('../../images/frame_bottom_xs.png') no-repeat center;
+      }
+    }
+  }
+
+  // lg
+  @include lg{
+    .content{
+      .frame{
+        background: url('../../images/frame_middle_small.png') repeat-y center/contain;
+        padding: 1rem 5rem;
+        h1{
+          left: calc(50% - 10px);
+          top: -58px;
+        }
+      }
+      &::before{
+        background: url('../../images/frame_top.png') no-repeat center/contain;
+      }
+      &::after{
+        background: url('../../images/frame_bottom.png') no-repeat center/contain;
       }
     }
   }
