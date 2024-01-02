@@ -298,8 +298,9 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+// 專案修改 自己更改primary, secondary顏色
+$primary:       #321e00 !default;
+$secondary:     #574235 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -340,7 +341,8 @@ $enable-shadows:              false !default;
 $enable-gradients:            false !default;
 $enable-transitions:          true !default;
 $enable-reduced-motion:       true !default;
-$enable-smooth-scroll:        true !default;
+// $enable-smooth-scroll:        true !default; 點標籤時會滑過去 但會跟GSAP衝突 所以要用false
+$enable-smooth-scroll:        false !default;
 $enable-grid-classes:         true !default;
 $enable-container-classes:    true !default;
 $enable-cssgrid:              false !default;
@@ -1058,7 +1060,8 @@ $zindex-toast:                      1090 !default;
 // scss-docs-start nav-variables
 $nav-link-padding-y:                .5rem !default;
 $nav-link-padding-x:                1rem !default;
-$nav-link-font-size:                null !default;
+// $nav-link-font-size:                null !default;
+$nav-link-font-size:                1.3rem !default;
 $nav-link-font-weight:              null !default;
 $nav-link-color:                    var(--#{$prefix}link-color) !default;
 $nav-link-hover-color:              var(--#{$prefix}link-hover-color) !default;
@@ -1271,8 +1274,11 @@ $accordion-button-padding-x:              $accordion-padding-x !default;
 $accordion-button-color:                  $accordion-color !default;
 $accordion-button-bg:                     var(--#{$prefix}accordion-bg) !default;
 $accordion-transition:                    $btn-transition, border-radius .15s ease !default;
-$accordion-button-active-bg:              tint-color($component-active-bg, 90%) !default;
-$accordion-button-active-color:           shade-color($primary, 10%) !default;
+// 專案修改
+// $accordion-button-active-bg:              tint-color($component-active-bg, 90%) !default;
+// $accordion-button-active-color:           shade-color($primary, 10%) !default;
+$accordion-button-active-bg:              $primary !default;
+$accordion-button-active-color:           $light !default;
 
 $accordion-button-focus-border-color:     $input-focus-border-color !default;
 $accordion-button-focus-box-shadow:       $btn-focus-box-shadow !default;
@@ -1418,7 +1424,9 @@ $modal-footer-bg:                   null !default;
 $modal-footer-border-color:         $modal-header-border-color !default;
 $modal-footer-border-width:         $modal-header-border-width !default;
 
-$modal-sm:                          300px !default;
+// 專案修改
+// $modal-sm:                          300px !default;
+$modal-sm:                          400px !default;
 $modal-md:                          500px !default;
 $modal-lg:                          800px !default;
 $modal-xl:                          1140px !default;

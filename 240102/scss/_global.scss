@@ -1,0 +1,16 @@
+body{
+  color: white;
+  background: #000;
+  font-weight: 400;
+  font-family: 'Noto Serif TC', serif;
+}
+
+#section01,
+#section02,
+#section03,
+#section04,
+#section05{
+  // 確保不會脫離父元素的控制
+  position: relative;
+  z-index: 1000;
+}
