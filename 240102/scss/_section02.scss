@@ -1,4 +1,9 @@
 #section02{
   // 引入extend的frame
   @extend %frame;
+  top: -50px;
+  @include lg{
+    top: 0;
+    margin-top: 90px;
+  }
 }

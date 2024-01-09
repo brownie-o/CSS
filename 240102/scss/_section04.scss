@@ -1,0 +1,69 @@
+#section04{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+
+  h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card{
+    background: transparent;
+    border: none;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-header{
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+
+    .card-body{
+      padding: 0 4rem;
+      background: url('../images/game_body.png') repeat-y center/100%;
+      video{
+        width: 100%;
+      }
+      h5{
+        padding: 0 0.5rem;
+      }
+      p{
+        padding: 0.5rem;
+      }
+    }
+
+    .card-footer{
+      background-color: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  @include lg{
+    height: 150vh;
+    padding: 0;
+    .card{
+      // .card.eq-game
+      &.eq-game{
+        position: relative;
+        top: 130px;
+      }
+      // .card.eq-game
+      &.dd-game{
+        position: relative;
+        top: 30px;
+      }
+      // .card.eq-game
+      &.wow-game{
+        position: relative;
+        top: 130px;
+      }
+    }
+  }
+}

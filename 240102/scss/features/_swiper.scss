@@ -1,0 +1,16 @@
+.swiper{
+  height: 470px;
+  @include sm{
+    height: 300px;
+
+  }
+  @include lg{
+    height: 360px;
+
+  }
+  @include xl{
+    height: 400px;
+
+  }
+  
+}

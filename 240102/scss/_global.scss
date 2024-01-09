@@ -3,6 +3,9 @@ body{
   background: #000;
   font-weight: 400;
   font-family: 'Noto Serif TC', serif;
+  // 雙層背景 50% 0%/100% 100% = 位置/大小
+  background: url('../images/mask.png') no-repeat fixed 50% 0%/100% 100%,
+  url('../images/night_sky.jpg') no-repeat fixed 50% 0%;
 }
 
 #section01,
