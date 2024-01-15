@@ -27,6 +27,7 @@
       width: 70%;
       height: 250px;
       font-size: 1.5rem;
+      padding: 1rem;
       background: #070d7f;
       border: 5px solid #eee;
       border-radius: 10px;
@@ -42,13 +43,28 @@
 </head>
 <body>
   <section>
-    <div class="text01">
-      Final Fantast V begins on a day when the world's wind currents beign to slow ad stale. The king of Tyco
+    <div id="text01">
+      Final Fantast V begins on a day when the world's wind currents beign to slow ad stale. The king of Tycoon makes ready to travel to the Wind Shrine on the back of his drake, quelling the worries of his daughter, Princess Lenna.
     </div>
   </section>
   <script src="./JS/gsap/gsap.js"></script>
   <script src="./JS/gsap/SplitText.min.js"></script>
 
-  <script></script>
+  <script>
+    gsap.registerPlugin(SplitText);
+    const text01 = new SplitText('#text01', {
+      type: 'chars, words, lines' 
+    })
+
+    console.log(text01.chars)
+    console.log(text01.words)
+    console.log(text01.lines)
+
+    gsap.from(text01.chars, {
+      opacity: 0, // 淡入
+      stagger: 0.1,
+      ease: 'steps(1)'
+    })
+  </script>
 </body>
 </html>
