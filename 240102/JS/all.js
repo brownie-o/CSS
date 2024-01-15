@@ -60,7 +60,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 $('#navbar .main-link, .backtop a').each(function (index) {
   $(this).on('click', function (e) {
     e.preventDefault() // 取消點擊預設行為(跳轉)
-    if ($(this).attr('href') ==='#section04' || $(this).attr('href') === '#section05') {
+    if ($(this).attr('href') === '#section04' || $(this).attr('href') === '#section05') {
       gsap.to($(window), {
         scrollTo: {
           y: `#section0${index + 1}`
@@ -84,7 +84,7 @@ $('#navbar .main-link, .backtop a').each(function (index) {
 // navbar 滾動收合
 gsap.from('#navbar', {
   yPercent: -100,
-  paused: false, 
+  paused: false,
   duration: 0.5,
   scrollTrigger: {
     start: 'top 60',
@@ -230,3 +230,53 @@ $('.fog').each(function (index, fog) {
     ease: 'none'
   })
 })
+
+// 流星
+// 1. 創建流星
+function createStar(starNumber) {
+  for (let i = 0; i < starNumber; i++) {
+    $('.shooting_star').append('<div class="star"></div>')
+  }
+  const stars = gsap.utils.toArray('.star') // 轉成陣列
+  return stars
+}
+
+// 2. 設定流星補間動畫預設值
+function setStarTween(stars) {
+  gsap.set('.shooting_star', {
+    perspective: 800 // 透視800 較有遠近感
+  })
+  // 初始化每顆星星的定位跟旋轉
+  stars.forEach(function (star, index) {
+    gsap.set(star, {
+      transformOrigin: '0 50%', // 原點: 左邊中間
+      position: 'absolute',
+      left: gsap.utils.random($(window).width() / 2, $(window).width() * 2),
+      top: gsap.utils.random(-100, -100),
+      rotation: -25
+    })
+  })
+  return stars
+}
+
+// 3. 流星動畫
+function playStarTimeline(stars) {
+  const tl = gsap.timeline({
+    repeat: -1
+  })
+
+  tl.to(stars, {
+    // 設定流星降落位置
+    x: '-=' + $(window).width() * 1.5, // 流星往左
+    y: '+=' + $(window).height() * 1.5, // 流星往下
+    z: 'random(-100, 500)',
+    stagger: function(index){
+      return gsap.utils.random(index + 5, (index + 5)*2, 1)
+    },
+    duration: 'random(0.5, 3, 0.1)', // random 0.5 ~ 3 以0.1的間隔
+    ease: 'none'
+  })
+}
+
+const playStar = gsap.utils.pipe(createStar, setStarTween, playStarTimeline)
+playStar(30)
