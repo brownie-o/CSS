@@ -51,6 +51,88 @@ const swiper = new Swiper('.swiper', {
   },
 })
 
+// GSAP
+// 註冊GSAP plugin
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
+// ScrollToPlugin
+// 點擊按鈕時，頁面滑動到指定位置
+$('#navbar .main-link, .backtop a').each(function (index) {
+  $(this).on('click', function (e) {
+    e.preventDefault() // 取消點擊預設行為(跳轉)
+    if ($(this).attr('href') ==='#section04' || $(this).attr('href') === '#section05') {
+      gsap.to($(window), {
+        scrollTo: {
+          y: `#section0${index + 1}`
+        },
+        duration: 1.5,
+        ease: 'back.inOut'
+      })
+    } else {
+      gsap.to($(window), {
+        scrollTo: {
+          y: `#section0${index + 1}`,
+          offsetY: 180 // 讓各section不會卡在navbar上
+        },
+        duration: 1.5,
+        ease: 'back.inOut'
+      })
+    }
+  })
+})
+
+// navbar 滾動收合
+gsap.from('#navbar', {
+  yPercent: -100,
+  paused: false, 
+  duration: 0.5,
+  scrollTrigger: {
+    start: 'top 60',
+    end: () => '+=' + document.documentElement.scrollHeight, // 整份文件滾動軸的高度
+    onEnter(self) {
+      // console.log(self)
+      self.animation.play() // 進來時撥放動畫
+    },
+    onUpdate(self) {
+      console.log(self.direction) // 滾動軸滾動的方向: 往下: 1; 往上: -1
+      // 往上滾動時正向播放(往下走)，往下滾動時反向播放(往上消失)
+      self.direction === -1 ? self.animation.play() : self.animation.reverse()
+    },
+    markers: true
+  }
+})
+
+// backtop
+gsap.to('.backtop', {
+  scrollTrigger: {
+    trigger: '#footer',
+    start: 'top bottom',
+    end: '100% bottom',
+    toggleActions: 'play none none reverse' // 進入時正向播放 離開時反向播放(消失)
+  },
+  display: 'block',
+  opacity: 1,
+  duration: 1
+})
+
+// navbar active的位置
+$('.main-link').each(function (index, link) {
+  let id = $(link).attr('href') // id = #section01 .....#section05
+  gsap.to(link, {
+    scrollTrigger: {
+      trigger: id, // 拿 #section01~5 當觸發點
+      start: 'top center',
+      end: 'bottom center',
+      // 觸發時加上active的 class
+      toggleClass: {
+        targets: link,
+        className: 'active'
+      },
+      // markers: true
+    }
+  })
+})
+
 // 視差效果 
 // 星空背景
 gsap.to('body', {
@@ -97,5 +179,54 @@ $('.float-island').each(function (index, island) {
     repeat: -1,
     yoyo: true,
     ease: 'power1.inOut'
+  })
+})
+
+// 用值是function也可以達到上面的效果
+// gsap.to('.float-island', {
+//   y: function(index, target, targest) {
+//     return 50*(index+1)
+//   },
+//   duration: function(index, target, targets) {
+//     return 10*(index+1)
+//   },
+//   repeat: -1,
+//   yoyo: true, 
+//   ease: 'power1.inOut'
+// })
+
+// 霧
+$('.fog').each(function (index, fog) {
+  // 也可以 set 用來設定樣式的初始值
+  gsap.set(fog, {
+    width: '100%',
+    height: '100%',
+    background: 'url("./images/fog.png") no-repeat center/80%',
+    opacity: 0.8,
+    position: 'absolute',
+    top: 'random(0, 100)' + '%',
+    x: function () {
+      // 設定偶數的霧要從左邊進場，奇數的霧要從右邊進場
+      // 單數的話 x= $(window).width() ， 雙數的話 x= -$(window).width()
+      return index % 2 === 0 ? -$(window).width() : $(window).width()
+    }
+  })
+  // to = 做補間動畫
+  gsap.to(fog, {
+    x: function () {
+      // 正負交換
+      return index % 2 === 0 ? $(window).width() : -$(window).width()
+    },
+    // 動畫重複播放時執行的函式
+    onRepeat() {
+      // 將霧的top 設定為隨機值
+      $(fog).css({
+        // gsap 內建 .random()
+        top: gsap.utils.random(0, 100) + '%'
+      })
+    },
+    repeat: -1,
+    duration: 60,
+    ease: 'none'
   })
 })

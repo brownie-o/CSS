@@ -341,7 +341,7 @@ $enable-shadows:              false !default;
 $enable-gradients:            false !default;
 $enable-transitions:          true !default;
 $enable-reduced-motion:       true !default;
-// $enable-smooth-scroll:        true !default; 點標籤時會滑過去 但會跟GSAP衝突 所以要用false
+// $enable-smooth-scroll:        true !default; // 點標籤時會滑過去 但會跟GSAP衝突 所以要用false
 $enable-smooth-scroll:        false !default;
 $enable-grid-classes:         true !default;
 $enable-container-classes:    true !default;
