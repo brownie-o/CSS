@@ -594,3 +594,37 @@ body {
     background: linear-gradient(90deg, white 0%, transparent 60%);
   }
 }
+
+#splitText {
+  display: none;
+}
+@media (min-width: 992px) {
+  #splitText {
+    font-size: 2rem;
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  #splitText p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #splitText p .charBg {
+    margin: 0.2rem;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255)) drop-shadow(0 0 10px rgb(255, 255, 0)) drop-shadow(0 0 30px rgb(255, 255, 0));
+  }
+}
