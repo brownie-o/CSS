@@ -11,7 +11,7 @@ $('#race a').on('click', function () {
 })
 
 // swiper
-const swiper = new Swiper('.swiper', {
+const swpier = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: true,
   speed: 1000,
