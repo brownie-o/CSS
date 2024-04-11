@@ -2,7 +2,7 @@
   color: rgb(50, 20, 0);
   font-size: 1.1rem;
   padding: 0 3rem;
-  background: url("../../images/frame_middle_xs.png") repeat-y center/contain;
+  background: url("../images/frame_middle_xs.png") repeat-y center/contain;
   margin-top: -25px;
   margin-bottom: -30px;
   position: relative;
@@ -22,29 +22,29 @@
   content: "";
   display: block;
   height: 90px;
-  background: url("../../images/frame_top_xs.png") no-repeat center/contain;
+  background: url("../images/frame_top_xs.png") no-repeat center/contain;
 }
 #section03 .content::after, #section02 .content::after, #section01 .content::after {
   content: "";
   display: block;
   height: 50px;
-  background: url("../../images/frame_bottom_xs.png") no-repeat center/contain;
+  background: url("../images/frame_bottom_xs.png") no-repeat center/contain;
 }
 @media (min-width: 768px) {
   #section03 .content .frame, #section02 .content .frame, #section01 .content .frame {
-    background: url("../../images/frame_middle_xs.png") repeat-y center;
+    background: url("../images/frame_middle_xs.png") repeat-y center;
     padding: 1rem 7rem;
   }
   #section03 .content::before, #section02 .content::before, #section01 .content::before {
-    background: url("../../images/frame_top_xs.png") no-repeat center;
+    background: url("../images/frame_top_xs.png") no-repeat center;
   }
   #section03 .content::after, #section02 .content::after, #section01 .content::after {
-    background: url("../../images/frame_bottom_xs.png") no-repeat center;
+    background: url("../images/frame_bottom_xs.png") no-repeat center;
   }
 }
 @media (min-width: 992px) {
   #section03 .content .frame, #section02 .content .frame, #section01 .content .frame {
-    background: url("../../images/frame_middle_small.png") repeat-y center/contain;
+    background: url("../images/frame_middle_small.png") repeat-y center/contain;
     padding: 1rem 5rem;
   }
   #section03 .content .frame h1, #section02 .content .frame h1, #section01 .content .frame h1 {
@@ -52,10 +52,10 @@
     top: -58px;
   }
   #section03 .content::before, #section02 .content::before, #section01 .content::before {
-    background: url("../../images/frame_top.png") no-repeat center/contain;
+    background: url("../images/frame_top.png") no-repeat center/contain;
   }
   #section03 .content::after, #section02 .content::after, #section01 .content::after {
-    background: url("../../images/frame_bottom.png") no-repeat center/contain;
+    background: url("../images/frame_bottom.png") no-repeat center/contain;
   }
 }
 
@@ -441,7 +441,7 @@ body {
 .modal-header {
   color: white;
   height: 120px;
-  background: url("../../images/login_register_header.png") no-repeat center top/100%;
+  background: url("../images/login_register_header.png") no-repeat center top/100%;
   padding: 5rem 5rem 2rem;
   border: none;
   justify-content: center;
@@ -460,7 +460,7 @@ body {
 
 .modal-body {
   padding: 0 5rem;
-  background: url("../../images/login_register_body_02.png") no-repeat center/contain, url("../../images/login_register_body_01.png") repeat-y center/100%;
+  background: url("../images/login_register_body_02.png") no-repeat center/contain, url("../images/login_register_body_01.png") repeat-y center/100%;
   margin-top: -10px;
   margin-bottom: -10px;
 }
@@ -469,7 +469,7 @@ body {
   border: none;
   height: 110px;
   padding: 0 5rem;
-  background: url("../../images/login_register_footer.png") no-repeat center bottom/100%;
+  background: url("../images/login_register_footer.png") no-repeat center bottom/100%;
   justify-content: center;
   align-items: start;
 }
@@ -520,7 +520,7 @@ body {
   .float-parallax .float-wrap-01 .float-island {
     width: 100%;
     height: 100%;
-    background: url("../../images/float-island-01.png") no-repeat center/100%;
+    background: url("../images/float-island-01.png") no-repeat center/100%;
   }
   .float-parallax .float-wrap-02 {
     width: 200px;
@@ -532,7 +532,7 @@ body {
   .float-parallax .float-wrap-02 .float-island {
     width: 100%;
     height: 100%;
-    background: url("../../images/float-island-02.png") no-repeat center/100%;
+    background: url("../images/float-island-02.png") no-repeat center/100%;
   }
   .float-parallax .float-wrap-03 {
     width: 100%;
@@ -543,7 +543,7 @@ body {
   .float-parallax .float-wrap-03 .float-island {
     width: 100%;
     height: 100%;
-    background: url("../../images/float-island-03.png") no-repeat center/100%;
+    background: url("../images/float-island-03.png") no-repeat center/100%;
   }
 }
 
@@ -564,12 +564,12 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  background: url("../../images/arrow_top.png") no-repeat right/100px;
+  background: url("../images/arrow_top.png") no-repeat right/100px;
   transition: 0.3s;
 }
 .backtop_item a:hover {
   transform: scale(1.01);
-  background: url("../../images/arrow_top_hover.png") no-repeat right/100px;
+  background: url("../images/arrow_top_hover.png") no-repeat right/100px;
 }
 
 .shooting_star {
